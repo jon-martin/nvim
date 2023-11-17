@@ -10,6 +10,7 @@ vim.keymap.set('n', '<leader>,', ":only<cr>", { desc = 'close other windows' })
 vim.keymap.set('n', '<leader>h', ":windo diffthis<cr>", { desc = 'difftHis' })
 vim.keymap.set('n', '<leader>k', ":windo diffoff<cr>", { desc = 'diffoff' })
 vim.keymap.set('n', '<leader>b', ":bnext<cr>", { desc = 'next Buffer' })
+vim.keymap.set('n', '<leader>x', ":bdelete<cr>", { desc = 'delete buffer' })
 
 local wk = require("which-key")
 wk.register({
