@@ -228,13 +228,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- [[ Configure Telescope ]]
+local actions = require "telescope.actions"
 require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-      },
+        ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+      }
     },
   },
 }
