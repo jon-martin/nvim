@@ -7,10 +7,30 @@ vim.keymap.set('n', '<leader>e', ':wincmd j<cr>', { desc = 'move Down' })
 vim.keymap.set('n', '<leader>i', ':wincmd l<cr>', { desc = 'move Right' })
 vim.keymap.set('n', '<leader>.', ':vert sba<cr>', { desc = 'split buffers' })
 vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
-vim.keymap.set('n', '<leader>h', ':windo diffthis<cr>', { desc = 'difftHis' })
-vim.keymap.set('n', '<leader>k', ':windo diffoff<cr>', { desc = 'diffoff' })
 vim.keymap.set('n', '<leader>b', ':bnext<cr>', { desc = 'next Buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
+
+-- Whichkey register
+local wk = require('which-key')
+wk.register({
+  ['h'] = { name = '+Custom' },
+  ['<leader>m'] = { name = '+Macros' },
+  ['<leader>s'] = { name = '+Search' },
+  ['<leader>g'] = { name = '+Git' },
+  ['<leader>d'] = { name = '+Document' },
+  ['<leader>t'] = { name = '+quickfix/Todo' },
+})
+
+-- Macros
+vim.keymap.set('n', '<leader>mu', '/version<CR>2fl<C-A>', { desc = 'Update version' })
+vim.keymap.set('n', '<leader>mc', ':%!', { desc = 'Run command on file' })
+vim.keymap.set('n', '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', { desc = 'G-remove template' })
+vim.keymap.set('n', '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', { desc = 'Searh-replace template' })
+vim.keymap.set('n', '<leader>ms', ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', { desc = 'SQLify' })
+vim.keymap.set('n', '<leader>me', 'yy!!bash<CR>Po<Esc><Up>', { desc = 'Execute line as command' })
+vim.keymap.set('n', '<leader>mn', ':enew<CR>', { desc = 'New buffer' })
+vim.keymap.set('n', '<leader>md', ':windo diffthis<cr>', { desc = 'Diffthis' })
+vim.keymap.set('n', '<leader>mo', ':windo diffoff<cr>', { desc = 'Diff Off' })
 -- Search commands
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = 'Search Files' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search Help' })
@@ -30,32 +50,10 @@ vim.keymap.set('n', '<leader>gC', ':Git commit -am ""<Left>', { desc = 'Git Comm
 vim.keymap.set('n', '<leader>gP', ':Git push', { desc = 'Git Push'})
 vim.keymap.set('n', '<leader>gt', ':diffget //2', { desc = 'diffget left'})
 vim.keymap.set('n', '<leader>gn', ':diffget //2', { desc = 'diffget right'})
-
--- Whichkey register
-local wk = require('which-key')
-wk.register({
-  ['h'] = { name = '+Custom' },
-  ['<leader>g'] = { name = '+Git' },
-  ['<leader>s'] = { name = '+Search' },
-  ['<leader>d'] = { name = '+Document' },
-  -- Quickfix commands
-  ['<leader>t'] = {
-    name = '+quickfix/Todo',
-    o = { ':copen<CR>', 'Open quickfix list' },
-    q = { ':cclose<CR>', 'close Quickfix list' },
-    n = { ':cnext<CR>', 'Next quickfix item' },
-    p = { ':cprev<CR>', 'Previous quickfix item' },
-    l = { ':clast<CR>', 'go to Last quickfix item' },
-    f = { ':cfirst<CR>', 'go to First quickfix item' }
-  },
-  -- Macros are contained in separate file in plugin-directory
-  ['<leader>m'] = {
-    name = '+Macros',
-    u = { '/version<CR>2fl<C-A>', 'Update version' },
-    c = { ':%!', 'Run command on file' },
-    g = { 'yiw:%g/<C-r>"/d<Left><Left>', 'G-remove template' },
-    f = { 'yiw:%s/<C-r>"//g<Left><Left>', 'Searh-replace template' },
-    s = { ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', 'SQLify' },
-    e = { 'yy!!bash<CR>Po<Esc><Up>', 'Execute line as command' },
-  },
-})
+-- Quickfix
+vim.keymap.set('n', '<leader>to', ':copen<CR>', { desc = 'Open quickfix list' })
+vim.keymap.set('n', '<leader>tq', ':cclose<CR>', { desc = 'close Quickfix list' })
+vim.keymap.set('n', '<leader>tn', ':cnext<CR>', { desc = 'Next quickfix item' })
+vim.keymap.set('n', '<leader>tp', ':cprev<CR>', { desc = 'Previous quickfix item' })
+vim.keymap.set('n', '<leader>tl', ':clast<CR>', { desc = 'go to Last quickfix item' })
+vim.keymap.set('n', '<leader>tf', ':cfirst<CR>', { desc = 'go to First quickfix item' })
