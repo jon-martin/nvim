@@ -22,7 +22,6 @@ wk.register({
 })
 
 -- Macros
-vim.keymap.set('n', '<leader>mu', '/version<CR>2fl<C-A>', { desc = 'Update version' })
 vim.keymap.set('n', '<leader>mu', '/version<CR>$F.<C-A>', { desc = 'Update version' })
 vim.keymap.set('n', '<leader>mc', ':%!', { desc = 'Run command on file' })
 vim.keymap.set('n', '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', { desc = 'G-remove template' })
@@ -33,6 +32,7 @@ vim.keymap.set('n', '<leader>me', 'yy!!bash<CR>Po<Esc><Up>', { desc = 'Execute l
 vim.keymap.set('n', '<leader>mn', ':enew<CR>', { desc = 'New buffer' })
 vim.keymap.set('n', '<leader>md', ':windo diffthis<cr>', { desc = 'Diffthis' })
 vim.keymap.set('n', '<leader>mo', ':windo diffoff<cr>', { desc = 'Diff Off' })
+vim.keymap.set('n', '<leader>mv', 'yy:!nohup <C-r>" &<CR>', { desc = 'Nohup-run line' })
 -- Search commands
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = 'Search Files' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search Help' })
