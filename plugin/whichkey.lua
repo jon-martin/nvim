@@ -23,6 +23,7 @@ wk.register({
 
 -- Macros
 vim.keymap.set('n', '<leader>mu', '/version<CR>2fl<C-A>', { desc = 'Update version' })
+vim.keymap.set('n', '<leader>mu', '/version<CR>$F.<C-A>', { desc = 'Update version' })
 vim.keymap.set('n', '<leader>mc', ':%!', { desc = 'Run command on file' })
 vim.keymap.set('n', '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', { desc = 'G-remove template' })
 vim.keymap.set('n', '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', { desc = 'search-Replace template' })
