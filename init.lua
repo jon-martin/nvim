@@ -21,6 +21,18 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",         -- required
+      "sindrets/diffview.nvim",        -- optional - Diff integration
+
+      -- Only one of these is needed, not both.
+      "nvim-telescope/telescope.nvim", -- optional
+      -- "ibhagwan/fzf-lua",              -- optional
+    },
+    config = true
+  },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -169,6 +181,7 @@ require('lazy').setup({
 require('ibl').setup()
 require('neoscroll').setup()
 require('oil').setup()
+require("flash").toggle(false)
 --
 -- Set highlight on search
 vim.o.hlsearch = true
@@ -215,6 +228,11 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Use unnamedplus while in visual
 vim.keymap.set( 'v', 'y', '"+y', { silent = true })
 vim.keymap.set( 'v', 'p', '"+p', { silent = true })
+
+-- Experimental
+vim.keymap.set( 'n', '<M-up>', 'ddkP', { noremap = true, silent = true })
+vim.keymap.set( 'n', '<M-down>', 'ddp', { noremap = true, silent = true })
+vim.keymap.set( 'n', '<M-c>', '"+yy', { noremap = true, silent = true })
 
 -- Oil keymap
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
