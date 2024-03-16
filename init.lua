@@ -233,7 +233,8 @@ vim.keymap.set( 'v', 'p', '"+p', { silent = true })
 vim.keymap.set( 'n', '<M-up>', 'ddkP', { noremap = true, silent = true })
 vim.keymap.set( 'n', '<M-down>', 'ddp', { noremap = true, silent = true })
 vim.keymap.set( 'n', '<M-c>', '"+yy', { noremap = true, silent = true })
-
+vim.keymap.set( 'n', '<M-a>', 'maggVG"+y\'a', { noremap = true, silent = true })
+--
 -- Oil keymap
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
