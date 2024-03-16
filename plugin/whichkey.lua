@@ -22,6 +22,7 @@ wk.register({
   ['<leader>t'] = { name = '+quickfix/Todo' },
 })
 
+
 -- FOrmatting
 vim.keymap.set('n', '<leader>fu', '/version<CR>$F.<cr>', { desc = 'Update version' })
 vim.keymap.set('n', '<leader>fs', ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', { desc = 'SQLify' })
