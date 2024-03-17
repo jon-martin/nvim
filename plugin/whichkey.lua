@@ -1,6 +1,6 @@
 -- Custom leader-keymaps
-vim.keymap.set('n', '<leader>y', ':vsplit<cr>', { desc = 'vertical split' })
-vim.keymap.set('n', '<leader>l', ':split<cr>', { desc = 'horizontal split' })
+vim.keymap.set('n', '<leader>y', ':vsplit<cr>:wincmd l<cr>', { desc = 'vertical split' })
+vim.keymap.set('n', '<leader>l', ':split<cr>:wincmd j<cr>', { desc = 'horizontal split' })
 vim.keymap.set('n', '<leader>n', ':wincmd h<cr>', { desc = 'move Left' })
 vim.keymap.set('n', '<leader>u', ':wincmd k<cr>', { desc = 'move Up' })
 vim.keymap.set('n', '<leader>e', ':wincmd j<cr>', { desc = 'move Down' })
