@@ -239,7 +239,7 @@ vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true })
 vim.keymap.set( 'n', '<tab>d', ':cprev<cr>', { noremap = true, silent = true })
 vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true })
 vim.keymap.set( 'n', '<tab>c', '"+yyj', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>v', 'vp', { noremap = true, silent = true })
+vim.keymap.set( 'n', '<tab>v', '"+p', { noremap = true, silent = true })
 --
 -- Oil keymap
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
