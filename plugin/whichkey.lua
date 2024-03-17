@@ -22,9 +22,7 @@ wk.register({
   ['<leader>t'] = { name = '+quickfix/Todo' },
 })
 
-
--- FOrmatting
-vim.keymap.set('n', '<leader>fu', '/version<CR>$F.<cr>', { desc = 'Update version' })
+-- Formatting
 vim.keymap.set('n', '<leader>fs', ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', { desc = 'SQLify' })
 vim.keymap.set('n', '<leader>fx', ':%! xmllint --format -<cr>', { desc = 'XML prettyprint' })
 vim.keymap.set('n', '<leader>fj', ':%! jq .<cr>', { desc = 'Json prettyprint' })
@@ -33,6 +31,7 @@ vim.keymap.set('n', '<leader>fc', 'ggI|<esc>A|<esc>:s/\\s\\+/\\|\\|/g<cr>:%s/\\s
 vim.keymap.set('n', '<leader>fd', ':%s/\\(\\d\\{2}:\\d\\{2}\\):\\d\\{2}\\,\\d\\{3}/\\1/g<cr>', { desc = 'Dateformat' })
 -- Macros
 vim.keymap.set('n', '<leader>ms', ':silent<cr>', { desc = 'Silence macros' })
+vim.keymap.set('n', '<leader>mu', '/version<cr>$F.<c-a>', { desc = 'Update version' })
 vim.keymap.set('n', '<leader>mc', ':%!', { desc = 'Run command on file' })
 vim.keymap.set('n', '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', { desc = 'G-remove template' })
 vim.keymap.set('n', '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', { desc = 'search-Replace template' })
