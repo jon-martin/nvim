@@ -41,6 +41,7 @@ vim.keymap.set('n', '<leader>me', 'yy!!bash<CR>Po<Esc><Up>', { desc = 'Execute l
 vim.keymap.set('n', '<leader>mn', ':enew<CR>', { desc = 'New buffer' })
 vim.keymap.set('n', '<leader>md', ':windo diffthis<cr>', { desc = 'Diffthis' })
 vim.keymap.set('n', '<leader>mo', ':windo diffoff<cr>', { desc = 'Diff Off' })
+vim.keymap.set('n', '<leader>ma', ':s/\\d\\+/\\=submatch(0)', { desc = 'Arithmetic operation' })
 -- Search commands
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = 'Search Files' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search Help' })
