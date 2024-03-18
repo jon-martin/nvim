@@ -232,16 +232,17 @@ vim.keymap.set( 'v', 'p', '"+p', { silent = true })
 -- Experimental
 vim.keymap.set( 'n', '<M-up>', 'ddkP', { noremap = true, silent = true })
 vim.keymap.set( 'n', '<M-down>', 'ddp', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>q', '@', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>a', 'maggVG"+y\'a', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>r', ':e!<cr>', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>s', ':wa<cr>', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>d', ':cprev<cr>', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>c', '"+yyj', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>v', '"+p', { noremap = true, silent = true })
---
+vim.keymap.set( 'n', '<tab>q', '@', { noremap = true, silent = true, desc = 'run macro' })
+vim.keymap.set( 'n', '<tab>a', 'maggVG"+y\'a', { noremap = true, silent = true, desc = 'copy All' })
+vim.keymap.set( 'n', '<tab>r', ':e!<cr>', { noremap = true, silent = true, desc = 'Reload file' })
+vim.keymap.set( 'n', '<tab>s', ':wa<cr>', { noremap = true, silent = true, desc = 'Save all' })
+vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true, desc = 'quickfix next' })
+vim.keymap.set( 'n', '<tab>d', ':cprev<cr>', { noremap = true, silent = true, desc = 'quickfix previous' })
+vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true, desc = 'cut' })
+vim.keymap.set( 'n', '<tab>c', '"+yyj', { noremap = true, silent = true, desc = 'Copy' })
+vim.keymap.set( 'n', '<tab>v', '"+p', { noremap = true, silent = true, desc = 'Paste' })
+        -- vim.keymap.set('n', 'hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
+
 -- Oil keymap
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
