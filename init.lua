@@ -230,21 +230,28 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set( 'v', 'y', '"+y', { silent = true })
 vim.keymap.set( 'v', 'p', '"+p', { silent = true })
 
--- Experimental
+-- Arrow bindings
 vim.keymap.set( 'n', '<M-up>', 'ddkP', { noremap = true, silent = true })
 vim.keymap.set( 'n', '<M-down>', 'ddp', { noremap = true, silent = true })
 vim.keymap.set( { 'n', 'v' }, '<M-left>', 'b', { noremap = true, silent = true })
 vim.keymap.set( { 'n', 'v' }, '<M-right>', 'w', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<tab>q', '@', { noremap = true, silent = true, desc = 'run macro' })
+-- Misc
+vim.keymap.set( 'n', '<tab>w', '@', { noremap = true, silent = true, desc = 'run macro' })
 vim.keymap.set( 'n', '<tab>a', 'maggVG"+y\'a', { noremap = true, silent = true, desc = 'copy All' })
 vim.keymap.set( 'n', '<tab>r', ':e!<cr>', { noremap = true, silent = true, desc = 'Reload file' })
 vim.keymap.set( 'n', '<tab>s', ':wa<cr>', { noremap = true, silent = true, desc = 'Save all' })
+-- easypick
+vim.keymap.set( 'n', '<tab>d', ':Easypick fd<cr>', { noremap = true, silent = true, desc = 'Save all' })
+-- Quickfix
 vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true, desc = 'quickfix next' })
-vim.keymap.set( 'n', '<tab>d', ':cprev<cr>', { noremap = true, silent = true, desc = 'quickfix previous' })
+vim.keymap.set( 'n', '<tab>p', ':cprev<cr>', { noremap = true, silent = true, desc = 'quickfix previous' })
+-- Copy/paste
 vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true, desc = 'cut' })
-vim.keymap.set( 'n', '<tab>c', '"+yyj', { noremap = true, silent = true, desc = 'Copy' })
-vim.keymap.set( 'n', '<tab>v', '"+p', { noremap = true, silent = true, desc = 'Paste' })
-vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true, desc = 'Paste' })
+vim.keymap.set( 'n', '<tab>c', '"+yy<down>', { noremap = true, silent = true, desc = 'Copy' })
+vim.keymap.set( 'n', '<tab>v', '"+P', { noremap = true, silent = true, desc = 'Paste' })
+-- Terminal
+vim.keymap.set( 'n', '<tab>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
+vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
 -- Oil keymap
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
