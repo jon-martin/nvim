@@ -120,10 +120,10 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'cocopon/iceberg.vim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'iceberg'
     end,
   },
 
@@ -135,7 +135,7 @@ require('lazy').setup({
       options = {
         path = 1,
         icons_enabled = true,
-        theme = 'onedark',
+        theme = 'iceberg',
         component_separators = '|',
         section_separators = '',
       },
@@ -182,7 +182,7 @@ require('ibl').setup()
 require('neoscroll').setup()
 require('oil').setup()
 require("flash").toggle(false)
---
+
 -- Set highlight on search
 vim.o.hlsearch = true
 
