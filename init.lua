@@ -174,6 +174,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  { 'axkirillov/easypick.nvim' },
 
 }, {})
 
