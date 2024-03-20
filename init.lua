@@ -239,10 +239,9 @@ vim.keymap.set( { 'n', 'v' }, '<M-right>', 'w', { noremap = true, silent = true 
 vim.keymap.set( 'n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
 vim.keymap.set( 'n', '<tab>w', '@', { noremap = true, silent = true, desc = 'run macro' })
 vim.keymap.set( 'n', '<tab>a', 'maggVG"+y\'a', { noremap = true, silent = true, desc = 'copy All' })
+vim.keymap.set( 'n', '<tab>d', 'ggdG', { noremap = true, silent = true, desc = 'Delete all' })
 vim.keymap.set( 'n', '<tab>r', ':e!<cr>', { noremap = true, silent = true, desc = 'Reload file' })
 vim.keymap.set( 'n', '<tab>s', ':wa<cr>', { noremap = true, silent = true, desc = 'Save all' })
--- easypick
-vim.keymap.set( 'n', '<tab>d', ':Easypick change_directory<cr>', { noremap = true, silent = true, desc = 'Save all' })
 -- Quickfix
 vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true, desc = 'quickfix next' })
 vim.keymap.set( 'n', '<tab>p', ':cprev<cr>', { noremap = true, silent = true, desc = 'quickfix previous' })
