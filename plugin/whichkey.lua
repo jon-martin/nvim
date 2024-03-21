@@ -47,6 +47,7 @@ vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = 'Search current Word' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search by Grep' })
 vim.keymap.set('n', '<leader>se', require('telescope.builtin').diagnostics, { desc = 'Search diagnostics' })
+vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc = 'Search Jumplist' })
 vim.keymap.set('n', '<leader>sd', ':Easypick change_directory<cr>', { desc = 'Search Directory' })
 vim.keymap.set('n', '<leader>sm', require('telescope.builtin').marks, { desc = 'Search Marks' })
 -- Git commands
