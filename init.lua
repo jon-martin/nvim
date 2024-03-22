@@ -37,6 +37,7 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   'karb94/neoscroll.nvim',
+  'TaDaa/vimade',
 
   -- Navigation
   {
@@ -250,7 +251,7 @@ vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true, desc = '
 vim.keymap.set( 'n', '<tab>c', '"+yy<down>', { noremap = true, silent = true, desc = 'Copy' })
 vim.keymap.set( 'n', '<tab>v', '"+P', { noremap = true, silent = true, desc = 'Paste' })
 -- Terminal
-vim.keymap.set( 'n', '<tab>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
+vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
 vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
 -- Oil keymap
