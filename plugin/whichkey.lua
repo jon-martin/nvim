@@ -1,3 +1,8 @@
+-- Kickstart defaults
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'find recently opened files' })
+vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = 'fuzzily search in current buffer' })
+
 -- Custom leader-keymaps
 vim.keymap.set('n', '<leader>y', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
 vim.keymap.set('n', '<leader>l', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
@@ -7,7 +12,7 @@ vim.keymap.set('n', '<leader>e', ':wincmd j<cr>', { desc = 'move Down' })
 vim.keymap.set('n', '<leader>i', ':wincmd l<cr>', { desc = 'move Right' })
 vim.keymap.set('n', '<leader>.', ':vert sba<cr>', { desc = 'split buffers' })
 vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
-vim.keymap.set('n', '<leader>b', ':bnext<cr>', { desc = 'next Buffer' })
+vim.keymap.set('n', '<leader>k', ':bnext<cr>', { desc = 'next buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
 
 -- Whichkey register
