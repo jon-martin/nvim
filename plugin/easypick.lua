@@ -18,7 +18,7 @@ easypick.setup({
 		-- pick new working directory
 		{
 			name = "change_directory",
-			command = "find . ~ -maxdepth 4 -type d",
+			command = "find ~/Documents ~/Downloads -type d -maxdepth 2 -not -path \'*/.*\'",
 			previewer = easypick.previewers.default(),
 			action = easypick.actions.nvim_commandf("cd %s"),
 		},
