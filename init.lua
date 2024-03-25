@@ -273,7 +273,8 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+      ["<cr>"] = function(prompt_bufnr) require("telescope.actions").select_default(prompt_bufnr) require("telescope.builtin").resume() end,
+      ['<esc>'] = actions.send_selected_to_qflist + actions.open_qflist,
       }
     },
   },
