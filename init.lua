@@ -37,7 +37,10 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   'karb94/neoscroll.nvim',
-  'TaDaa/vimade',
+  {
+    'TaDaa/vimade',
+    event = "VeryLazy",
+  },
 
   -- Navigation
   {
