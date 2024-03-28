@@ -6,7 +6,7 @@ vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuz
 -- Custom leader-keymaps
 vim.keymap.set('n', '<leader>y', ':vsplit<cr>:wincmd l<cr>:Telescope buffers<cr>', { desc = 'vertical split' })
 vim.keymap.set('n', '<leader>Y', ':vertical resize +10<cr>', { desc = 'vertical resize' })
-vim.keymap.set('n', '<leader>l', ':split<cr>:wincmd j<cr>:Telescope buffers<cr>', { desc = 'horizontal split' })
+vim.keymap.set('n', '<leader>l', ':split<cr>:wincmd j<cr>:Telescope find_files<cr>', { desc = 'horizontal split' })
 vim.keymap.set('n', '<leader>L', ':resize +10<cr>', { desc = 'resize' })
 vim.keymap.set('n', '<leader>n', ':wincmd h<cr>', { desc = 'move Left' })
 vim.keymap.set('n', '<leader>u', ':wincmd k<cr>', { desc = 'move Up' })

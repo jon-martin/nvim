@@ -36,7 +36,11 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-  'karb94/neoscroll.nvim',
+  -- 'karb94/neoscroll.nvim',
+  {
+    'echasnovski/mini.animate',
+    -- version = false,
+  },
   {
     'TaDaa/vimade',
     event = "VeryLazy",
@@ -183,8 +187,9 @@ require('lazy').setup({
 }, {})
 
 -- [[ Setting options ]]
+require('mini.animate').setup()
 require('ibl').setup()
-require('neoscroll').setup()
+-- require('neoscroll').setup()
 require('oil').setup()
 require("flash").toggle(false)
 
