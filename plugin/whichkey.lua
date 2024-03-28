@@ -1,22 +1,3 @@
--- Kickstart defaults
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'find recently opened files' })
-vim.keymap.set('n', '<leader>k', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
-vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = 'fuzzily search in current buffer' })
-
--- Custom leader-keymaps
-vim.keymap.set('n', '<leader>y', ':vsplit<cr>:wincmd l<cr>:Telescope find_files<cr>', { desc = 'vertical split' })
-vim.keymap.set('n', '<leader>Y', ':vertical resize +10<cr>', { desc = 'vertical resize' })
-vim.keymap.set('n', '<leader>l', ':split<cr>:wincmd j<cr>:Telescope find_files<cr>', { desc = 'horizontal split' })
-vim.keymap.set('n', '<leader>L', ':resize +10<cr>', { desc = 'resize' })
-vim.keymap.set('n', '<leader>n', ':wincmd h<cr>', { desc = 'move Left' })
-vim.keymap.set('n', '<leader>u', ':wincmd k<cr>', { desc = 'move Up' })
-vim.keymap.set('n', '<leader>e', ':wincmd j<cr>', { desc = 'move Down' })
-vim.keymap.set('n', '<leader>i', ':wincmd l<cr>', { desc = 'move Right' })
-vim.keymap.set('n', '<leader>.', ':vert sba<cr>', { desc = 'split buffers' })
-vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
-vim.keymap.set('n', '<leader>b', ':bnext<cr>', { desc = 'next buffer' })
-vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
-
 -- Whichkey register
 local wk = require('which-key')
 wk.register({
@@ -28,6 +9,51 @@ wk.register({
   ['<leader>d'] = { name = '+Document' },
   ['<leader>t'] = { name = '+quickfix/Todo' },
 })
+
+-- Kickstart defaults
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'find recently opened files' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = 'fuzzily search in current buffer' })
+
+-- Custom leader-keymaps
+vim.keymap.set('n', '<leader>y', ':vsplit<cr>:wincmd l<cr>:Telescope find_files<cr>', { desc = 'vertical split' })
+vim.keymap.set('n', '<leader>Y', ':vertical resize +20<cr>', { desc = 'vertical resize' })
+vim.keymap.set('n', '<leader>l', ':split<cr>:wincmd j<cr>:Telescope find_files<cr>', { desc = 'horizontal split' })
+vim.keymap.set('n', '<leader>L', ':resize +20<cr>', { desc = 'resize' })
+vim.keymap.set('n', '<leader>n', ':wincmd h<cr>', { desc = 'move Left' })
+vim.keymap.set('n', '<leader>u', ':wincmd k<cr>', { desc = 'move Up' })
+vim.keymap.set('n', '<leader>e', ':wincmd j<cr>', { desc = 'move Down' })
+vim.keymap.set('n', '<leader>i', ':wincmd l<cr>', { desc = 'move Right' })
+vim.keymap.set('n', '<leader>.', ':vert sba<cr>', { desc = 'split buffers' })
+vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
+vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
+vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
+
+-- Arrow bindings
+vim.keymap.set( 'n', '<M-up>', 'ddkP', { noremap = true, silent = true })
+vim.keymap.set( 'n', '<M-down>', 'ddp', { noremap = true, silent = true })
+vim.keymap.set( { 'n', 'v' }, '<M-left>', 'b', { noremap = true, silent = true })
+vim.keymap.set( { 'n', 'v' }, '<M-right>', 'w', { noremap = true, silent = true })
+-- Misc
+vim.keymap.set( 'n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
+vim.keymap.set( 'n', '<tab>w', '@', { noremap = true, silent = true, desc = 'run macro' })
+vim.keymap.set( 'n', '<tab>a', 'maggVG"+y\'a', { noremap = true, silent = true, desc = 'copy All' })
+vim.keymap.set( 'n', '<tab>d', 'ggdG', { noremap = true, silent = true, desc = 'Delete all' })
+vim.keymap.set( 'n', '<tab>r', ':e!<cr>', { noremap = true, silent = true, desc = 'Reload file' })
+vim.keymap.set( 'n', '<tab>s', ':wa<cr>', { noremap = true, silent = true, desc = 'Save all' })
+-- Quickfix
+vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true, desc = 'quickfix next' })
+vim.keymap.set( 'n', '<tab>p', ':cprev<cr>', { noremap = true, silent = true, desc = 'quickfix previous' })
+-- Copy/paste
+vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true, desc = 'cut' })
+vim.keymap.set( 'n', '<tab>c', '"+yy<down>', { noremap = true, silent = true, desc = 'Copy' })
+vim.keymap.set( 'n', '<tab>v', '"+P', { noremap = true, silent = true, desc = 'Paste' })
+vim.keymap.set( 'n', '<tab>b', ':bnext<cr>', { desc = 'next buffer' })
+-- Terminal
+vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
+vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
+
+-- Oil keymap
+vim.keymap.set("n", "-", ":vsplit<cr>:vert resize 40<cr>:Oil<cr>", { desc = "Open parent directory" })
 
 -- Formatting
 vim.keymap.set('n', '<leader>fs', ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', { desc = 'SQLify' })

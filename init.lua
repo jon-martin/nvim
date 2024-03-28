@@ -18,57 +18,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-
-      -- Only one of these is needed, not both.
-      "nvim-telescope/telescope.nvim", -- optional
-      -- "ibhagwan/fzf-lua",              -- optional
-    },
-    config = true
-  },
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-  -- 'karb94/neoscroll.nvim',
-  {
-    'echasnovski/mini.animate',
-    -- version = false,
-  },
-  {
-    'TaDaa/vimade',
-    event = "VeryLazy",
-  },
-
-  -- Navigation
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    -- @type Flash.Config
-    opts = {},
-    -- stylua: ignore
-    keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    },
-  },
-
-  {
-    'stevearc/oil.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -85,78 +34,6 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
-  {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds LSP completion capabilities
-      'hrsh7th/cmp-nvim-lsp',
-
-      -- Adds a number of user-friendly snippets
-      'rafamadriz/friendly-snippets',
-    },
-  },
-
-  -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
-  {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-      on_attach = function(bufnr)
-        vim.keymap.set('n', 'hp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
-        vim.keymap.set('n', 'hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
-        vim.keymap.set('n', 'hb', require('gitsigns').blame_line, { buffer = bufnr, desc = 'Git blame' })
-        vim.keymap.set('n', 'hv', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'PreView Hunk' })
-        vim.keymap.set('n', 'hr', require('gitsigns').reset_hunk, { buffer = bufnr, desc = 'Reset Hunk' })
-      end,
-    },
-  },
-
-  {
-    -- Theme inspired by Atom
-    'cocopon/iceberg.vim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'iceberg'
-    end,
-  },
-
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        path = 1,
-        icons_enabled = true,
-        theme = 'iceberg',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
-
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-  },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -182,14 +59,13 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-  { 'axkirillov/easypick.nvim' },
 
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
-require('mini.animate').setup()
+require('neoscroll').setup()
 require('ibl').setup()
--- require('neoscroll').setup()
 require('oil').setup()
 require("flash").toggle(false)
 
@@ -239,31 +115,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set( 'v', 'y', '"+y', { silent = true })
 vim.keymap.set( 'v', 'p', '"+p', { silent = true })
 
--- Arrow bindings
-vim.keymap.set( 'n', '<M-up>', 'ddkP', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<M-down>', 'ddp', { noremap = true, silent = true })
-vim.keymap.set( { 'n', 'v' }, '<M-left>', 'b', { noremap = true, silent = true })
-vim.keymap.set( { 'n', 'v' }, '<M-right>', 'w', { noremap = true, silent = true })
--- Misc
-vim.keymap.set( 'n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
-vim.keymap.set( 'n', '<tab>w', '@', { noremap = true, silent = true, desc = 'run macro' })
-vim.keymap.set( 'n', '<tab>a', 'maggVG"+y\'a', { noremap = true, silent = true, desc = 'copy All' })
-vim.keymap.set( 'n', '<tab>d', 'ggdG', { noremap = true, silent = true, desc = 'Delete all' })
-vim.keymap.set( 'n', '<tab>r', ':e!<cr>', { noremap = true, silent = true, desc = 'Reload file' })
-vim.keymap.set( 'n', '<tab>s', ':wa<cr>', { noremap = true, silent = true, desc = 'Save all' })
--- Quickfix
-vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true, desc = 'quickfix next' })
-vim.keymap.set( 'n', '<tab>p', ':cprev<cr>', { noremap = true, silent = true, desc = 'quickfix previous' })
--- Copy/paste
-vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true, desc = 'cut' })
-vim.keymap.set( 'n', '<tab>c', '"+yy<down>', { noremap = true, silent = true, desc = 'Copy' })
-vim.keymap.set( 'n', '<tab>v', '"+P', { noremap = true, silent = true, desc = 'Paste' })
--- Terminal
-vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
-vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
-
--- Oil keymap
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -371,6 +222,7 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
+
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
