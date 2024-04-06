@@ -20,7 +20,7 @@ easypick.setup({
 			name = "change_directory",
 			command = "find ~/Documents ~/Downloads -type d -maxdepth 2 -not -path \'*/.*\'",
 			previewer = easypick.previewers.default(),
-			action = easypick.actions.nvim_commandf("cd %s"),
+			action = easypick.actions.nvim_commandf("tcd %s"),
 		},
 	}
 })

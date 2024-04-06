@@ -14,44 +14,55 @@ wk.register({
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'find recently opened files' })
 vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = 'fuzzily search in current buffer' })
 
--- Custom leader-keymaps
+-- Linux keybinds
 vim.keymap.set('n', '<M-y>', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
-vim.keymap.set('n', '<M-Y>', ':vertical resize +10<cr>', { desc = 'vertical resize' })
 vim.keymap.set('n', '<M-l>', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
-vim.keymap.set('n', '<M-L>', ':resize +10<cr>', { desc = 'resize' })
 vim.keymap.set('n', '<M-n>', ':wincmd h<cr>', { desc = 'move Left' })
 vim.keymap.set('n', '<M-u>', ':wincmd k<cr>', { desc = 'move Up' })
 vim.keymap.set('n', '<M-e>', ':wincmd j<cr>', { desc = 'move Down' })
 vim.keymap.set('n', '<M-i>', ':wincmd l<cr>', { desc = 'move Right' })
--- mac variants
--- vim.keymap.set('n', '<c-b>%', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
--- vim.keymap.set('n', '<leader>y', ':vertical resize +20<cr>', { desc = 'vertical resize' })
--- vim.keymap.set('n', '<c-b>"', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
--- vim.keymap.set('n', '<leader>l', ':resize +20<cr>', { desc = 'resize' })
--- vim.keymap.set('n', '<c-b><left>', ':wincmd h<cr>', { desc = 'move Left' })
--- vim.keymap.set('n', '<c-b><up>', ':wincmd k<cr>', { desc = 'move Up' })
--- vim.keymap.set('n', '<c-b><down>', ':wincmd j<cr>', { desc = 'move Down' })
--- vim.keymap.set('n', '<c-b><right>', ':wincmd l<cr>', { desc = 'move Right' })
-
--- 
-vim.keymap.set('n', '<leader>.', ':vert sba<cr>', { desc = 'split buffers' })
-vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
-vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
-vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
-
--- Arrow bindings
-vim.keymap.set( 'n', '<M-up>', 'ddkP', { noremap = true, silent = true })
-vim.keymap.set( 'n', '<M-down>', 'ddp', { noremap = true, silent = true })
+vim.keymap.set('n', '<m-1>', '1gt', { desc = 'select tab 1' })
+vim.keymap.set('n', '<m-2>', '2gt', { desc = 'select tab 2' })
+vim.keymap.set('n', '<m-3>', '3gt', { desc = 'select tab 3' })
+vim.keymap.set('n', '<m-4>', '4gt', { desc = 'select tab 4' })
+vim.keymap.set('n', '<m-5>', '5gt', { desc = 'select tab 5' })
+vim.keymap.set('n', '<m-f>', ':tabnew<cr>', { desc = 'create new tab' })
+vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
+vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })
+-- Linux keybinds without mac equivalent
 vim.keymap.set( { 'n', 'v' }, '<M-left>', 'b', { noremap = true, silent = true })
 vim.keymap.set( { 'n', 'v' }, '<M-right>', 'w', { noremap = true, silent = true })
 vim.keymap.set( { 'n', 'v' }, '<C-left>', '0', { noremap = true, silent = true })
 vim.keymap.set( { 'n', 'v' }, '<C-right>', '$', { noremap = true, silent = true })
-vim.keymap.set( { 'n', 'v' }, '<C-up>', '<c-u>zz', { noremap = true, silent = true })
-vim.keymap.set( { 'n', 'v' }, '<C-down>', '<c-d>zz', { noremap = true, silent = true })
-vim.keymap.set( 'i', '<M-left>', '<esc>bi', { noremap = true, silent = true })
-vim.keymap.set( 'i', '<M-right>', '<esc>2wi', { noremap = true, silent = true })
-vim.keymap.set( 'i', '<C-left>', '<esc>I', { noremap = true, silent = true })
-vim.keymap.set( 'i', '<C-right>', '<esc>A', { noremap = true, silent = true })
+vim.keymap.set( 'i', '<M-left>', '<s-left>', { noremap = true, silent = true })
+vim.keymap.set( 'i', '<M-right>', '<s-right>', { noremap = true, silent = true })
+vim.keymap.set( 'i', '<C-left>', '<home>', { noremap = true, silent = true })
+vim.keymap.set( 'i', '<C-right>', '<end>', { noremap = true, silent = true })
+-- Mac keybinds
+-- vim.keymap.set('n', '<c-b>%', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
+-- vim.keymap.set('n', '<c-b>"', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
+-- vim.keymap.set('n', '<c-b><left>', ':wincmd h<cr>', { desc = 'move Left' })
+-- vim.keymap.set('n', '<c-b><up>', ':wincmd k<cr>', { desc = 'move Up' })
+-- vim.keymap.set('n', '<c-b><down>', ':wincmd j<cr>', { desc = 'move Down' })
+-- vim.keymap.set('n', '<c-b><right>', ':wincmd l<cr>', { desc = 'move Right' })
+-- vim.keymap.set('n', '<c-b><1>', '1gt', { desc = 'select tab 1' })
+-- vim.keymap.set('n', '<c-b><2>', '2gt', { desc = 'select tab 2' })
+-- vim.keymap.set('n', '<c-b><3>', '3gt', { desc = 'select tab 3' })
+-- vim.keymap.set('n', '<c-b><4>', '4gt', { desc = 'select tab 4' })
+-- vim.keymap.set('n', '<c-b><5>', '5gt', { desc = 'select tab 5' })
+-- vim.keymap.set('n', '<m-up>', ':tabnew<cr>', { desc = 'create new tab' })
+-- vim.keymap.set('n', '<m-left>', 'gT', { desc = 'move to left tab' })
+-- vim.keymap.set('n', '<m-right>', 'gt', { desc = 'move to right tab' })
+
+-- Window management
+vim.keymap.set('n', '<leader>y', ':vertical resize +20<cr>', { desc = 'vertical resize' })
+vim.keymap.set('n', '<leader>l', ':resize +20<cr>', { desc = 'resize' })
+vim.keymap.set('n', '<leader>.', ':vert sba<cr>', { desc = 'split buffers' })
+vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
+vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
+vim.keymap.set('n', '<leader>n', ':enew<CR>', { desc = 'New buffer' })
+vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
+
 -- Misc
 vim.keymap.set( 'n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
 vim.keymap.set( 'n', '<tab>w', '@', { noremap = true, silent = true, desc = 'run macro' })
@@ -72,7 +83,7 @@ vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = tr
 vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
 -- Oil keymap
-vim.keymap.set("n", "-", ":vsplit<cr>:vert resize 40<cr>:Oil<cr>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", ":Oil<cr>", { desc = "Open parent directory" })
 
 -- Formatting
 vim.keymap.set('n', '<leader>fs', ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', { desc = 'SQLify' })
@@ -89,7 +100,6 @@ vim.keymap.set('n', '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', { desc = 'G-rem
 vim.keymap.set('n', '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', { desc = 'search-Replace template' })
 vim.keymap.set('n', '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>', { desc = 'search-Replace template across windows' })
 vim.keymap.set('n', '<leader>me', 'yy!!bash<CR>Po<Esc><Up>', { desc = 'Execute line as command' })
-vim.keymap.set('n', '<leader>mn', ':enew<CR>', { desc = 'New buffer' })
 vim.keymap.set('n', '<leader>md', ':windo diffthis<cr>', { desc = 'Diffthis' })
 vim.keymap.set('n', '<leader>mo', ':windo diffoff<cr>', { desc = 'Diff Off' })
 vim.keymap.set('n', '<leader>ma', ':s/\\d\\+/\\=submatch(0)', { desc = 'Arithmetic operation' })
@@ -108,7 +118,7 @@ vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc
 vim.keymap.set('n', '<leader>gu', require('telescope.builtin').git_bcommits, { desc = 'search Git bUffer commits' })
 vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_commits, { desc = 'search Git Commits' })
 vim.keymap.set('n', '<leader>gr', require('telescope.builtin').git_branches, { desc = 'search Git bRanches' })
-vim.keymap.set('n', '<leader>gg', ':Neogit<cr>', { desc = 'Neogit' })
+vim.keymap.set('n', '<leader>gg', ':Neogit kind=split cwd=%:p:h<cr>', { desc = 'Neogit' })
 vim.keymap.set('n', '<leader>gb', ':Git blame<cr>', { desc = 'Git Blame' })
 vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<cr>', { desc = 'Git Diffsplit' })
 vim.keymap.set('n', '<leader>gp', ':Git pull', { desc = 'Git pull'})
