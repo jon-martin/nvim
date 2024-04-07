@@ -118,12 +118,10 @@ vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc
 vim.keymap.set('n', '<leader>gu', require('telescope.builtin').git_bcommits, { desc = 'search Git bUffer commits' })
 vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_commits, { desc = 'search Git Commits' })
 vim.keymap.set('n', '<leader>gr', require('telescope.builtin').git_branches, { desc = 'search Git bRanches' })
-vim.keymap.set('n', '<leader>gg', ':Neogit kind=split cwd=%:p:h<cr>', { desc = 'Neogit' })
+vim.keymap.set('n', '<leader>gg', ':Neogit  cwd=%:p:h<cr>', { desc = 'Neogit' })
 vim.keymap.set('n', '<leader>gb', ':Git blame<cr>', { desc = 'Git Blame' })
 vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<cr>', { desc = 'Git Diffsplit' })
 vim.keymap.set('n', '<leader>gp', ':Git pull', { desc = 'Git pull'})
-vim.keymap.set('n', '<leader>gC', ':Git commit -am ""<Left>', { desc = 'Git Commit'})
-vim.keymap.set('n', '<leader>gP', ':Git push', { desc = 'Git Push'})
 vim.keymap.set('n', '<leader>gt', ':diffget //2', { desc = 'diffget left'})
 vim.keymap.set('n', '<leader>gn', ':diffget //2', { desc = 'diffget right'})
 -- Quickfix
