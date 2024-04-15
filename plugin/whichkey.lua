@@ -1,4 +1,16 @@
 -- Whichkey register
+local zoom = false
+function Zoomfun()
+  if zoom then
+    zoom = false
+    vim.api.nvim_feedkeys(':wincmd =\n', 'n', true)
+  else
+    zoom = true
+    vim.api.nvim_feedkeys(':wincmd |\n', 'n', true)
+    vim.api.nvim_feedkeys(':wincmd _\n', 'n', true)
+  end
+end
+
 local wk = require('which-key')
 wk.register({
   ['h'] = { name = '+Custom' },
@@ -29,8 +41,7 @@ vim.keymap.set('n', '<m-5>', '5gt', { desc = 'select tab 5' })
 vim.keymap.set('n', '<m-f>', ':tabnew<cr>', { desc = 'create new tab' })
 vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
 vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })
-vim.keymap.set('n', '<m-z>', '<c-w>_<c-w>|', { desc = 'resize' })
-vim.keymap.set('n', '<m-Z>', '<c-w>=', { desc = 'resize' })
+vim.keymap.set('n', '<m-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
 -- Linux keybinds without mac equivalent
 vim.keymap.set( { 'n', 'v' }, '<M-left>', 'b', { noremap = true, silent = true })
 vim.keymap.set( { 'n', 'v' }, '<M-right>', 'w', { noremap = true, silent = true })
