@@ -66,7 +66,17 @@ require('lazy').setup({
 -- [[ Setting options ]]
 require('neoscroll').setup()
 require('ibl').setup()
-require('oil').setup()
+require('oil').setup({
+  columns = {
+    "icon",
+    "size"
+  },
+  keymaps = {
+    ["l"] = "actions.open_external",
+  },
+  constrain_cursor = "editable",
+}
+)
 require("flash").toggle(false)
 
 -- Set highlight on search
@@ -80,6 +90,10 @@ vim.wo.number = true
 
 -- Enable mouse mode
 -- vim.o.mouse = 'i'
+
+-- Split direction
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- line number style
 vim.wo.relativenumber = true
@@ -112,8 +126,8 @@ vim.o.termguicolors = true
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Use unnamedplus while in visual
-vim.keymap.set( 'v', 'y', '"+y', { silent = true })
-vim.keymap.set( 'v', 'p', '"+p', { silent = true })
+-- vim.keymap.set( 'v', 'y', '"+y', { silent = true })
+-- vim.keymap.set( 'v', 'p', '"+p', { silent = true })
 
 
 -- [[ Highlight on yank ]]
