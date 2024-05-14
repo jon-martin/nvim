@@ -50,11 +50,6 @@ vim.keymap.set('t', '<m-3>', '<c-\\><c-n>3gt', { desc = 'select tab 3' })
 vim.keymap.set('t', '<m-4>', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
 vim.keymap.set('t', '<m-5>', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
 vim.keymap.set('n', '<m-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
-vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'copy to clipboard' })
-vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
-vim.keymap.set('n', '<m-v>', '"+p', { desc = 'paste from clipboard' })
-vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
-vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
 -- Mac keybinds
 -- vim.keymap.set('n', '<c-b>%', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
 -- vim.keymap.set('n', '<c-b>"', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
@@ -80,6 +75,7 @@ vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
 -- vim.keymap.set('t', '<c-b>4>', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
 -- vim.keymap.set('t', '<c-b>5>', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
 -- vim.keymap.set('n', '<c-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
+-- vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'copy to clipboard' })
 
 -- Window management
 vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
@@ -88,20 +84,13 @@ vim.keymap.set('n', '<leader>n', ':enew<CR>', { desc = 'New buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
 
 -- Misc
+vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'copy to clipboard' })
+vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
+vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
+vim.keymap.set('n', '<m-v>', '"+p', { desc = 'paste from clipboard' })
+vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
 vim.keymap.set( 'n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
-vim.keymap.set( 'n', '<tab>w', '@', { noremap = true, silent = true, desc = 'run macro' })
-vim.keymap.set( 'n', '<tab>a', 'maggVG"+y\'a', { noremap = true, silent = true, desc = 'copy All' })
-vim.keymap.set( 'n', '<tab>d', 'ggdG', { noremap = true, silent = true, desc = 'Delete all' })
-vim.keymap.set( 'n', '<tab>r', ':e!<cr>', { noremap = true, silent = true, desc = 'Reload file' })
-vim.keymap.set( 'n', '<tab>s', ':wa<cr>', { noremap = true, silent = true, desc = 'Save all' })
--- Quickfix
-vim.keymap.set( 'n', '<tab>t', ':cnext<cr>', { noremap = true, silent = true, desc = 'quickfix next' })
-vim.keymap.set( 'n', '<tab>p', ':cprev<cr>', { noremap = true, silent = true, desc = 'quickfix previous' })
--- Copy/paste
-vim.keymap.set( 'n', '<tab>x', '"+dd', { noremap = true, silent = true, desc = 'cut' })
-vim.keymap.set( 'n', '<tab>c', '"+yy<down>', { noremap = true, silent = true, desc = 'Copy' })
-vim.keymap.set( 'n', '<tab>v', '"+P', { noremap = true, silent = true, desc = 'Paste' })
-vim.keymap.set( 'n', '<tab>b', ':bnext<cr>', { desc = 'next buffer' })
+
 -- Terminal
 vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
 vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
