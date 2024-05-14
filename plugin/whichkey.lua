@@ -74,7 +74,7 @@ vim.keymap.set('n', '<m-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
 -- vim.keymap.set('t', '<c-b>3>', '<c-\\><c-n>3gt', { desc = 'select tab 3' })
 -- vim.keymap.set('t', '<c-b>4>', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
 -- vim.keymap.set('t', '<c-b>5>', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
--- vim.keymap.set('n', '<c-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
+-- vim.keymap.set('n', '<c-b>z', ':lua Zoomfun()<cr>', { desc = 'resize' })
 -- vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'copy to clipboard' })
 
 -- Window management
