@@ -163,6 +163,8 @@ require('telescope').setup {
       i = {
         ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
         ['<CR>'] = select_one_or_multi,
+        ['<C-h>'] = "which_key",
+        ['<C-o>'] = require('telescope.actions').delete_buffer,
       }
     },
   },

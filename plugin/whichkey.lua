@@ -53,9 +53,6 @@ vim.keymap.set('n', '<m-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
 -- Mac keybinds
 -- vim.keymap.set('n', '<c-b>%', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
 -- vim.keymap.set('n', '<c-b>"', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
--- vim.keymap.set('n', '<c-up>', ':tabnew<cr>', { desc = 'create new tab' })
--- vim.keymap.set('n', '<c-left>', 'gT', { desc = 'move to left tab' })
--- vim.keymap.set('n', '<c-right>', 'gt', { desc = 'move to right tab' })
 -- vim.keymap.set('n', '<c-b><left>', ':wincmd h<cr>', { desc = 'move Left' })
 -- vim.keymap.set('n', '<c-b><up>', ':wincmd k<cr>', { desc = 'move Up' })
 -- vim.keymap.set('n', '<c-b><down>', ':wincmd j<cr>', { desc = 'move Down' })
@@ -82,6 +79,7 @@ vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
 vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
 vim.keymap.set('n', '<leader>n', ':enew<CR>', { desc = 'New buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
+vim.keymap.set('n', '<leader>w', ':Easypick new_window<cr>', { desc = 'new Window' })
 
 -- Misc
 vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'copy to clipboard' })

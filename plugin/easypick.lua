@@ -18,9 +18,17 @@ easypick.setup({
 		-- pick new working directory
 		{
 			name = "change_directory",
-			command = "find ~/Documents ~/Downloads -type d -maxdepth 2 -not -path \'*/.*\'",
+			command = "find ~/Documents ~/Downloads -type d -maxdepth 3 -not -path \'*/.*\'",
 			previewer = easypick.previewers.default(),
-			action = easypick.actions.nvim_commandf("tcd %s"),
+			action = easypick.actions.nvim_commandf("lcd %s"),
+		},
+
+		-- pick new working directory
+		{
+			name = "new_window",
+			command = "find ~/Documents ~/Downloads -type d -maxdepth 3 -not -path \'*/.*\'",
+			previewer = easypick.previewers.default(),
+			action = easypick.actions.nvim_commandf("tabnew | lcd %s | Telescope find_files "),
 		},
 	}
 })
