@@ -77,7 +77,7 @@ vim.keymap.set('n', '<m-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
 -- Window management
 vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
 vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
-vim.keymap.set('n', '<leader>n', ':enew<CR>', { desc = 'New buffer' })
+vim.keymap.set('n', '<leader>n', ':Oil ~/Documents/notes/<cr>:sleep 100m<cr>G:put=strftime(\'%Y%m%d\')<cr>', { desc = 'New buffer' })
 vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
 vim.keymap.set('n', '<leader>w', ':Easypick new_window<cr>', { desc = 'new Window' })
 

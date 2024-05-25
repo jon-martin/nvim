@@ -16,10 +16,10 @@ return{
 
   -- Theme inspired by Atom
   {
-    'cocopon/iceberg.vim',
+    'catppuccin/nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'iceberg'
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
