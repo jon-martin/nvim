@@ -28,11 +28,15 @@ return{
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', 'hp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
-        vim.keymap.set('n', 'hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
-        vim.keymap.set('n', 'hb', require('gitsigns').blame_line, { buffer = bufnr, desc = 'Git blame' })
-        vim.keymap.set('n', 'hv', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'PreView Hunk' })
-        vim.keymap.set('n', 'hr', require('gitsigns').reset_hunk, { buffer = bufnr, desc = 'Reset Hunk' })
+        vim.keymap.set('n', 'hb', require('gitsigns').blame_line, { buffer = bufnr, desc = 'git Blame' })
+        vim.keymap.set('n', 'hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'go to Next Hunk' })
+        vim.keymap.set('n', 'hp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'go to Previous Hunk' })
+        vim.keymap.set('n', 'hr', require('gitsigns').reset_hunk, { buffer = bufnr, desc = 'reset Hunk' })
+        vim.keymap.set('n', 'hv', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'preView Hunk' })
+        vim.keymap.set('n', 'hB', ':Git blame<cr>', { desc = 'Git Blame' })
+        vim.keymap.set('n', 'hP', ':Git push<cr>', { desc = 'git Push'})
+        vim.keymap.set('n', 'hc', ':Git commit -am ""<left>', { desc = 'git Commit'})
+        vim.keymap.set('n', 'hg', ':Git pull<cr>', { desc = 'git Get'})
       end,
     },
   },
