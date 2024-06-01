@@ -72,7 +72,7 @@ require('oil').setup({
     "size"
   },
   keymaps = {
-    ["l"] = "actions.open_external",
+    ["<c-o>"] = "actions.open_external",
   },
   constrain_cursor = "editable",
 }
@@ -124,11 +124,6 @@ vim.o.termguicolors = true
 
 -- Keymaps for better default experience
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Use unnamedplus while in visual
--- vim.keymap.set( 'v', 'y', '"+y', { silent = true })
--- vim.keymap.set( 'v', 'p', '"+p', { silent = true })
-
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
