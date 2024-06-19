@@ -87,7 +87,7 @@ vim.keymap.set('n', '<leader>t', ':tabnew<cr>', { desc = 'new Tab' })
 vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'copy to clipboard' })
 vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
 vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
-vim.keymap.set('n', '<m-v>', '"+p', { desc = 'paste from clipboard' })
+vim.keymap.set('n', '<m-v>', '"+pj', { desc = 'paste from clipboard' })
 vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
 vim.keymap.set('n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
 

@@ -1,15 +1,5 @@
 return{
-  -- Animations for cursor, windows and scrolling
-  {
-    'karb94/neoscroll.nvim',
-    -- version = false,
-  },
-
-  -- Fade inactive windows
-  {
-    'TaDaa/vimade',
-    event = "VeryLazy",
-  },
+  { 'echasnovski/mini.animate', version = false },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },

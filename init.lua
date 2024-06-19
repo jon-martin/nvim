@@ -64,7 +64,13 @@ require('lazy').setup({
 }, {})
 
 -- [[ Setting options ]]
-require('neoscroll').setup()
+require('mini.animate').setup({
+  resize = {
+    -- Whether to enable this animation
+    enable = false,
+  }
+}
+)
 require('ibl').setup()
 require('oil').setup({
   columns = {
