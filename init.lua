@@ -289,7 +289,7 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  pyright = {},
+  pylsp = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
