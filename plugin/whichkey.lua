@@ -90,6 +90,8 @@ vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
 vim.keymap.set('n', '<m-v>', '"+pj', { desc = 'paste from clipboard' })
 vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
 vim.keymap.set('n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
+vim.keymap.set('i', '<c-e>', '<c-o>e<right>', { desc = 'ea-move' })
+vim.keymap.set('i', '<c-b>', '<c-o>b', { desc = 'b-move' })
 
 -- Terminal
 vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
@@ -127,6 +129,7 @@ vim.keymap.set('n', '<leader>sj', require('telescope.builtin').jumplist, { desc 
 vim.keymap.set('n', '<leader>sd', ':Easypick change_directory<cr>', { desc = 'search Directory' })
 vim.keymap.set('n', '<leader>sm', require('telescope.builtin').marks, { desc = 'search Marks' })
 vim.keymap.set('n', '<leader>ss', require('telescope.builtin').git_status, { desc = 'search Git Status' })
+vim.keymap.set('n', '<leader>sS', require('telescope.builtin').git_stash, { desc = 'search Git Stash' })
 vim.keymap.set('n', '<leader>sb', require('telescope.builtin').git_bcommits, { desc = 'search Git Buffer commits' })
 vim.keymap.set('n', '<leader>sc', require('telescope.builtin').git_commits, { desc = 'search Git Commits' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').git_branches, { desc = 'search Git bRanches' })
