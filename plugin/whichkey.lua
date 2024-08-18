@@ -79,7 +79,7 @@ vim.keymap.set('n', '<leader>,', ':only<cr>', { desc = 'close other windows' })
 vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = 'find existing Buffers' })
 vim.keymap.set('n', '<leader>N', ':Oil ~/Documents/notes/<cr>:sleep 100m<cr>G:put=strftime(\'%Y%m%d\')<cr>', { desc = 'New note' })
 vim.keymap.set('n', '<leader>n', ':enew<cr>', { desc = 'New buffer' })
-vim.keymap.set('n', '<leader>x', ':bdelete<cr>', { desc = 'delete buffer' })
+vim.keymap.set('n', '<leader>x', ':bdelete!<cr>', { desc = 'delete buffer' })
 vim.keymap.set('n', '<leader>w', ':Easypick new_window<cr>', { desc = 'new Window' })
 vim.keymap.set('n', '<leader>t', ':tabnew<cr>', { desc = 'new Tab' })
 
@@ -98,7 +98,7 @@ vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = tr
 vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
 -- Oil keymap
-vim.keymap.set("n", "-", ":Oil<cr>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", ":lua MiniFiles.open()<cr>", { desc = "Open parent directory" })
 
 -- Formatting
 vim.keymap.set('n', '<leader>fs', ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', { desc = 'SQLify' })

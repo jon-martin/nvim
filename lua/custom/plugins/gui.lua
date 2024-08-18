@@ -1,6 +1,4 @@
 return{
-  { 'echasnovski/mini.animate', version = false },
-
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
 

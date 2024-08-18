@@ -64,25 +64,42 @@ require('lazy').setup({
 }, {})
 
 -- [[ Setting options ]]
-require('mini.animate').setup({
-  resize = {
-    -- Whether to enable this animation
-    enable = false,
-  }
-}
-)
 require('ibl').setup()
-require('oil').setup({
-  columns = {
-    "icon",
-    "size"
+require('mini.files').setup({
+  mappings = {
+    close       = 'q',
+    go_in       = '<right>',
+    go_in_plus  = '<cr>',
+    go_out      = '<left>',
+    go_out_plus = 'H',
+    reset       = '<BS>',
+    reveal_cwd  = '@',
+    show_help   = 'g?',
+    synchronize = '=',
+    trim_left   = '<',
+    trim_right  = '>',
   },
-  keymaps = {
-    ["<c-o>"] = "actions.open_external",
-  },
-  constrain_cursor = "editable",
-}
-)
+  windows = {
+    preview = true,
+    -- Width of focused window
+    width_focus = 50,
+    -- Width of non-focused window
+    width_nofocus = 15,
+    -- Width of preview window
+    width_preview = 75,
+  }
+})
+-- require('oil').setup({
+--   columns = {
+--     "icon",
+--     "size"
+--   },
+--   keymaps = {
+--     ["<c-o>"] = "actions.open_external",
+--   },
+--   constrain_cursor = "editable",
+-- }
+-- )
 require("flash").toggle(false)
 
 -- Set highlight on search
@@ -96,6 +113,9 @@ vim.wo.number = true
 
 -- Enable mouse mode
 -- vim.o.mouse = 'i'
+
+-- Nowrap
+vim.opt.wrap = false
 
 -- Split direction
 vim.opt.splitright = true

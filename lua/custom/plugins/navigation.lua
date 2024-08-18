@@ -13,12 +13,7 @@ return{
   },
 
   -- File navigation
-  {
-    'stevearc/oil.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  -- Picker, used for changing directory
+
+  { 'echasnovski/mini.files', version = '*' },
   { 'axkirillov/easypick.nvim' },
 }
