@@ -97,7 +97,7 @@ vim.keymap.set('i', '<c-b>', '<c-o>b', { desc = 'b-move' })
 vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
 vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
--- Oil keymap
+-- MiniFiles keymap
 vim.keymap.set("n", "-", ":lua MiniFiles.open()<cr>", { desc = "Open parent directory" })
 
 -- Formatting
@@ -138,14 +138,18 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').git_branches, { d
 vim.keymap.set('n', '<leader>gd', ':Gvdiffsplit<cr>', { desc = 'Git Diffsplit' })
 vim.keymap.set('n', '<leader>gt', ':diffget //2', { desc = 'diffget left'})
 vim.keymap.set('n', '<leader>gn', ':diffget //3', { desc = 'diffget right'})
-vim.keymap.set('n', '<leader>gg', ':Neogit  cwd=%:p:h<cr>', { desc = 'Neogit' })
+vim.keymap.set('n', '<leader>g', ':Neogit  cwd=%:p:h<cr>', { desc = 'Neogit' })
 -- Quickfix
-vim.keymap.set('n', 'lo', ':copen<CR>', { desc = 'Open quickfix list' })
-vim.keymap.set('n', 'lc', ':cclose<CR>', { desc = 'Close quickfix list' })
+vim.keymap.set('n', 'lq', ':copen<CR>', { desc = 'Open quickfix list' })
+vim.keymap.set('n', 'lQ', ':cclose<CR>', { desc = 'Close quickfix list' })
 vim.keymap.set('n', 'ln', ':cnext<CR>', { desc = 'Next quickfix item' })
 vim.keymap.set('n', 'lN', ':cprev<CR>', { desc = 'previous quickfix item' })
 vim.keymap.set('n', 'lgg', ':cfirst<CR>', { desc = 'first quickfix item' })
 vim.keymap.set('n', 'lG', ':clast<CR>', { desc = 'last quickfix item' })
+vim.keymap.set('n', 'lc', 'o- [ ] ', { desc = 'create markdown Checkbox' })
+vim.keymap.set('n', 'lx', '/\\[ \\]<CR><right>rx', { desc = 'mark checkbox done' })
+vim.keymap.set('n', 'lt', 'V:s/\\%V / | /g<CR>I| <esc>A |<esc><down>', { desc = 'markdown Table line' })
+vim.keymap.set('n', 'lh', 'yyV:s/\\%V / | /g<CR>I| <esc>A |<esc>pV:s/\\%V\\w*/ | --- /g<CR>A |<esc><down>', { desc = 'markdown table Header' })
 vim.keymap.set('n', 'll', '@q', { desc = 'run q-macro' })
 vim.keymap.set('n', 'lu', '@w', { desc = 'run w-macro' })
 vim.keymap.set('n', 'ly', '@f', { desc = 'run f-macro' })
