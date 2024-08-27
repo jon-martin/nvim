@@ -89,17 +89,17 @@ require('mini.files').setup({
     width_preview = 75,
   }
 })
--- require('oil').setup({
---   columns = {
---     "icon",
---     "size"
---   },
---   keymaps = {
---     ["<c-o>"] = "actions.open_external",
---   },
---   constrain_cursor = "editable",
--- }
--- )
+require("catppuccin").setup({
+    transparent_background = false, -- disables setting the background color.
+    dim_inactive = {
+        enabled = true, -- dims the background color of inactive window
+        shade = "light",
+        percentage = 0.5, -- percentage of the shade to apply to the inactive window
+    },
+})
+
+vim.cmd.colorscheme 'catppuccin'
+
 require("flash").toggle(false)
 
 -- Set highlight on search
