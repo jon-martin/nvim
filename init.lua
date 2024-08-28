@@ -150,6 +150,10 @@ vim.o.termguicolors = true
 
 -- Keymaps for better default experience
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+-- Hack for whichkey
+vim.keymap.set({ 'n', 'v' }, 'l', ':WhichKey l<CR>', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, 'h', ':WhichKey h<CR>', { noremap = true, silent = true })
+
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
