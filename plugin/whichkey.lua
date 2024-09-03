@@ -44,6 +44,7 @@ vim.keymap.set('n', '<m-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
 -- Mac keybinds
 -- vim.keymap.set('n', '<c-b>%', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
 -- vim.keymap.set('n', '<c-b>"', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
+-- vim.keymap.set('n', '<c-b>c', ':tabnew<cr>', { desc = 'create new tab' })
 -- vim.keymap.set('n', '<c-b><left>', ':wincmd h<cr>', { desc = 'move Left' })
 -- vim.keymap.set('n', '<c-b><up>', ':wincmd k<cr>', { desc = 'move Up' })
 -- vim.keymap.set('n', '<c-b><down>', ':wincmd j<cr>', { desc = 'move Down' })
@@ -91,7 +92,6 @@ wk.add({
   { '<leader>n', ':enew<cr>', desc = 'New buffer' },
   { '<leader>x', ':bdelete!<cr>', desc = 'delete buffer' },
   { '<leader>w', ':Easypick new_window<cr>', desc = 'new Window' },
-  { '<leader>t', ':tabnew<cr>', desc = 'new Tab' },
 -- Formatting
   { '<leader>f', group = "Format" },
   { '<leader>fs', ':%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', desc = 'SQLify' },
@@ -124,6 +124,8 @@ wk.add({
   { '<leader>sd', ':Easypick change_directory<cr>', desc = 'search Directory' },
   { '<leader>s"', require('telescope.builtin').registers, desc = 'search registers' },
   { '<leader>sm', require('telescope.builtin').marks, desc = 'search Marks' },
+  { '<leader>sn', ':Telescope live_grep search_dirs={"~/Documents/notes/"}<cr>', desc = 'search Notes' },
+  { '<leader>sN', ':Telescope find_files search_dirs={"~/Documents/notes/"}<cr>', desc = 'search Notefiles' },
   { '<leader>ss', require('telescope.builtin').git_status, desc = 'search Git Status' },
   { '<leader>sS', require('telescope.builtin').git_stash, desc = 'search Git Stash' },
   { '<leader>sb', require('telescope.builtin').git_bcommits, desc = 'search Git Buffer commits' },
@@ -136,8 +138,8 @@ wk.add({
   { '<leader>gn', ':diffget //3', desc = 'diffget right'},
 -- Quickfix (not working, neither is git-stuff)
   { 'l', group = "Quickfix" },
-  { 'lq', ':copen<CR>', desc = 'Open quickfix list' },
-  { 'lQ', ':cclose<CR>', desc = 'Close quickfix list' },
+  { 'lo', ':copen<CR>', desc = 'Open quickfix list' },
+  { 'lq', ':cclose<CR>', desc = 'Quit quickfix list' },
   { 'ln', ':cnext<CR>', desc = 'Next quickfix item' },
   { 'lN', ':cprev<CR>', desc = 'previous quickfix item' },
   { 'lgg', ':cfirst<CR>', desc = 'first quickfix item' },
