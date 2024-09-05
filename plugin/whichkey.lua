@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuz
 vim.keymap.set('n', '<m-y>', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
 vim.keymap.set('n', '<m-l>', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
 vim.keymap.set('n', '<m-f>', ':tabnew<cr>', { desc = 'create new tab' })
+vim.keymap.set('n', '<m-s>', ':Tabby rename_tab ', { desc = 'rename tab' })
 vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
 vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })
 vim.keymap.set('n', '<m-n>', ':wincmd h<cr>', { desc = 'move Left' })
@@ -42,6 +43,10 @@ vim.keymap.set('t', '<m-4>', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
 vim.keymap.set('t', '<m-5>', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
 vim.keymap.set('n', '<m-z>', ':lua Zoomfun()<cr>', { desc = 'resize' })
 -- Mac keybinds
+-- vim.keymap.set('n', '<esc><up>', ':tabnew<cr>', { desc = 'create new tab' })
+-- vim.keymap.set('n', '<esc><down>', ':Tabby rename_tab ', { desc = 'rename tab' })
+-- vim.keymap.set('n', '<esc><left>', 'gT', { desc = 'move to left tab' })
+-- vim.keymap.set('n', '<esc><right>', 'gt', { desc = 'move to right tab' })
 -- vim.keymap.set('n', '<c-b>%', ':vsplit<cr>:wincmd l<cr>:bnext<cr>', { desc = 'vertical split' })
 -- vim.keymap.set('n', '<c-b>"', ':split<cr>:wincmd j<cr>:bnext<cr>', { desc = 'horizontal split' })
 -- vim.keymap.set('n', '<c-b>c', ':tabnew<cr>', { desc = 'create new tab' })
@@ -76,6 +81,7 @@ vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
 vim.keymap.set('n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
 vim.keymap.set('i', '<c-e>', '<c-o>e<right>', { desc = 'ea-move' })
 vim.keymap.set('i', '<c-b>', '<c-o>b', { desc = 'b-move' })
+vim.keymap.set('n', '<c-d>', ':bdelete!<cr>', { desc = 'delete buffer' })
 
 -- Terminal
 vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
@@ -90,7 +96,7 @@ wk.add({
   { '<leader>b', require('telescope.builtin').buffers, desc = 'find existing Buffers' },
   { '<leader>N', ':lua MiniFiles.open(\'~/Documents/notes/\')<CR>:put=strftime(\'%Y-%m-%d\')<CR>A-.md<left><left><left>', desc = 'New note' },
   { '<leader>n', ':enew<cr>', desc = 'New buffer' },
-  { '<leader>x', ':bdelete!<cr>', desc = 'delete buffer' },
+  -- { '<leader>x', ':bdelete!<cr>', desc = 'delete buffer' },
   { '<leader>w', ':Easypick new_window<cr>', desc = 'new Window' },
 -- Formatting
   { '<leader>f', group = "Format" },
@@ -151,6 +157,8 @@ wk.add({
   { 'll', '@q', desc = 'run q-macro' },
   { 'lu', '@w', desc = 'run w-macro' },
   { 'ly', '@f', desc = 'run f-macro' },
+  { 'lv', ':vsplit<cr>:cnext<cr>', desc = 'open next quickfix-item in Vertical split' },
+  { 'ls', ':split<cr>:cnext<cr>', desc = 'open next quickfix-item in Split' },
 -- Git
   { 'h', group = "Git" },
 })
