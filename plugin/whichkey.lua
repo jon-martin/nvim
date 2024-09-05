@@ -124,7 +124,7 @@ wk.add({
   { '<leader>sf', require('telescope.builtin').find_files, desc = 'search Files' },
   { '<leader>sh', require('telescope.builtin').help_tags, desc = 'search Help' },
   { '<leader>sw', require('telescope.builtin').grep_string, desc = 'search current Word' },
-  { '<leader>sg', require('telescope.builtin').live_grep, desc = 'search by Grep' },
+  { '<leader>sg', ':Telescope live_grep_args<cr>', desc = 'search by Grep' },
   { '<leader>se', require('telescope.builtin').diagnostics, desc = 'search diagnostics' },
   { '<leader>sj', require('telescope.builtin').jumplist, desc = 'search Jumplist' },
   { '<leader>sd', ':Easypick change_directory<cr>', desc = 'search Directory' },

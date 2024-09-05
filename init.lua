@@ -25,6 +25,7 @@ require('lazy').setup({
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
+      'nvim-telescope/telescope-live-grep-args.nvim',
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -102,12 +103,12 @@ end)
 
 require('mini.files').setup({
   mappings = {
-    close       = 'q',
-    go_in       = '<right>',
+    close       = '<esc>',
+    go_in       = '<tab>',
     go_in_plus  = '<cr>',
-    go_out      = '<left>',
-    go_out_plus = 'H',
-    reset       = '<BS>',
+    go_out      = '<c-bc>',
+    go_out_plus = '<bs>',
+    reset       = '-',
     reveal_cwd  = '@',
     show_help   = 'g?',
     synchronize = '=',
@@ -217,6 +218,7 @@ end
 
 -- [[ Configure Telescope ]]
 local actions = require "telescope.actions"
+local lga_actions = require("telescope-live-grep-args.actions")
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -225,6 +227,10 @@ require('telescope').setup {
         ['<CR>'] = select_one_or_multi,
         ['<C-h>'] = "which_key",
         ['<C-o>'] = require('telescope.actions').delete_buffer,
+        ["<C-k>"] = lga_actions.quote_prompt(),
+        ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+        -- freeze the current list and start a fuzzy search in the frozen list
+        ["<C-space>"] = actions.to_fuzzy_refine,
       }
     },
   },
@@ -232,6 +238,7 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'live_grep_args')
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
