@@ -84,7 +84,7 @@ vim.keymap.set('i', '<c-b>', '<c-o>b', { desc = 'b-move' })
 vim.keymap.set('n', '<c-d>', ':bdelete!<cr>', { desc = 'delete buffer' })
 
 -- Terminal
-vim.keymap.set( 'n', '<leader>z', ':terminal<cr>', { noremap = true, silent = true, desc = 'Terminal' })
+vim.keymap.set( 'n', '<leader>z', ':terminal<cr>a', { noremap = true, silent = true, desc = 'Terminal' })
 vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
 -- MiniFiles keymap
