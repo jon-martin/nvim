@@ -155,3 +155,20 @@ wk.add({
 -- Git
   { 'h', group = "Git" },
 })
+
+-- Keymaps for better default experience
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Hack for whichkey
+vim.keymap.set({ 'n', 'v' }, 'l', ':WhichKey l<CR>', { noremap = true, silent = true })
+vim.keymap.set({ 'n', 'v' }, 'h', ':WhichKey h<CR>', { noremap = true, silent = true })
+
+-- Moved from wk.add, because refresh of command line did not happen
+vim.keymap.set({ 'n' }, '<leader>mc', ':%!', {desc = 'Run command on buffer' })
+vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', {desc = 'G-remove template' })
+vim.keymap.set({ 'n' }, '<leader>mG', 'yiw:%g!/<C-r>"/d<Left><Left>', {desc = 'G-invert-remove template' })
+vim.keymap.set({ 'n' }, '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template' })
+vim.keymap.set({ 'n' }, '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template across windows' })
+vim.keymap.set({ 'v' }, '<leader>mr', ':s/\\%V//g<left><left><left>', {desc = 'search-Replace template' })
+
+vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t', {desc = 'Table prettyprint' })
