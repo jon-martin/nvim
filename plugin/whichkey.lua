@@ -73,7 +73,7 @@ vim.keymap.set('n', '<m-z>', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
 
 
 -- Misc
-vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'copy to clipboard' })
+vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'cut to clipboard' })
 vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
 vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
 vim.keymap.set('n', '<m-v>', '"+P<down>', { desc = 'paste from clipboard' })
@@ -81,7 +81,7 @@ vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
 vim.keymap.set('n', '<esc>', '<cmd>nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
 vim.keymap.set('i', '<c-e>', '<c-o>e<right>', { desc = 'ea-move' })
 vim.keymap.set('i', '<c-b>', '<c-o>b', { desc = 'b-move' })
-vim.keymap.set('n', '<c-d>', '<cmd>bdelete!<cr>', { desc = 'delete buffer' })
+vim.keymap.set('n', '<c-d>', '<cmd>bdelete!<cr>', { desc = 'delete buffer' }) -- This does overwrite default ctrl+d behaviour (scrolling)
 
 -- Terminal
 vim.keymap.set( 'n', '<leader>z', '<cmd>terminal<cr>a', { noremap = true, silent = true, desc = 'Terminal' })
