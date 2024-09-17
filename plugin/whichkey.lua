@@ -172,5 +172,6 @@ vim.keymap.set({ 'n' }, '<leader>mG', 'yiw:%g!/<C-r>"/d<Left><Left>', {desc = 'G
 vim.keymap.set({ 'n' }, '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template' })
 vim.keymap.set({ 'n' }, '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template across windows' })
 vim.keymap.set({ 'v' }, '<leader>mr', ':s/\\%V//g<left><left><left>', {desc = 'search-Replace template' })
+vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @', {desc = 'run macro template' })
 
 vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t', {desc = 'Table prettyprint' })
