@@ -73,6 +73,8 @@ vim.keymap.set('n', '<m-z>', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
 
 
 -- Misc
+vim.keymap.set('n', '<m-up>', '10kzz', { desc = 'Scroll up' })
+vim.keymap.set('n', '<m-down>', '10jzz', { desc = 'Scroll down' })
 vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'cut to clipboard' })
 vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
 vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
