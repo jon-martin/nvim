@@ -69,12 +69,12 @@ vim.keymap.set('n', '<m-z>', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
 -- vim.keymap.set('t', '<c-b>4', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
 -- vim.keymap.set('t', '<c-b>5', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
 -- vim.keymap.set('n', '<c-b>z', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
--- vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'copy to clipboard' })
 
 
 -- Misc
-vim.keymap.set('n', '<m-up>', '10kzz', { desc = 'Scroll up' })
-vim.keymap.set('n', '<m-down>', '10jzz', { desc = 'Scroll down' })
+vim.keymap.set('n', '<m-up>', '10kzz', { desc = 'scroll up' })
+vim.keymap.set('n', '<m-down>', '10jzz', { desc = 'scroll down' })
+vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'visual select all' })
 vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'cut to clipboard' })
 vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
 vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
