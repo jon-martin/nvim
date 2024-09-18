@@ -72,8 +72,6 @@ vim.keymap.set('n', '<m-z>', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
 
 
 -- Misc
-vim.keymap.set('n', '<m-up>', '10kzz', { desc = 'scroll up' })
-vim.keymap.set('n', '<m-down>', '10jzz', { desc = 'scroll down' })
 vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'visual select all' })
 vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'cut to clipboard' })
 vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
@@ -146,7 +144,7 @@ wk.add({
   { 'lgg', '<cmd>cfirst<CR>', desc = 'first quickfix item' },
   { 'lG', '<cmd>clast<CR>', desc = 'last quickfix item' },
   { 'lc', 'o- [ ] ', desc = 'create markdown Checkbox' },
-  { 'lx', '0/\\[ \\]<CR><right>rx', desc = 'mark checkbox done' },
+  { 'lx', '0/\\[ \\]<CR><right>rx<down>', desc = 'mark checkbox done' },
   { 'lt', 'V<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc><down>', desc = 'markdown Table line' },
   { 'lh', 'yyV<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc>pV<cmd>s/\\%V\\w*/ | --- /g<CR>A |<esc><down>', desc = 'markdown table Header' },
   { 'll', '@q', desc = 'run q-macro' },
