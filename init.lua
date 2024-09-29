@@ -227,6 +227,8 @@ end
 -- [[ Configure Telescope ]]
 local actions = require "telescope.actions"
 local lga_actions = require("telescope-live-grep-args.actions")
+local fb_actions = require "telescope._extensions.file_browser.actions"
+
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -245,15 +247,11 @@ require('telescope').setup {
   },
 }
 
-local fb_actions = require "telescope._extensions.file_browser.actions"
-
-local action_state = require "telescope.actions.state"
-local fb_utils = require "telescope._extensions.file_browser.utils"
-
 require("telescope").setup {
   extensions = {
     file_browser = {
       files = false,
+      hide_parent_dir = true,
       mappings = {
         ["i"] = {
           ['<CR>'] = select_one_or_multi,
