@@ -164,10 +164,6 @@ wk.add({
 -- Keymaps for better default experience
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- Hack for whichkey
-vim.keymap.set({ 'n', 'v' }, 'l', ':WhichKey l<CR>', { noremap = true, silent = true })
-vim.keymap.set({ 'n', 'v' }, 'h', ':WhichKey h<CR>', { noremap = true, silent = true })
-
 -- Moved from wk.add, because refresh of command line did not happen
 vim.keymap.set({ 'n' }, '<leader>mc', ':%!', {desc = 'Run command on buffer' })
 vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', {desc = 'G-remove template' })
