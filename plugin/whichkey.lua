@@ -93,7 +93,7 @@ vim.keymap.set( 'n', '<leader>z', '<cmd>terminal<cr>a', { noremap = true, silent
 vim.keymap.set( 't', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
 
 -- MiniFiles keymap
-vim.keymap.set("n", "-", "<cmd>lua MiniFiles.open()<cr>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>-", "<cmd>lua MiniFiles.open()<cr>", { desc = "Open parent directory" })
 
 wk.add({
 -- Window management
@@ -101,8 +101,7 @@ wk.add({
   { '<leader>b', require('telescope.builtin').buffers, desc = 'find existing Buffers' },
   { '<leader>N', '<cmd>lua MiniFiles.open(\'~/Documents/notes/\')<CR><cmd>put=strftime(\'%Y-%m-%d\')<CR>A-.md<left><left><left>', desc = 'New note' },
   { '<leader>n', '<cmd>enew<cr>', desc = 'New buffer' },
-  -- { '<leader>x', '<cmd>bdelete!<cr>', desc = 'delete buffer' },
-  { '<leader>w', '<cmd>Easypick new_window<cr>', desc = 'new Window' },
+  { '<leader>w', '<cmd>tabnew<cr><cmd>lua require("telescope").extensions.file_browser.file_browser({cwd = "~/Documents"})<cr>', desc = 'new Window' },
 -- Formatting
   { '<leader>f', group = "Format" },
   { '<leader>fs', '<cmd>%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', desc = 'SQLify' },
@@ -125,7 +124,7 @@ wk.add({
   { '<leader>sg', '<cmd>Telescope live_grep_args<cr>', desc = 'search by Grep' },
   { '<leader>se', require('telescope.builtin').diagnostics, desc = 'search diagnostics' },
   { '<leader>sj', require('telescope.builtin').jumplist, desc = 'search Jumplist' },
-  { '<leader>sd', '<cmd>Easypick change_directory<cr>', desc = 'search Directory' },
+  { '<leader>sd', '<cmd>lua require("telescope").extensions.file_browser.file_browser({cwd = "~/Documents"})<cr>', desc = 'search Documents' },
   { '<leader>s"', require('telescope.builtin').registers, desc = 'search registers' },
   { '<leader>sm', require('telescope.builtin').marks, desc = 'search Marks' },
   { '<leader>sn', '<cmd>Telescope live_grep search_dirs={"~/Documents/notes/"}<cr>', desc = 'search Notes' },
