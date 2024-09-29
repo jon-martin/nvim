@@ -263,9 +263,16 @@ end
 require("telescope").setup {
   extensions = {
     file_browser = {
-      path = vim.loop.cwd(),
-      cwd = vim.loop.cwd(),
+      cwd = '~/Documents',
       files = false,
+      mappings = {
+        ["i"] = {
+          ["<c-w>"] = fb_actions.change_lwd,
+        },
+        ["n"] = {
+          ["w"] = fb_actions.change_lwd,
+        },
+      },
     },
   },
 }
