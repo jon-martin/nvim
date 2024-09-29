@@ -13,6 +13,10 @@ return{
   },
 
   -- File navigation
+{
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+},
 
   { 'echasnovski/mini.files', version = '*' },
   { 'axkirillov/easypick.nvim' },

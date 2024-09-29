@@ -234,9 +234,46 @@ require('telescope').setup {
   },
 }
 
+local fb_actions = require "telescope._extensions.file_browser.actions"
+
+local action_state = require "telescope.actions.state"
+local fb_utils = require "telescope._extensions.file_browser.utils"
+
+--- Change working directory of nvim to the selected file/folder in |telescope-file-browser.picker.file_browser|.
+---@param prompt_bufnr number: The prompt bufnr
+fb_actions.change_lwd = function(prompt_bufnr)
+  local current_picker = action_state.get_current_picker(prompt_bufnr)
+  local finder = current_picker.finder
+  local entry_path = action_state.get_selected_entry().Path
+  finder.path = entry_path:is_dir() and entry_path:absolute() or entry_path:parent():absolute()
+  finder.cwd = finder.path
+  vim.cmd("lcd " .. finder.path)
+
+  fb_utils.redraw_border_title(current_picker)
+  current_picker:refresh(
+    finder,
+    { new_prefix = fb_utils.relative_path_prefix(finder), reset_prompt = true, multi = current_picker._multi }
+  )
+  fb_utils.notify(
+    "action.change_lwd",
+    { msg = "Set the current local working directory!", level = "INFO", quiet = finder.quiet }
+  )
+end
+
+require("telescope").setup {
+  extensions = {
+    file_browser = {
+      path = vim.loop.cwd(),
+      cwd = vim.loop.cwd(),
+      files = false,
+    },
+  },
+}
+
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'live_grep_args')
+pcall(require('telescope').load_extension, 'file_browser')
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
