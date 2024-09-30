@@ -427,7 +427,9 @@ mason_lspconfig.setup_handlers {
 -- [[ Configure nvim-cmp ]]
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load {
+  exclude = { "cpp" },
+}
 luasnip.config.setup {}
 
 cmp.setup {
