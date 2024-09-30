@@ -71,7 +71,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = function()
     local current_dir = vim.fn.expand('%:p:h')
-    vim.cmd("silent! lcd " .. current_dir)
+    vim.cmd("silent! cd " .. current_dir)
   end,
 })
 
