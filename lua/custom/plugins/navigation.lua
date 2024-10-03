@@ -19,5 +19,4 @@ return{
 },
 
   { 'echasnovski/mini.files', version = '*' },
-  { 'axkirillov/easypick.nvim' },
 }

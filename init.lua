@@ -66,7 +66,7 @@ require('lazy').setup({
 
 -- [[ Setting options ]]
 
--- Change lcd on buffer entry
+-- Change cd on buffer entry
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*",
   callback = function()

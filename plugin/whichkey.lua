@@ -44,7 +44,7 @@ vim.keymap.set('t', '<m-5>', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
 vim.keymap.set('n', '<m-z>', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
 -- Mac keybinds
 -- vim.keymap.set('n', '<esc><up>', '<cmd>tabnew<cr>', { desc = 'create new tab' })
--- vim.keymap.set('n', '<esc><down>', '<cmd>Tabby rename_tab ', { desc = 'rename tab' })
+-- vim.keymap.set('n', '<esc><down>', ':Tabby rename_tab ', { desc = 'rename tab' })
 -- vim.keymap.set('n', '<esc><left>', 'gT', { desc = 'move to left tab' })
 -- vim.keymap.set('n', '<esc><right>', 'gt', { desc = 'move to right tab' })
 -- vim.keymap.set('n', '<c-b>%', '<cmd>vsplit<cr><cmd>wincmd l<cr><cmd>bnext<cr>', { desc = 'vertical split' })
