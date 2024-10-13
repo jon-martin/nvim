@@ -17,8 +17,8 @@ vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc =
 vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = 'fuzzily search in current buffer' })
 
 -- Linux keybinds
-vim.keymap.set('n', '<m-y>', '<cmd>vsplit<cr><cmd>wincmd l<cr><cmd>bnext<cr>', { desc = 'vertical split' })
-vim.keymap.set('n', '<m-l>', '<cmd>split<cr><cmd>wincmd j<cr><cmd>bnext<cr>', { desc = 'horizontal split' })
+vim.keymap.set('n', '<m-y>', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
+vim.keymap.set('n', '<m-l>', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
 vim.keymap.set('n', '<m-f>', '<cmd>tabnew<cr>', { desc = 'create new tab' })
 vim.keymap.set('n', '<m-s>', ':Tabby rename_tab ', { desc = 'rename tab' })
 vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
@@ -47,8 +47,8 @@ vim.keymap.set('n', '<m-z>', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
 -- vim.keymap.set('n', '<esc><down>', ':Tabby rename_tab ', { desc = 'rename tab' })
 -- vim.keymap.set('n', '<esc><left>', 'gT', { desc = 'move to left tab' })
 -- vim.keymap.set('n', '<esc><right>', 'gt', { desc = 'move to right tab' })
--- vim.keymap.set('n', '<c-b>%', '<cmd>vsplit<cr><cmd>wincmd l<cr><cmd>bnext<cr>', { desc = 'vertical split' })
--- vim.keymap.set('n', '<c-b>"', '<cmd>split<cr><cmd>wincmd j<cr><cmd>bnext<cr>', { desc = 'horizontal split' })
+-- vim.keymap.set('n', '<c-b>%', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
+-- vim.keymap.set('n', '<c-b>"', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
 -- vim.keymap.set('n', '<c-b>c', '<cmd>tabnew<cr>', { desc = 'create new tab' })
 -- vim.keymap.set('n', '<c-b><left>', '<cmd>wincmd h<cr>', { desc = 'move Left' })
 -- vim.keymap.set('n', '<c-b><up>', '<cmd>wincmd k<cr>', { desc = 'move Up' })
@@ -150,6 +150,7 @@ wk.add({
   { 'lgg', '<cmd>cfirst<CR>', desc = 'first quickfix item' },
   { 'lG', '<cmd>clast<CR>', desc = 'last quickfix item' },
   { 'lc', 'o- [ ] ', desc = 'create markdown Checkbox' },
+  { 'lw', '<cmd>lcd %:p:h<CR>', desc = 'set buffer as local directory' },
   { 'lx', '0/\\[ \\]<CR><right>rx<down>', desc = 'mark checkbox done' },
   { 'lt', 'V<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc><down>', desc = 'markdown Table line' },
   { 'lh', 'yyV<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc>pV<cmd>s/\\%V\\w*/ | --- /g<CR>A |<esc><down>', desc = 'markdown table Header' },

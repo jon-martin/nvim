@@ -66,15 +66,6 @@ require('lazy').setup({
 
 -- [[ Setting options ]]
 
--- Change cd on buffer entry
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*",
-  callback = function()
-    local current_dir = vim.fn.expand('%:p:h')
-    vim.cmd("silent! cd " .. current_dir)
-  end,
-})
-
 require('ibl').setup()
 
 local theme = {
@@ -137,7 +128,7 @@ require('mini.files').setup({
 })
 
 require("catppuccin").setup({
-    transparent_background = false, -- disables setting the background color.
+    -- transparent_background = true, -- disables setting the background color.
     dim_inactive = {
         enabled = true, -- dims the background color of inactive window
         shade = "light",
@@ -428,7 +419,7 @@ mason_lspconfig.setup_handlers {
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load {
-  exclude = { "cpp" },
+  exclude = { "loremipsum" },
 }
 luasnip.config.setup {}
 
