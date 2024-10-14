@@ -150,7 +150,7 @@ wk.add({
   { 'lgg', '<cmd>cfirst<CR>', desc = 'first quickfix item' },
   { 'lG', '<cmd>clast<CR>', desc = 'last quickfix item' },
   { 'lc', 'o- [ ] ', desc = 'create markdown Checkbox' },
-  { 'lw', '<cmd>lcd %:p:h<CR>', desc = 'set buffer as local directory' },
+  { 'lw', '<cmd>tcd %:p:h<CR>', desc = 'set buffer as local directory' },
   { 'lx', '0/\\[ \\]<CR><right>rx<down>', desc = 'mark checkbox done' },
   { 'lt', 'V<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc><down>', desc = 'markdown Table line' },
   { 'lh', 'yyV<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc>pV<cmd>s/\\%V\\w*/ | --- /g<CR>A |<esc><down>', desc = 'markdown table Header' },
