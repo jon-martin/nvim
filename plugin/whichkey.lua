@@ -119,11 +119,11 @@ wk.add({
 -- Search commands
   { '<leader>s', group = "Search commands" },
   { '<leader>sf', require('telescope.builtin').find_files, desc = 'search Files' },
-  { '<leader>sF', '<cmd>cd ..<cr><cmd>Telescope find_files<cr>', desc = 'search Files' },
+  { '<leader>sF', '<cmd>Telescope find_files<cr>', desc = 'search Files' },
   { '<leader>sh', require('telescope.builtin').help_tags, desc = 'search Help' },
   { '<leader>sw', require('telescope.builtin').grep_string, desc = 'search current Word' },
   { '<leader>sg', '<cmd>Telescope live_grep_args<cr>', desc = 'search by Grep' },
-  { '<leader>sG', '<cmd>cd ..<cr><cmd>Telescope live_grep_args<cr>', desc = 'search by Grep' },
+  { '<leader>sG', '<cmd>Telescope live_grep_args<cr>', desc = 'search by Grep' },
   { '<leader>se', require('telescope.builtin').diagnostics, desc = 'search diagnostics' },
   { '<leader>sj', require('telescope.builtin').jumplist, desc = 'search Jumplist' },
   { '<leader>sd', '<cmd>lua require("telescope").extensions.file_browser.file_browser({cwd = "~/Documents"})<cr>', desc = 'search Documents' },
