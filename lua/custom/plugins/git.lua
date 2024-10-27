@@ -32,13 +32,12 @@ return{
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', 'hB', ':Git blame<cr>', { desc = 'git Blame' })
-        vim.keymap.set('n', 'ha', ':Git add %<cr>', { desc = 'git Add'})
-        vim.keymap.set('n', 'hc', ':Git commit -am ""<left>', { desc = 'git Commit'})
-        vim.keymap.set('n', 'hp', ':Git pull<cr>', { desc = 'git Get'})
-        vim.keymap.set('n', 'hP', ':Git push<cr>', { desc = 'git Push'})
-        vim.keymap.set('n', 'hs', ':Git stash<cr>', { desc = 'git Stash'})
-        vim.keymap.set('n', 'hS', ':Git stash pop<cr>', { desc = 'git Stash pop'})
+        vim.keymap.set('n', 'hB', '<cmd>Gitsigns blame<cr>', { desc = 'git Blame' })
+        vim.keymap.set('n', 'ha', '<cmd>!git add %<cr>', { desc = 'git Add'})
+        vim.keymap.set('n', 'hc', '<cmd>Neogit commit -a<cr>', { desc = 'git Commit'})
+        vim.keymap.set('n', 'hp', '<cmd>Neogit pull<cr>', { desc = 'git Get'})
+        vim.keymap.set('n', 'hP', '<cmd>Neogit push<cr>', { desc = 'git Push'})
+        vim.keymap.set('n', 'hs', '<cmd>Neogit stash<cr>', { desc = 'git Stash'})
         vim.keymap.set('n', 'hb', require('gitsigns').blame_line, { buffer = bufnr, desc = 'git Blame' })
         vim.keymap.set('n', 'hN', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'go to Previous Hunk' })
         vim.keymap.set('n', 'hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'go to Next Hunk' })
@@ -48,3 +47,4 @@ return{
     },
   },
 }
+
