@@ -5,7 +5,6 @@ return{
     dependencies = {
       "nvim-lua/plenary.nvim",         -- required
       "sindrets/diffview.nvim",        -- optional - Diff integration
-
       "nvim-telescope/telescope.nvim",
     },
     config = true
@@ -26,6 +25,7 @@ return{
         vim.keymap.set('n', 'hB', '<cmd>Gitsigns blame<cr>', { desc = 'git Blame' })
         vim.keymap.set('n', 'ha', '<cmd>!git add %<cr>', { desc = 'git Add'})
         vim.keymap.set('n', 'hg', '<cmd>Neogit<cr>', { desc = 'Neogit'})
+        vim.keymap.set('n', 'hd', '<cmd>DiffviewOpen<cr>', { desc = 'Diffview'})
         vim.keymap.set('n', 'hc', ':!git commit -am ""<left>', { desc = 'git Get'})
         vim.keymap.set('n', 'hp', '<cmd>!git pull<cr>', { desc = 'git Get'})
         vim.keymap.set('n', 'hP', '<cmd>!git push<cr>', { desc = 'git Push'})
