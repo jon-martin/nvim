@@ -11,14 +11,6 @@ return{
     config = true
   },
   {
-    "rbong/vim-flog",
-    lazy = true,
-    cmd = { "Flog", "Flogsplit", "Floggit" },
-    dependencies = {
-      "tpope/vim-fugitive",
-    },
-  },
-  {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -33,7 +25,8 @@ return{
       on_attach = function(bufnr)
         vim.keymap.set('n', 'hB', '<cmd>Gitsigns blame<cr>', { desc = 'git Blame' })
         vim.keymap.set('n', 'ha', '<cmd>!git add %<cr>', { desc = 'git Add'})
-        vim.keymap.set('n', 'hc', '<cmd>Neogit<cr>', { desc = 'Neogit'})
+        vim.keymap.set('n', 'hg', '<cmd>Neogit<cr>', { desc = 'Neogit'})
+        vim.keymap.set('n', 'hc', ':!git commit -am ""<left>', { desc = 'git Get'})
         vim.keymap.set('n', 'hp', '<cmd>!git pull<cr>', { desc = 'git Get'})
         vim.keymap.set('n', 'hP', '<cmd>!git push<cr>', { desc = 'git Push'})
         vim.keymap.set('n', 'hs', '<cmd>Neogit stash<cr>', { desc = 'git Stash'})
