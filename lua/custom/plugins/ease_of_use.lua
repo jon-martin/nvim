@@ -17,7 +17,4 @@ return{
       'rafamadriz/friendly-snippets',
     },
   },
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
 }

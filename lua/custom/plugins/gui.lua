@@ -2,6 +2,7 @@ return{
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {
       triggers = {
+        { "<auto>", mode = "nixsotc" },
         { "<leader>", mode = { "n", "v" } },
         { "h", mode = { "n"}, desc = 'git commands' },
         { "l", mode = { "n"}, desc = 'quickfix and markup hotkeys' }
