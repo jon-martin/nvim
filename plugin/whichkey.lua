@@ -134,11 +134,6 @@ wk.add({
   { '<leader>sb', require('telescope.builtin').git_bcommits, desc = 'search Git Buffer commits' },
   { '<leader>sc', require('telescope.builtin').git_commits, desc = 'search Git Commits' },
   { '<leader>sr', require('telescope.builtin').git_branches, desc = 'search Git bRanches' },
--- Git commands
-  { '<leader>g', group = "Git commands" },
-  { '<leader>gd', '<cmd>Gvdiffsplit<cr>', desc = 'Git Diffsplit' },
-  { '<leader>gt', ':diffget //2', desc = 'diffget left'},
-  { '<leader>gn', ':diffget //3', desc = 'diffget right'},
 -- Quickfix (not working, neither is git-stuff)
   { 'l', group = "Quickfix" },
   { 'lo', '<cmd>copen<CR>', desc = 'Open quickfix list' },
