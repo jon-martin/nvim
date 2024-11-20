@@ -156,12 +156,27 @@ wk.add({
   { 'ls', '<cmd>split<cr><cmd>cnext<cr>', desc = 'open next quickfix-item in Split' },
 -- Git
   { 'h', group = "Git" },
+  { 'ha', '<cmd>!git add %<cr>', desc = 'Add' },
+  { 'hB', '<cmd>Gitsigns blame<cr>', desc = 'Blame' },
+  { 'hC', '<cmd>Gvdiffsplit!<cr>', desc = 'resolve Conflict'},
+  { 'he', '<cmd>diffget //2<cr>', desc = 'get lEft'},
+  { 'hi', '<cmd>diffget //3<cr>', desc = 'get rIght'},
+  { 'hp', '<cmd>Git pull<cr>', desc = 'pull'},
+  { 'hP', '<cmd>Git push<cr>', desc = 'Push'},
+  { 'hs', '<cmd>Git stash<cr>', desc = 'Stash'},
+  { 'hS', '<cmd>Git stash pop<cr>', desc = 'Stash pop'},
+  { 'hb', require('gitsigns').blame_line, desc = 'blame' },
+  { 'hN', require('gitsigns').prev_hunk, desc = 'go to Previous Hunk' },
+  { 'hn', require('gitsigns').next_hunk, desc = 'go to Next Hunk' },
+  { 'hr', require('gitsigns').reset_hunk, desc = 'reset Hunk' },
+  { 'hv', require('gitsigns').preview_hunk, desc = 'preView Hunk' },
 })
 
 -- Keymaps for better default experience
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Moved from wk.add, because refresh of command line did not happen
+vim.keymap.set({ 'n' }, 'hc', ':wa<cr>:Git commit -am ""<left>', { desc = 'Commit'})
 vim.keymap.set({ 'n' }, '<leader>mc', ':%!', {desc = 'Run command on buffer' })
 vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', {desc = 'G-remove template' })
 vim.keymap.set({ 'n' }, '<leader>mG', 'yiw:%g!/<C-r>"/d<Left><Left>', {desc = 'G-invert-remove template' })
