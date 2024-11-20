@@ -100,6 +100,7 @@ wk.add({
   { '<leader>,', '<cmd>only<cr>', desc = 'close other windows' },
   { '<leader>b', require('telescope.builtin').buffers, desc = 'find existing Buffers' },
   { '<leader>N', '<cmd>lua MiniFiles.open(\'~/Documents/notes/\')<CR><cmd>put=strftime(\'%Y-%m-%d\')<CR>A-.md<left><left><left>', desc = 'New note' },
+  { '<leader>o', '<cmd>only<cr>', desc = 'Only' },
   { '<leader>n', '<cmd>enew<cr>', desc = 'New buffer' },
   { '<leader>w', '<cmd>tabnew<cr><cmd>lua require("telescope").extensions.file_browser.file_browser({cwd = "~/Documents"})<cr>', desc = 'new Window' },
 -- Formatting
