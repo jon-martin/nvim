@@ -1,14 +1,7 @@
 return{
   -- Git related plugins
   "tpope/vim-fugitive",
-  {
-    "rbong/vim-flog",
-    lazy = true,
-    cmd = { "Flog", "Flogsplit", "Floggit" },
-    dependencies = {
-      "tpope/vim-fugitive",
-    },
-  },
+
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -32,7 +25,6 @@ return{
         vim.keymap.set('n', 'hP', '<cmd>Git push<cr>', { desc = 'Push'})
         vim.keymap.set('n', 'hs', '<cmd>Git stash<cr>', { desc = 'Stash'})
         vim.keymap.set('n', 'hS', '<cmd>Git stash pop<cr>', { desc = 'Stash pop'})
-        vim.keymap.set('n', 'hf', '<cmd>Flog<cr>', { desc = 'Flog commit history'})
         vim.keymap.set('n', 'hb', require('gitsigns').blame_line, { buffer = bufnr, desc = 'blame' })
         vim.keymap.set('n', 'hN', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'go to Previous Hunk' })
         vim.keymap.set('n', 'hn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'go to Next Hunk' })
