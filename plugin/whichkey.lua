@@ -124,14 +124,16 @@ wk.add({
   { '<leader>fx', '<cmd>%! xmllint --format -<cr>', desc = 'XML prettyprint' },
   { '<leader>fj', '<cmd>%! jq .<cr>', desc = 'Json prettyprint' },
   { '<leader>fc', 'ggI|<esc>A|<esc>:s/\\s\\+/\\|\\|/g<cr>:%s/\\s\\+/\\|/g<cr>:%s/^/\\|/g<cr>:%s/$/\\|/g<cr>', desc = 'Confluence prettyprint' },
-  { '<leader>fd', ':%s/\\(\\d\\{2}:\\d\\{2}\\):\\d\\{2}\\.\\d\\{3}/\\1/g<cr>', desc = 'Dateformat' },
+  { '<leader>fd', ':%s/\\(\\d\\{2}:\\d\\{2}\\):\\d\\{2}\\.\\d\\{3}/\\1/g<cr>', desc = 'format Date (cut seconds)' },
+  { '<leader>fT', '<cmd>%s/\\(\\d\\{4}-\\d\\{2}-\\d\\{2}\\) /\\1_/g<cr>', desc = 'format Timestamp for table' },
+  { '<leader>f_', '<cmd>:%s/_/ /g<cr>', desc = 'remove all _' },
 -- Macros
   { '<leader>m', group = "Macros" },
   { '<leader>ms', '<cmd>set lazyredraw<cr>', desc = 'Silence macros' },
   { '<leader>mu', '/version<cr>$F.<c-a>', desc = 'Update version' },
   { '<leader>me', 'yy!!bash<CR>Po<Esc><Up>', desc = 'Execute line as command' },
   { '<leader>md', '<cmd>windo diffthis<cr>', desc = 'Diffthis' },
-  { '<leader>mo', '<cmd>windo diffoff<cr>', desc = 'Diff Off' },
+  { '<leader>mo', '<cmd>windo diffoff<cr>', desc = 'diff Off' },
 -- Search commands
   { '<leader>s', group = "Search commands" },
   { '<leader>sf', require('telescope.builtin').find_files, desc = 'search Files' },
