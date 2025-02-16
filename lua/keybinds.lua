@@ -15,7 +15,7 @@ vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuz
 -- Linux keybinds
 vim.keymap.set('n', '<m-y>', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
 vim.keymap.set('n', '<m-l>', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
-vim.keymap.set('n', '<m-f>', '<cmd>tabnew<cr>', { desc = 'create new tab' })
+vim.keymap.set('n', '<m-f>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
 vim.keymap.set('n', '<m-s>', ':Tabby rename_tab ', { desc = 'rename tab' })
 vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
 vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })

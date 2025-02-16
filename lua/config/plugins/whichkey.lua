@@ -13,7 +13,6 @@ return {
 	local wk = require("which-key")
 	wk.add({
 	    -- Window management
-	    { '<leader>,',  '<cmd>only<cr>', desc = 'close other windows' },
 	    { '<leader>b',  require('telescope.builtin').buffers, desc = 'find existing Buffers' },
 	    { '<leader>N',  '<cmd>lua MiniFiles.open(\'~/Documents/notes/\')<CR><cmd>put=strftime(\'%Y-%m-%d\')<CR>A-.md<left><left><left>', desc = 'New note' },
 	    { '<leader>o',  '<cmd>only<cr>', desc = 'Only' },
