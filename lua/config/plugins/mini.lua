@@ -8,4 +8,7 @@ return {
 			statusline.setup { use_icons = true }
 		end
 	},
+	{ 'echasnovski/mini.files', version = '*' },
+	{ 'echasnovski/mini.ai', version = '*' },
+	{ 'echasnovski/mini.operators', version = '*' },
 }

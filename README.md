@@ -1,7 +1,8 @@
 # Rewritten with advent of neovim as a basis
 
 # Plugins to include
-
+- [x] blink-cmp
+- [x] which-key
 - [ ] Markdown
 - [ ] Tabby
 - [ ] Flash
@@ -23,7 +24,6 @@
 - [ ] tiny-glimmer?
 
 # Functionality to include
-
 - [ ] Search files in specific directories
 - [ ] Change to tab for autocompletion in blink-cmp?
 - [ ] Escape to remove focus
