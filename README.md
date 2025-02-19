@@ -31,7 +31,7 @@
 - [ ] Search files in specific directories
 - [ ] Change to tab for autocompletion in blink-cmp?
 - [ ] Escape to remove focus
-- [ ] Keybind fixes
-    - [ ] h > git-related keybinds (and disabling)
-    - [ ] l > quickfix stuff (and disabling)
+- [x] Keybind fixes
+    - [x] h > git-related keybinds (and disabling)
+    - [x] l > quickfix stuff (and disabling)
 
