@@ -1,7 +1,10 @@
 require("config.lazy")
 
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.o.expandtab = true   -- Use spaces instead of tabs
+vim.o.shiftwidth = 4     -- Number of spaces for indentation
+vim.o.tabstop = 4        -- Number of spaces a tab counts for
+vim.o.softtabstop = 4    -- Number of spaces when hitting <Tab>
+
 vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -30,9 +33,24 @@ vim.o.termguicolors = true
 -- Enable mouse mode
 -- vim.o.mouse = 'i'
 
+vim.keymap.set("n", "l", "<Nop>", { desc = "quickfix stuff" })
+vim.keymap.set("n", "h", "<Nop>", { desc = "git stuff" })
+
 require('keybinds')
 require('autocmds')
 require('functions')
+
+require("catppuccin").setup({
+  flavour = "mocha",
+  -- transparent_background = true, -- disables setting the background color.
+  dim_inactive = {
+    enabled = true,       -- dims the background color of inactive window
+    shade = "light",
+    percentage = 0.5,     -- percentage of the shade to apply to the inactive window
+  },
+})
+
+vim.cmd.colorscheme 'catppuccin'
 
 require("flash").toggle(false)
 require('mini.files').setup({
@@ -97,3 +115,6 @@ require("tabby.tabline").set(function(line)
     hl = theme.fill,
   }
 end)
+
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
