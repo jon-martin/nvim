@@ -5,7 +5,7 @@ vim.o.shiftwidth = 4     -- Number of spaces for indentation
 vim.o.tabstop = 4        -- Number of spaces a tab counts for
 vim.o.softtabstop = 4    -- Number of spaces when hitting <Tab>
 
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -132,9 +132,6 @@ wk.add({
   { '<leader>md', '<cmd>windo diffthis<cr>', desc = 'Diffthis' },
   { '<leader>mo', '<cmd>windo diffoff<cr>', desc = 'Diff Off' },
   -- Search commands
-  { '<leader>s',  group = "Search commands" },
-  { '<leader>u',  group = "Enable/Disable features" },
-  { '<leader>g',  group = "Git commands" },
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`

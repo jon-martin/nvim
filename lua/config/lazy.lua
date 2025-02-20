@@ -23,6 +23,8 @@ vim.opt.runtimepath:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.g.snacks_animate = false
+
 -- Save undo history
 vim.o.undofile = true
 
