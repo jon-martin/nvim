@@ -6,7 +6,11 @@ return {
         version = 'v0.*',
 
         opts = {
-            keymap = { preset = 'default' },
+            keymap = { 
+                preset = 'default',
+
+                ['<tab>'] = { 'accept', 'fallback' },
+            },
 
             appearance = {
                 use_nvim_cmp_as_default = true,

@@ -50,32 +50,6 @@ require("catppuccin").setup({
 vim.cmd.colorscheme 'catppuccin'
 
 require("flash").toggle(false)
-require('mini.files').setup({
-  mappings = {
-    close       = '<esc>',
-    go_in       = '<tab>',
-    go_in_plus  = '<cr>',
-    go_out      = '<c-bc>',
-    go_out_plus = '<bs>',
-    reset       = '-',
-    reveal_cwd  = '@',
-    show_help   = 'g?',
-    synchronize = '=',
-    trim_left   = '<',
-    trim_right  = '>',
-  },
-  windows = {
-    preview = true,
-    -- Width of focused window
-    width_focus = 50,
-    -- Width of non-focused window
-    width_nofocus = 15,
-    -- Width of preview window
-    width_preview = 75,
-  }
-})
-require('mini.ai').setup()
-require('mini.operators').setup()
 
 require('gitsigns').setup()
 

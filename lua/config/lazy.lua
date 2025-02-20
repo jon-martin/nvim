@@ -71,7 +71,9 @@ end
 
 local servers = {
     ruff = {},
+    -- pylsp = {},
     bashls = {},
+    cssls = {},
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
