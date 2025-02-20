@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-
 -- Linux keybinds
 vim.keymap.set('n', '<m-y>', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
 vim.keymap.set('n', '<m-l>', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
@@ -49,6 +47,7 @@ wk.add({
     { '<leader>s',  group = "Search commands" },
     { '<leader>u',  group = "Enable/Disable features" },
     { '<leader>g',  group = "Git commands" },
+    { '<leader>d',  group = "Document LSP" },
     -- Window management
     -- { '<leader>b',  require('telescope.builtin').buffers, desc = 'find existing Buffers' },
     { '<leader>o',  '<cmd>only<cr>',                                                                                                 desc = 'Only' },

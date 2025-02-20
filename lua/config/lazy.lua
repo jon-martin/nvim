@@ -53,9 +53,7 @@ local on_attach = function(_, bufnr)
     end
 
     nmap('gd', vim.lsp.buf.definition, 'Goto Definition')
-    -- nmap('gr', require('telescope.builtin').lsp_references, 'Goto References')
     nmap('gI', vim.lsp.buf.implementation, 'Goto Implementation')
-    -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
     nmap('<leader>dr', vim.lsp.buf.rename, 'Document Rename')
     nmap('<leader>da', vim.lsp.buf.code_action, 'Document code Action')
 

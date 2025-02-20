@@ -8,6 +8,7 @@ vim.o.softtabstop = 4    -- Number of spaces when hitting <Tab>
 -- vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
 
 -- Nowrap
 vim.opt.wrap = false
@@ -87,26 +88,6 @@ require("tabby.tabline").set(function(line)
   }
 end)
 
-
-local wk = require("which-key")
-wk.add({
-  { '<leader>o',  '<cmd>only<cr>', desc = 'Only' },
-  -- Formatting
-  { '<leader>f',  group = "Format" },
-  { '<leader>fs', '<cmd>%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y', desc = 'SQLify' },
-  { '<leader>fx', '<cmd>%! xmllint --format -<cr>', desc = 'XML prettyprint' },
-  { '<leader>fj', '<cmd>%! jq .<cr>', desc = 'Json prettyprint' },
-  { '<leader>fc', 'ggI|<esc>A|<esc>:s/\\s\\+/\\|\\|/g<cr>:%s/\\s\\+/\\|/g<cr>:%s/^/\\|/g<cr>:%s/$/\\|/g<cr>', desc = 'Confluence prettyprint' },
-  { '<leader>fd', ':%s/\\(\\d\\{2}:\\d\\{2}\\):\\d\\{2}\\.\\d\\{3}/\\1/g<cr>', desc = 'Dateformat' },
-  -- Macros
-  { '<leader>m',  group = "Macros" },
-  { '<leader>ms', '<cmd>set lazyredraw<cr>', desc = 'Silence macros' },
-  { '<leader>mu', '/version<cr>$F.<c-a>', desc = 'Update version' },
-  { '<leader>me', 'yy!!bash<CR>Po<Esc><Up>', desc = 'Execute line as command' },
-  { '<leader>md', '<cmd>windo diffthis<cr>', desc = 'Diffthis' },
-  { '<leader>mo', '<cmd>windo diffoff<cr>', desc = 'Diff Off' },
-  -- Search commands
-})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
