@@ -1,16 +1,4 @@
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
---  vim.keymap.set("n", "<space>z", function()
--- 	vim.cmd.vnew()
--- 	vim.cmd.term()
--- 	vim.cmd.wincmd("J")
--- 	vim.api.nvim_win_set_height(0, 15)
--- 	vim.cmd("startinsert")
--- end, {desc = 'Terminal'})
-vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>x', '<cmd>bdelete!<cr>', { noremap = true, silent = true })
-
--- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = 'find recently opened files' })
--- vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = 'fuzzily search in current buffer' })
 
 -- Linux keybinds
 vim.keymap.set('n', '<m-y>', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
@@ -45,22 +33,6 @@ vim.keymap.set('t', '<m-6>', '<c-\\><c-n>6gt', { desc = 'select tab 6' })
 vim.keymap.set('t', '<m-7>', '<c-\\><c-n>7gt', { desc = 'select tab 7' })
 vim.keymap.set('t', '<m-8>', '<c-\\><c-n>8gt', { desc = 'select tab 8' })
 vim.keymap.set('t', '<m-9>', '<c-\\><c-n>9gt', { desc = 'select tab 9' })
--- vim.keymap.set('n', '<m-z>', '<cmd>lua Zoomfun()<cr>', { desc = 'resize' })
-
--- Keymaps for better default experience
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Moved from wk.add, because refresh of command line did not happen
-vim.keymap.set({ 'n' }, 'h', '<Nop>', { desc = 'git commands'})
-vim.keymap.set({ 'n' }, 'hc', ':wa<cr>:Git commit -am ""<left>', { desc = 'Commit'})
-vim.keymap.set({ 'n' }, '<leader>mc', ':%!', {desc = 'Run command on buffer' })
-vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', {desc = 'G-remove template' })
-vim.keymap.set({ 'n' }, '<leader>mG', 'yiw:%g!/<C-r>"/d<Left><Left>', {desc = 'G-invert-remove template' })
-vim.keymap.set({ 'n' }, '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template' })
-vim.keymap.set({ 'n' }, '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template across windows' })
-vim.keymap.set({ 'v' }, '<leader>mr', ':s/\\%V//g<left><left><left>', {desc = 'search-Replace template' })
-vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @', {desc = 'run macro template' })
-vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t', {desc = 'Table prettyprint' })
 
 -- Extra keymaps with explicit modes
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to clipboard" }) -- Visual mode
@@ -87,24 +59,6 @@ wk.add({
   { '<leader>me', 'yy!!bash<CR>Po<Esc><Up>', desc = 'Execute line as command' },
   { '<leader>md', '<cmd>windo diffthis<cr>', desc = 'Diffthis' },
   { '<leader>mo', '<cmd>windo diffoff<cr>', desc = 'Diff Off' },
-  -- Search commands
-  { '<leader>s',  group = "Search commands" },
-  -- { '<leader>sf', require('telescope.builtin').find_files, desc = 'search Files' },
-  -- { '<leader>sh', require('telescope.builtin').help_tags, desc = 'search Help' },
-  -- { '<leader>sw', require('telescope.builtin').grep_string, desc = 'search current Word' },
-  -- { '<leader>sg', desc = 'search by Grep' },
-  -- { '<leader>se', require('telescope.builtin').diagnostics, desc = 'search diagnostics' },
-  -- { '<leader>sj', require('telescope.builtin').jumplist, desc = 'search Jumplist' },
-  -- { '<leader>sd', '<cmd>lua require("telescope").extensions.file_browser.file_browser({cwd = "~/Documents"})<cr>', desc = 'search Documents' },
-  -- { '<leader>s"', require('telescope.builtin').registers, desc = 'search registers' },
-  -- { '<leader>sm', require('telescope.builtin').marks, desc = 'search Marks' },
-  -- { '<leader>sn', '<cmd>Telescope live_grep search_dirs={"~/Documents/notes/"}<cr>', desc = 'search Notes' },
-  -- { '<leader>sN', '<cmd>Telescope find_files search_dirs={"~/Documents/notes/"}<cr>', desc = 'search Notefiles' },
-  -- { '<leader>ss', require('telescope.builtin').git_status, desc = 'search Git Status' },
-  -- { '<leader>sS', require('telescope.builtin').git_stash, desc = 'search Git Stash' },
-  -- { '<leader>sb', require('telescope.builtin').git_bcommits, desc = 'search Git Buffer commits' },
-  -- { '<leader>sc', require('telescope.builtin').git_commits, desc = 'search Git Commits' },
-  -- { '<leader>sr', require('telescope.builtin').git_branches, desc = 'search Git bRanches' },
   -- Quickfix (not working, neither is git-stuff)
   { 'l',          group = "Quickfix" },
   { 'lo',         '<cmd>copen<CR>', desc = 'Open quickfix list' },
@@ -141,3 +95,14 @@ wk.add({
   { 'hr',         require('gitsigns').reset_hunk, desc = 'reset Hunk' },
   { 'hv',         require('gitsigns').preview_hunk, desc = 'preView Hunk' },
 })
+
+-- Moved from wk.add, because refresh of command line did not happen
+vim.keymap.set({ 'n' }, 'hc', ':wa<cr>:Git commit -am ""<left>', { desc = 'Commit'})
+vim.keymap.set({ 'n' }, '<leader>mc', ':%!', {desc = 'Run command on buffer' })
+vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', {desc = 'G-remove template' })
+vim.keymap.set({ 'n' }, '<leader>mG', 'yiw:%g!/<C-r>"/d<Left><Left>', {desc = 'G-invert-remove template' })
+vim.keymap.set({ 'n' }, '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template' })
+vim.keymap.set({ 'n' }, '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>', {desc = 'search-Replace template across windows' })
+vim.keymap.set({ 'v' }, '<leader>mr', ':s/\\%V//g<left><left><left>', {desc = 'search-Replace template' })
+vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @', {desc = 'run macro template' })
+vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t', {desc = 'Table prettyprint' })

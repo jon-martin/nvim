@@ -13,14 +13,14 @@ return {
                 { "l", mode = { "n" }, desc = 'quickfix and markup hotkeys' }
             },
         },
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({ global = false })
-                end,
-                desc = "Buffer Local Keymaps (which-key)",
-            },
-        },
+        -- keys = {
+        --     {
+        --         "<leader>?",
+        --         function()
+        --             require("which-key").show({ global = false })
+        --         end,
+        --         desc = "Buffer Local Keymaps (which-key)",
+        --     },
+        -- },
     },
 }
