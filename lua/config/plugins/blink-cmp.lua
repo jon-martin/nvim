@@ -1,12 +1,12 @@
 return {
     {
         'saghen/blink.cmp',
-        dependencies = 'rafamadriz/friendly-snippets',
+        dependencies = 'jon-martin/friendly-snippets',
 
         version = 'v0.*',
 
         opts = {
-            keymap = { 
+            keymap = {
                 preset = 'default',
 
                 ['<tab>'] = { 'accept', 'fallback' },
