@@ -9,10 +9,6 @@ vim.keymap.set('n', '<m-n>', '<cmd>wincmd h<cr>', { desc = 'move Left' })
 vim.keymap.set('n', '<m-u>', '<cmd>wincmd k<cr>', { desc = 'move Up' })
 vim.keymap.set('n', '<m-e>', '<cmd>wincmd j<cr>', { desc = 'move Down' })
 vim.keymap.set('n', '<m-i>', '<cmd>wincmd l<cr>', { desc = 'move Right' })
-vim.keymap.set('t', '<m-n>', '<c-\\><c-n><cmd>wincmd h<cr>', { desc = 'move Left' })
-vim.keymap.set('t', '<m-u>', '<c-\\><c-n><cmd>wincmd k<cr>', { desc = 'move Up' })
-vim.keymap.set('t', '<m-e>', '<c-\\><c-n><cmd>wincmd j<cr>', { desc = 'move Down' })
-vim.keymap.set('t', '<m-i>', '<c-\\><c-n><cmd>wincmd l<cr>', { desc = 'move Right' })
 vim.keymap.set('n', '<m-1>', '1gt', { desc = 'select tab 1' })
 vim.keymap.set('n', '<m-2>', '2gt', { desc = 'select tab 2' })
 vim.keymap.set('n', '<m-3>', '3gt', { desc = 'select tab 3' })
@@ -22,15 +18,6 @@ vim.keymap.set('n', '<m-6>', '6gt', { desc = 'select tab 6' })
 vim.keymap.set('n', '<m-7>', '7gt', { desc = 'select tab 7' })
 vim.keymap.set('n', '<m-8>', '8gt', { desc = 'select tab 8' })
 vim.keymap.set('n', '<m-9>', '9gt', { desc = 'select tab 9' })
-vim.keymap.set('t', '<m-1>', '<c-\\><c-n>1gt', { desc = 'select tab 1' })
-vim.keymap.set('t', '<m-2>', '<c-\\><c-n>2gt', { desc = 'select tab 2' })
-vim.keymap.set('t', '<m-3>', '<c-\\><c-n>3gt', { desc = 'select tab 3' })
-vim.keymap.set('t', '<m-4>', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
-vim.keymap.set('t', '<m-5>', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
-vim.keymap.set('t', '<m-6>', '<c-\\><c-n>6gt', { desc = 'select tab 6' })
-vim.keymap.set('t', '<m-7>', '<c-\\><c-n>7gt', { desc = 'select tab 7' })
-vim.keymap.set('t', '<m-8>', '<c-\\><c-n>8gt', { desc = 'select tab 8' })
-vim.keymap.set('t', '<m-9>', '<c-\\><c-n>9gt', { desc = 'select tab 9' })
 
 -- Extra keymaps with explicit modes
 vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'visual select all' })
@@ -102,8 +89,9 @@ wk.add({
     { 'hr',         require('gitsigns').reset_hunk,                                                                     desc = 'reset Hunk' },
     { 'hv',         require('gitsigns').preview_hunk,                                                                   desc = 'preView Hunk' },
     { '<leader>p',  group = "Projects" },
-    { '<leader>pn', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>Tabby rename_tab notes<cr><cmd>lua Snacks.explorer()<cr>', desc = "Notes" },
-    { '<leader>pw', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Downloads/<cr><cmd>Tabby rename_tab downloads<cr><cmd>lua Snacks.explorer()<cr>',       desc = "Downloads" },
+    { '<leader>pp', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lua Snacks.picker.projects()<cr>', desc = "Project picker" },
+    { '<leader>pn', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>Tabby rename_tab notes<cr><cmd>lua Snacks.picker.files()<cr>', desc = "Notes" },
+    { '<leader>pw', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Downloads/<cr><cmd>Tabby rename_tab downloads<cr><cmd>lua Snacks.picker.files()<cr>',       desc = "Downloads" },
 })
 
 -- Moved from wk.add, because refresh of command line did not happen

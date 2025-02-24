@@ -11,26 +11,26 @@
 - [x] Gitsigns
 - [ ] Snacks [repo](https://github.com/folke/snacks.nvim/blob/main/README.md) 
     - [ ] gitbrowse (fix url stuff)
-    - [ ] bufdelete (unsure of usage)
+    - [x] bufdelete (unsure of usage)
     - [x] bigfile
     - [x] quickfile
     - [x] dim
     - [x] terminal
     - [x] indent
-- [ ] Mini [repo](https://github.com/echasnovski/mini.nvim/blob/main/README.md) 
-    - [ ] files (swap for snacks.explore?)
-    - [ ] ai (learn usage)
-    - [ ] operators? (learn usage)
+- [-] Mmagick '*.jpg' -crop 120x120+10+5 thumbnail%03d.pngini [repo](https://github.com/echasnovski/mini.nvim/blob/main/README.md) 
+    - [-] files (swap for snacks.explore?)
+    - [-] ai (learn usage)
+    - [-] operators? (learn usage)
 - [-] tiny-glimmer? - nah
 
 # Functionality to include
 
-- [ ] Lots of keybind fixes
-- [ ] Gutter fix (its too wide)
-- [ ] Snippet fix (can i ditch my fork?)
-- [ ] Search files in specific directories
-- [ ] Change to tab for autocompletion in blink-cmp?
-- [ ] Escape to remove focus
+- [x] Lots of keybind fixes
+- [x] Gutter fix (its too wide)
+- [x] Snippet fix (can i ditch my fork? nah)
+- [x] Search files in specific directories
+- [x] Change to tab for autocompletion in blink-cmp?
+- [x] Escape to remove focus
 - [x] Keybind fixes
     - [x] h > git-related keybinds (and disabling)
     - [x] l > quickfix stuff (and disabling)
