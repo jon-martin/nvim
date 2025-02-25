@@ -73,26 +73,36 @@ require('lualine').setup {
   },
 }
 
-require("tabby.tabline").set(function(line)
+local theme = {
+  fill = 'TabLineFill',
+  current_tab = { fg = '#000000', bg = '#89b4fa' },
+  tab = 'TabLine',
+  win = 'TabLine',
+}
+
+require('tabby.tabline').set(function(line)
   return {
     line.tabs().foreach(function(tab)
-      local hl = tab.is_current() and theme.current or theme.not_current
+      local hl = tab.is_current() and theme.current_tab or theme.tab
       return {
-        line.sep(" ", hl, theme.fill),
+        line.sep('█', hl, theme.fill),
+        tab.number(),
         tab.name(),
-        line.sep(" ", hl, theme.fill),
+        -- tab.close_btn(''), -- show a close button
+        line.sep('', hl, theme.fill),
         hl = hl,
+        margin = ' ',
       }
     end),
     line.spacer(),
+    -- shows list of windows in tab
     line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
-      local hl = win.is_current() and theme.current or theme.not_current
-
       return {
-        line.sep(" ", hl, theme.fill),
+        win.is_current() and '' or '',
         win.buf_name(),
-        line.sep(" ", hl, theme.fill),
-        hl = hl,
+        line.sep(' ', theme.win, theme.fill),
+        hl = theme.win,
+        margin = ' ',
       }
     end),
     hl = theme.fill,
