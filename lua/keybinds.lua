@@ -116,6 +116,7 @@ wk.add({
     { '<leader>pp', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lua Snacks.picker.projects()<cr>', desc = "Project picker" },
     { '<leader>pn', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>Tabby rename_tab notes<cr><cmd>lua Snacks.picker.files()<cr>', desc = "Notes" },
     { '<leader>pw', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Downloads/<cr><cmd>Tabby rename_tab downloads<cr><cmd>lua Snacks.picker.files()<cr>',       desc = "Downloads" },
+    { '<leader>pg', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/git/<cr><cmd>Tabby rename_tab git<cr><cmd>lua Snacks.picker.files()<cr>',       desc = "Git" },
 })
 
 -- Moved from wk.add, because refresh of command line did not happen
