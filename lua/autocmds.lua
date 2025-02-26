@@ -21,9 +21,3 @@ vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "term://*",
     command = "startinsert",
 })
-
--- Autocmd to create a new tab when Neovim starts
-vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = "*",
-    command = "tabnew | tabfirst",  -- Opens a new tab
-})
