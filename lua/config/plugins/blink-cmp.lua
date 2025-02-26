@@ -8,8 +8,7 @@ return {
         opts = {
             keymap = {
                 preset = 'default',
-
-                ['<tab>'] = { 'accept', 'fallback' },
+                -- ['<tab>'] = { 'accept', 'fallback' },
             },
 
             appearance = {
