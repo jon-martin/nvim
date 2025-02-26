@@ -70,6 +70,7 @@ end
 local servers = {
     ruff = {},
     -- pylsp = {},
+    tailwindcss = {},
     bashls = {},
     cssls = {},
     lua_ls = {

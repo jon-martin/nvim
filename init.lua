@@ -54,14 +54,6 @@ require("flash").toggle(false)
 
 require('gitsigns').setup()
 
-local theme = {
-
-  current = { fg = "#cad3f5", bg = "transparent", style = "bold" },
-  not_current = { fg = "#5b6078", bg = "transparent" },
-
-  fill = { bg = "transparent" },
-}
-
 require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
@@ -108,7 +100,6 @@ require('tabby.tabline').set(function(line)
     hl = theme.fill,
   }
 end)
-
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

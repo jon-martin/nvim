@@ -77,7 +77,6 @@ return {
             { "<leader>dd", function() Snacks.picker.diagnostics() end,           desc = "Diagnostics" },
             { "<leader>dD", function() Snacks.picker.diagnostics_buffer() end,    desc = "Buffer Diagnostics" },
             -- Other
-            { "<leader>z",  function() Snacks.zen.zoom() end,                     desc = "Toggle Zoom" },
             { "<leader>x",  function() Snacks.bufdelete() end,                    desc = "Delete Buffer" },
             { "<c-/>",      function() Snacks.terminal() end,                     desc = "Toggle Terminal",          mode = { "n", "t" } },
         },

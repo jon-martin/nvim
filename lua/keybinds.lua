@@ -1,23 +1,48 @@
--- Linux keybinds
-vim.keymap.set('n', '<m-y>', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
-vim.keymap.set('n', '<m-l>', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
-vim.keymap.set('n', '<m-f>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
-vim.keymap.set('n', '<m-s>', ':Tabby rename_tab ', { desc = 'rename tab' })
-vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
-vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })
-vim.keymap.set('n', '<m-n>', '<cmd>wincmd h<cr>', { desc = 'move Left' })
-vim.keymap.set('n', '<m-u>', '<cmd>wincmd k<cr>', { desc = 'move Up' })
-vim.keymap.set('n', '<m-e>', '<cmd>wincmd j<cr>', { desc = 'move Down' })
-vim.keymap.set('n', '<m-i>', '<cmd>wincmd l<cr>', { desc = 'move Right' })
-vim.keymap.set('n', '<m-1>', '1gt', { desc = 'select tab 1' })
-vim.keymap.set('n', '<m-2>', '2gt', { desc = 'select tab 2' })
-vim.keymap.set('n', '<m-3>', '3gt', { desc = 'select tab 3' })
-vim.keymap.set('n', '<m-4>', '4gt', { desc = 'select tab 4' })
-vim.keymap.set('n', '<m-5>', '5gt', { desc = 'select tab 5' })
-vim.keymap.set('n', '<m-6>', '6gt', { desc = 'select tab 6' })
-vim.keymap.set('n', '<m-7>', '7gt', { desc = 'select tab 7' })
-vim.keymap.set('n', '<m-8>', '8gt', { desc = 'select tab 8' })
-vim.keymap.set('n', '<m-9>', '9gt', { desc = 'select tab 9' })
+if jit.os == "Linux" then
+    -- Linux keybinds
+    vim.keymap.set('n', '<m-f>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
+    vim.keymap.set('n', '<m-s>', ':Tabby rename_tab ', { desc = 'rename tab' })
+    vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
+    vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })
+    vim.keymap.set('n', '<m-y>', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
+    vim.keymap.set('n', '<m-l>', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
+    vim.keymap.set('n', '<m-n>', '<cmd>wincmd h<cr>', { desc = 'move Left' })
+    vim.keymap.set('n', '<m-u>', '<cmd>wincmd k<cr>', { desc = 'move Up' })
+    vim.keymap.set('n', '<m-e>', '<cmd>wincmd j<cr>', { desc = 'move Down' })
+    vim.keymap.set('n', '<m-i>', '<cmd>wincmd l<cr>', { desc = 'move Right' })
+    vim.keymap.set('n', '<m-1>', '1gt', { desc = 'select tab 1' })
+    vim.keymap.set('n', '<m-2>', '2gt', { desc = 'select tab 2' })
+    vim.keymap.set('n', '<m-3>', '3gt', { desc = 'select tab 3' })
+    vim.keymap.set('n', '<m-4>', '4gt', { desc = 'select tab 4' })
+    vim.keymap.set('n', '<m-5>', '5gt', { desc = 'select tab 5' })
+    vim.keymap.set('n', '<m-6>', '6gt', { desc = 'select tab 6' })
+    vim.keymap.set('n', '<m-7>', '7gt', { desc = 'select tab 7' })
+    vim.keymap.set('n', '<m-8>', '8gt', { desc = 'select tab 8' })
+    vim.keymap.set('n', '<m-9>', '9gt', { desc = 'select tab 9' })
+    vim.keymap.set('n', '<m-z>', '<cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
+else
+    -- Mac keybinds
+    vim.keymap.set('n', '<esc><up>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
+    vim.keymap.set('n', '<esc><down>', ':Tabby rename_tab ', { desc = 'rename tab' })
+    vim.keymap.set('n', '<esc><left>', 'gT', { desc = 'move to left tab' })
+    vim.keymap.set('n', '<esc><right>', 'gt', { desc = 'move to right tab' })
+    vim.keymap.set('n', '<c-b>%', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
+    vim.keymap.set('n', '<c-b>"', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
+    vim.keymap.set('n', '<c-b><left>', '<cmd>wincmd h<cr>', { desc = 'move Left' })
+    vim.keymap.set('n', '<c-b><up>', '<cmd>wincmd k<cr>', { desc = 'move Up' })
+    vim.keymap.set('n', '<c-b><down>', '<cmd>wincmd j<cr>', { desc = 'move Down' })
+    vim.keymap.set('n', '<c-b><right>', '<cmd>wincmd l<cr>', { desc = 'move Right' })
+    vim.keymap.set('n', '<c-b>1', '1gt', { desc = 'select tab 1' })
+    vim.keymap.set('n', '<c-b>2', '2gt', { desc = 'select tab 2' })
+    vim.keymap.set('n', '<c-b>3', '3gt', { desc = 'select tab 3' })
+    vim.keymap.set('n', '<c-b>4', '4gt', { desc = 'select tab 4' })
+    vim.keymap.set('n', '<c-b>5', '5gt', { desc = 'select tab 5' })
+    vim.keymap.set('n', '<c-b>6', '6gt', { desc = 'select tab 6' })
+    vim.keymap.set('n', '<c-b>7', '7gt', { desc = 'select tab 7' })
+    vim.keymap.set('n', '<c-b>8', '8gt', { desc = 'select tab 8' })
+    vim.keymap.set('n', '<c-b>9', '9gt', { desc = 'select tab 9' })
+    vim.keymap.set('n', '<c-b>z', '<cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
+end
 
 -- Extra keymaps with explicit modes
 vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'visual select all' })
@@ -36,7 +61,6 @@ wk.add({
     { '<leader>g',  group = "Git commands" },
     { '<leader>d',  group = "Document LSP" },
     -- Window management
-    -- { '<leader>b',  require('telescope.builtin').buffers, desc = 'find existing Buffers' },
     { '<leader>o',  '<cmd>only<cr>',                                                                                    desc = 'Only' },
     { '<leader>n',  '<cmd>enew<cr>',                                                                                    desc = 'New buffer' },
     -- Formatting
