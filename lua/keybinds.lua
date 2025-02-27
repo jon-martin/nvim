@@ -20,6 +20,20 @@ if jit.os == "Linux" then
     vim.keymap.set('n', '<m-8>', '8gt', { desc = 'select tab 8' })
     vim.keymap.set('n', '<m-9>', '9gt', { desc = 'select tab 9' })
     vim.keymap.set('n', '<m-z>', '<cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
+
+    vim.keymap.set('t', '<m-n>', '<c-\\><c-n><cmd>wincmd h<cr>', { desc = 'move Left' })
+    vim.keymap.set('t', '<m-u>', '<c-\\><c-n><cmd>wincmd k<cr>', { desc = 'move Up' })
+    vim.keymap.set('t', '<m-e>', '<c-\\><c-n><cmd>wincmd j<cr>', { desc = 'move Down' })
+    vim.keymap.set('t', '<m-i>', '<c-\\><c-n><cmd>wincmd l<cr>', { desc = 'move Right' })
+    vim.keymap.set('t', '<m-1>', '<c-\\><c-n>1gt', { desc = 'select tab 1' })
+    vim.keymap.set('t', '<m-2>', '<c-\\><c-n>2gt', { desc = 'select tab 2' })
+    vim.keymap.set('t', '<m-3>', '<c-\\><c-n>3gt', { desc = 'select tab 3' })
+    vim.keymap.set('t', '<m-4>', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
+    vim.keymap.set('t', '<m-5>', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
+    vim.keymap.set('t', '<m-6>', '<c-\\><c-n>6gt', { desc = 'select tab 6' })
+    vim.keymap.set('t', '<m-7>', '<c-\\><c-n>7gt', { desc = 'select tab 7' })
+    vim.keymap.set('t', '<m-8>', '<c-\\><c-n>8gt', { desc = 'select tab 8' })
+    vim.keymap.set('t', '<m-9>', '<c-\\><c-n>9gt', { desc = 'select tab 9' })
 else
     -- Mac keybinds
     vim.keymap.set('n', '<esc><up>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
@@ -42,6 +56,20 @@ else
     vim.keymap.set('n', '<c-b>8', '8gt', { desc = 'select tab 8' })
     vim.keymap.set('n', '<c-b>9', '9gt', { desc = 'select tab 9' })
     vim.keymap.set('n', '<c-b>z', '<cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
+
+    vim.keymap.set('t', '<c-b><left>', '<c-\\><c-n><cmd>wincmd h<cr>', { desc = 'move Left' })
+    vim.keymap.set('t', '<c-b><up>', '<c-\\><c-n><cmd>wincmd k<cr>', { desc = 'move Up' })
+    vim.keymap.set('t', '<c-b><down>', '<c-\\><c-n><cmd>wincmd j<cr>', { desc = 'move Down' })
+    vim.keymap.set('t', '<c-b><right>', '<c-\\><c-n><cmd>wincmd l<cr>', { desc = 'move Right' })
+    vim.keymap.set('t', '<c-b>1', '<c-\\><c-n>1gt', { desc = 'select tab 1' })
+    vim.keymap.set('t', '<c-b>2', '<c-\\><c-n>2gt', { desc = 'select tab 2' })
+    vim.keymap.set('t', '<c-b>3', '<c-\\><c-n>3gt', { desc = 'select tab 3' })
+    vim.keymap.set('t', '<c-b>4', '<c-\\><c-n>4gt', { desc = 'select tab 4' })
+    vim.keymap.set('t', '<c-b>5', '<c-\\><c-n>5gt', { desc = 'select tab 5' })
+    vim.keymap.set('t', '<c-b>6', '<c-\\><c-n>6gt', { desc = 'select tab 6' })
+    vim.keymap.set('t', '<c-b>7', '<c-\\><c-n>7gt', { desc = 'select tab 7' })
+    vim.keymap.set('t', '<c-b>8', '<c-\\><c-n>8gt', { desc = 'select tab 8' })
+    vim.keymap.set('t', '<c-b>9', '<c-\\><c-n>9gt', { desc = 'select tab 9' })
 end
 
 -- Extra keymaps with explicit modes
