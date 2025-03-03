@@ -1,6 +1,6 @@
 if jit.os == "Linux" then
     -- Linux keybinds
-    vim.keymap.set('n', '<m-f>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
+    vim.keymap.set('n', '<m-f>', '<cmd>tabnew<cr>', { desc = 'create new tab' })
     vim.keymap.set('n', '<m-s>', ':Tabby rename_tab ', { desc = 'rename tab' })
     vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
     vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })
@@ -141,10 +141,10 @@ wk.add({
     { 'hr',         require('gitsigns').reset_hunk,                                                                     desc = 'reset Hunk' },
     { 'hv',         require('gitsigns').preview_hunk,                                                                   desc = 'preView Hunk' },
     { '<leader>p',  group = "Projects" },
-    { '<leader>pp', '<cmd>tabnew<cr><cmd>lua Snacks.picker.projects()<cr>', desc = "Project picker" },
-    { '<leader>pn', '<cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>Tabby rename_tab notes<cr><cmd>lua Snacks.picker.files()<cr>', desc = "Notes" },
-    { '<leader>pw', '<cmd>tabnew<cr><cmd>lcd ~/Downloads/<cr><cmd>Tabby rename_tab downloads<cr><cmd>lua Snacks.picker.files()<cr>',       desc = "Downloads" },
-    { '<leader>pg', '<cmd>tabnew<cr><cmd>lcd ~/Documents/git/<cr><cmd>Tabby rename_tab git<cr><cmd>lua Snacks.picker.files()<cr>',       desc = "Git" },
+    { '<leader>pp', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lua Snacks.picker.projects()<cr>', desc = "Project picker" },
+    { '<leader>pn', '<cmd>tabfirst<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>Tabby rename_tab notes<cr><cmd>lua Snacks.picker.files()<cr>', desc = "Notes" },
+    { '<leader>pw', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Downloads/<cr><cmd>Tabby rename_tab downloads<cr><cmd>lua Snacks.picker.files()<cr>',       desc = "Downloads" },
+    { '<leader>pg', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/git/<cr><cmd>Tabby rename_tab git<cr><cmd>lua Snacks.picker.files()<cr>',       desc = "Git" },
 })
 
 -- Moved from wk.add, because refresh of command line did not happen
@@ -160,5 +160,3 @@ vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @', { desc = 'run macro templa
 vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t', { desc = 'Table prettyprint' })
 vim.keymap.set({ 'n' }, '<leader>N',
     ':enew<cr>:w ~/Documents/notes/<c-r>=strftime(\'%Y-%m-%d\')<cr>-.md<left><left><left>', { desc = 'New note' })
-
--- { '<leader>N',  '<cmd>lua MiniFiles.open(\'~/Documents/notes/\')<CR><cmd>put=strftime(\'%Y-%m-%d\')<CR>A-.md<left><left><left>', desc = 'New note' },
