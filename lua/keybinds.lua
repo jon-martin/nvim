@@ -137,8 +137,8 @@ wk.add({
     { 'hs',         '<cmd>Git stash<cr>',                                                                                                               desc = 'Stash' },
     { 'hS',         '<cmd>Git stash pop<cr>',                                                                                                           desc = 'Stash pop' },
     { 'hb',         require('gitsigns').blame_line,                                                                                                     desc = 'blame' },
-    { 'hN',         require('gitsigns').prev_hunk,                                                                                                      desc = 'go to Previous Hunk' },
-    { 'hn',         require('gitsigns').next_hunk,                                                                                                      desc = 'go to Next Hunk' },
+    { 'hN',                                                                                                               desc = 'go to Previous Hunk' },
+    { 'hn',                                                                                                               desc = 'go to Next Hunk' },
     { 'hr',         require('gitsigns').reset_hunk,                                                                                                     desc = 'reset Hunk' },
     { 'hv',         require('gitsigns').preview_hunk,                                                                                                   desc = 'preView Hunk' },
     { '<leader>p',  group = "Projects" },
@@ -146,6 +146,7 @@ wk.add({
     { '<leader>pn', '<cmd>tabfirst<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>Tabby rename_tab notes<cr><cmd>lua Snacks.picker.files()<cr>', desc = "Notes" },
     { '<leader>pw', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Downloads/<cr><cmd>Tabby rename_tab downloads<cr><cmd>lua Snacks.picker.files()<cr>',    desc = "Downloads" },
     { '<leader>pg', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/git/<cr><cmd>Tabby rename_tab git<cr><cmd>lua Snacks.picker.files()<cr>',      desc = "Git" },
+    { '<leader>pd', '<cmd>tablast<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/<cr><cmd>Tabby rename_tab documents<cr><cmd>lua Snacks.picker.files()<cr>',    desc = "Git" },
     { '<leader>f',  group = "Format",                                                                                                                   mode = 'v' },
     { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'sqlify' },
     { '<leader>fo', "J<cmd>s/ / OR /g<cr>V\"+y",                                                                                                        mode = 'v',                                        desc = 'ORify' },
@@ -153,7 +154,7 @@ wk.add({
 })
 
 -- Moved from wk.add, because refresh of command line did not happen
-vim.keymap.set({ 'n' }, 'hc', ':wa<cr>:Git commit -am ""<left>', { desc = 'Commit' })
+vim.keymap.set({ 'n' }, 'hc', '<cr>:Git commit -am ""<left>', { desc = 'Commit' })
 vim.keymap.set({ 'n' }, '<leader>mc', ':%!', { desc = 'Run command on buffer' })
 vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', { desc = 'G-remove template' })
 vim.keymap.set({ 'n' }, '<leader>mG', 'yiw:%g!/<C-r>"/d<Left><Left>', { desc = 'G-invert-remove template' })
