@@ -27,9 +27,7 @@ return {
             }
         },
         keys = {
-            -- { "<leader>?", function() Snacks.picker.projects() end, desc = "Projects" }, // Maybe?
             { "<leader>?",  function() Snacks.picker.smart() end,                 desc = "Smart Find Files" },
-            -- { "<leader>?", function() Snacks.picker.recent() end, desc = "Recent" }, // What is better, smart or recent?
             { "<leader>/",  function() Snacks.picker.lines() end,                 desc = "Buffer Lines" },
             { "<leader>b",  function() Snacks.picker.buffers() end,               desc = "Buffers" },
             { "<leader>e",  function() Snacks.explorer() end,                     desc = "File Explorer" },
