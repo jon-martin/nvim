@@ -166,3 +166,16 @@ vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @', { desc = 'run macro templa
 vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t', { desc = 'Table prettyprint' })
 vim.keymap.set({ 'n' }, '<leader>N',
     ':enew<cr>:w ~/Documents/notes/<c-r>=strftime(\'%Y-%m-%d\')<cr>-.md<left><left><left>', { desc = 'New note' })
+
+-- Hacky mini.surround
+vim.keymap.set({ 'v' }, '<leader>x', '"xxxX"xP', { desc = 'Remove surrounding characters' })
+vim.keymap.set({ 'v' }, '<leader>\'', '"xxi\'\'<esc>"xP', { desc = 'Add surrounding \'' })
+vim.keymap.set({ 'v' }, '<leader>"', '"xxi""<esc>"xP', { desc = 'Add surrounding ""' })
+vim.keymap.set({ 'v' }, '<leader>(', '"xxi()<esc>"xP', { desc = 'Add surrounding ()' })
+vim.keymap.set({ 'v' }, '<leader>)', '"xxi()<esc>"xP', { desc = 'Add surrounding ()' })
+vim.keymap.set({ 'v' }, '<leader><', '"xxi<><esc>"xP', { desc = 'Add surrounding <>' })
+vim.keymap.set({ 'v' }, '<leader>>', '"xxi<><esc>"xP', { desc = 'Add surrounding <>' })
+vim.keymap.set({ 'v' }, '<leader>[', '"xxi[]<esc>"xP', { desc = 'Add surrounding []' })
+vim.keymap.set({ 'v' }, '<leader>]', '"xxi[]<esc>"xP', { desc = 'Add surrounding []' })
+vim.keymap.set({ 'v' }, '<leader>{', '"xxi{}<esc>"xP', { desc = 'Add surrounding {}' })
+vim.keymap.set({ 'v' }, '<leader>}', '"xxi{}<esc>"xP', { desc = 'Add surrounding {}' })

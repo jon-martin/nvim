@@ -31,6 +31,11 @@ vim.o.timeoutlen = 300
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+vim.diagnostic.config({
+  virtual_text = true,
+  update_in_insert = false,
+})
+
 -- Enable mouse mode
 -- vim.o.mouse = 'i'
 
