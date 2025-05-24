@@ -5,6 +5,10 @@ vim.o.shiftwidth = 4     -- Number of spaces for indentation
 vim.o.tabstop = 4        -- Number of spaces a tab counts for
 vim.o.softtabstop = 4    -- Number of spaces when hitting <Tab>
 
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevel = 99
+
 -- vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
