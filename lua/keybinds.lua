@@ -159,13 +159,11 @@ vim.keymap.set({ 'n' }, '<leader>mc', ':%!', { desc = 'Run command on buffer' })
 vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>', { desc = 'G-remove template' })
 vim.keymap.set({ 'n' }, '<leader>mG', 'yiw:%g!/<C-r>"/d<Left><Left>', { desc = 'G-invert-remove template' })
 vim.keymap.set({ 'n' }, '<leader>mr', 'yiw:%s/<C-r>"//g<Left><Left>', { desc = 'search-Replace template' })
-vim.keymap.set({ 'n' }, '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>',
-    { desc = 'search-Replace template across windows' })
+vim.keymap.set({ 'n' }, '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>', { desc = 'search-Replace template across windows' })
 vim.keymap.set({ 'v' }, '<leader>mr', ':s/\\%V//g<left><left><left>', { desc = 'search-Replace template' })
 vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @', { desc = 'run macro template' })
 vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t', { desc = 'Table prettyprint' })
-vim.keymap.set({ 'n' }, '<leader>N',
-    ':enew<cr>:w ~/Documents/notes/<c-r>=strftime(\'%Y-%m-%d\')<cr>-.md<left><left><left>', { desc = 'New note' })
+vim.keymap.set({ 'n' }, '<leader>N',  ':enew<cr>:w ~/Documents/notes/<c-r>=strftime(\'%Y-%m-%d\')<cr>-.md<left><left><left>', { desc = 'New note' })
 
 -- Hacky mini.surround
 vim.keymap.set({ 'v' }, '<leader>x', '"xxxX"xP', { desc = 'Remove surrounding characters' })
@@ -179,3 +177,7 @@ vim.keymap.set({ 'v' }, '<leader>[', '"xxi[]<esc>"xP', { desc = 'Add surrounding
 vim.keymap.set({ 'v' }, '<leader>]', '"xxi[]<esc>"xP', { desc = 'Add surrounding []' })
 vim.keymap.set({ 'v' }, '<leader>{', '"xxi{}<esc>"xP', { desc = 'Add surrounding {}' })
 vim.keymap.set({ 'v' }, '<leader>}', '"xxi{}<esc>"xP', { desc = 'Add surrounding {}' })
+
+-- Rename the variable under your cursor.
+--  Most Language Servers support renaming across files, etc.
+vim.keymap.set({ 'n'}, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })

@@ -99,17 +99,6 @@ require('tabby.tabline').set(function(line)
         margin = ' ',
       }
     end),
-    line.spacer(),
-    -- shows list of windows in tab
-    line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
-      return {
-        win.is_current() and '' or '',
-        win.buf_name(),
-        line.sep(' ', theme.win, theme.fill),
-        hl = theme.win,
-        margin = ' ',
-      }
-    end),
     hl = theme.fill,
   }
 end)

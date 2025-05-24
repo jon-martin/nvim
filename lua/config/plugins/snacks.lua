@@ -67,8 +67,9 @@ return {
             { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "LSP Workspace Symbols" },
             -- LSP
             { "gd",         function() Snacks.picker.lsp_definitions() end,       desc = "Goto Definition" },
+            { "gr",         function() Snacks.picker.lsp_references() end,        nowait = true,                     desc = "References" },
+            { "gs",         function() Snacks.picker.lsp_symbols() end,           nowait = true,                     desc = "References" },
             { "gD",         function() Snacks.picker.lsp_declarations() end,      desc = "Goto Declaration" },
-            { "grrr",         function() Snacks.picker.lsp_references() end,        nowait = true,                     desc = "References" },
             { "gI",         function() Snacks.picker.lsp_implementations() end,   desc = "Goto Implementation" },
             { "gy",         function() Snacks.picker.lsp_type_definitions() end,  desc = "Goto T[y]pe Definition" },
             { "<leader>dR", function() Snacks.rename.rename_file() end,           desc = "Rename File" },
