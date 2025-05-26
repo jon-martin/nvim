@@ -68,13 +68,14 @@ return {
             -- LSP
             { "gd",         function() Snacks.picker.lsp_definitions() end,       desc = "Goto Definition" },
             { "gr",         function() Snacks.picker.lsp_references() end,        nowait = true,                     desc = "References" },
-            { "gs",         function() Snacks.picker.lsp_symbols() end,           nowait = true,                     desc = "References" },
+            { "gs",         function() Snacks.picker.lsp_symbols() end,           nowait = true,                     desc = "Symbols" },
             { "gD",         function() Snacks.picker.lsp_declarations() end,      desc = "Goto Declaration" },
             { "gI",         function() Snacks.picker.lsp_implementations() end,   desc = "Goto Implementation" },
-            { "gy",         function() Snacks.picker.lsp_type_definitions() end,  desc = "Goto T[y]pe Definition" },
-            { "<leader>dR", function() Snacks.rename.rename_file() end,           desc = "Rename File" },
+            { "gy",         function() Snacks.picker.lsp_type_definitions() end,  desc = "Goto tYpe Definition" },
+            { "hz",         function() Snacks.lazygit() end,                      desc = "start laZygit" },
+            { "<leader>dr", function() Snacks.rename.rename_file() end,           desc = "Rename file" },
             { "<leader>dd", function() Snacks.picker.diagnostics() end,           desc = "Diagnostics" },
-            { "<leader>dD", function() Snacks.picker.diagnostics_buffer() end,    desc = "Buffer Diagnostics" },
+            { "<leader>db", function() Snacks.picker.diagnostics_buffer() end,    desc = "Buffer diagnostics" },
             -- Other
             { "<leader>x",  function() Snacks.bufdelete() end,                    desc = "Delete Buffer" },
             { "<c-/>",      function() Snacks.terminal() end,                     desc = "Toggle Terminal",          mode = { "n", "t" } },
