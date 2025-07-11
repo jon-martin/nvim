@@ -25,6 +25,16 @@ return {
                 use_nvim_cmp_as_default = true,
                 nerd_font_variant = 'mono'
             },
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer" },
+                per_filetype = {
+                    sql = { 'dadbod', 'buffer' },
+                },
+                -- add vim-dadbod-completion to your completion providers
+                providers = {
+                    dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+                },
+            },
 
             signature = { enabled = true },
         },
