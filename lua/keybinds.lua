@@ -181,4 +181,5 @@ vim.keymap.set({ 'v' }, '<leader>}', '"xxi{}<esc>"xP', { desc = 'Add surrounding
 
 -- Rename the variable under your cursor.
 --  Most Language Servers support renaming across files, etc.
-vim.keymap.set({ 'n'}, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
+vim.keymap.set({ 'n' }, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
+vim.keymap.set({ 'n' }, '<leader>ff', 'o[notat]()<esc><Left>"%pdd', { desc = 'File markdown to register' })
