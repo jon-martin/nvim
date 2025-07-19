@@ -37,6 +37,14 @@ return {
                 notification = {
                     -- wo = { wrap = true } -- Wrap notifications
                 }
+            },
+            ---@class snacks.zen.Config
+            zen = {
+                zoom = {
+                    toggles = {
+                        dim = true,
+                    },
+                },
             }
         },
         keys = {

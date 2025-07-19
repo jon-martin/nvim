@@ -91,6 +91,7 @@ wk.add({
     -- Window management
     { '<leader>o',  '<cmd>only<cr>',                                                                                                                    desc = 'Only' },
     { '<leader>n',  '<cmd>enew<cr>',                                                                                                                    desc = 'New buffer' },
+    { '<leader>q',  '<cmd>DBUI<cr>',                                                                                                                    desc = 'Query database' },
     -- Formatting
     { '<leader>f',  group = "Format" },
     { '<leader>fs', '<cmd>%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y',                                                                                            desc = 'SQLify' },
