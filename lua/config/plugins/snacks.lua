@@ -14,7 +14,20 @@ return {
                 enabled = true,
                 timeout = 3000,
             },
-            picker = { enabled = true },
+            picker = {
+                enabled = true,
+                win = {
+                    input = {
+                        keys = {
+                            ["<c-h>"] = { "toggle_hidden", mode = { "i", "n" } },
+                            ["<c-g>"] = { "toggle_ignored", mode = { "i", "n" } },
+                        },
+                    },
+                },
+                toggles = {
+                    ignored = "g",
+                },
+            },
             quickfile = { enabled = true },
             scope = { enabled = true },
             scroll = { enabled = false },
