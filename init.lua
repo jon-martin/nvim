@@ -4,6 +4,7 @@ vim.o.expandtab = true   -- Use spaces instead of tabs
 vim.o.shiftwidth = 4     -- Number of spaces for indentation
 vim.o.tabstop = 4        -- Number of spaces a tab counts for
 vim.o.softtabstop = 4    -- Number of spaces when hitting <Tab>
+vim.o.nrformats = 'unsigned'
 
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
