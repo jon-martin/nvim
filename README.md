@@ -6,7 +6,6 @@
 - [x] Markdown
 - [x] Tabby
 - [x] Flash
-- [x] Dim of inactive (through catppuccin?)
 - [x] Fugitive
 - [x] Gitsigns
 - [ ] Snacks [repo](https://github.com/folke/snacks.nvim/blob/main/README.md) 
