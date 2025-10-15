@@ -34,6 +34,7 @@ if jit.os == "Linux" then
     vim.keymap.set('t', '<m-7>', '<c-\\><c-n>7gt', { desc = 'select tab 7' })
     vim.keymap.set('t', '<m-8>', '<c-\\><c-n>8gt', { desc = 'select tab 8' })
     vim.keymap.set('t', '<m-9>', '<c-\\><c-n>9gt', { desc = 'select tab 9' })
+    vim.keymap.set('t', '<m-z>', '<c-\\><c-n><cmd>lua Snacks.zen.zoom()<cr>a', { desc = 'resize' })
 else
     -- Mac keybinds
     vim.keymap.set({'n', 't'}, '<esc><up>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
@@ -70,6 +71,7 @@ else
     vim.keymap.set('t', '<c-b>7', '<c-\\><c-n>7gt', { desc = 'select tab 7' })
     vim.keymap.set('t', '<c-b>8', '<c-\\><c-n>8gt', { desc = 'select tab 8' })
     vim.keymap.set('t', '<c-b>9', '<c-\\><c-n>9gt', { desc = 'select tab 9' })
+    vim.keymap.set('t', '<c-b>z', '<c-\\><c-n><cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
 end
 
 vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { desc = 'esc' })
@@ -94,6 +96,7 @@ wk.add({
     -- Window management
     { '<leader>o',  '<cmd>only<cr>',                                                                                                                    desc = 'Only' },
     { '<leader>n',  '<cmd>enew<cr>',                                                                                                                    desc = 'New buffer' },
+    { '<leader>t',  '<cmd>terminal<cr>a',                                                                                                               desc = 'New terminal' },
     { '<leader>w',  '<c-w>=',                                                                                                                           desc = 'equal Windows' },
     { '<leader>q',  '<cmd>DBUI<cr>',                                                                                                                    desc = 'Query database' },
     -- Formatting
