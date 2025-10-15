@@ -21,6 +21,12 @@ if jit.os == "Linux" then
     vim.keymap.set('n', '<m-9>', '9gt', { desc = 'select tab 9' })
     vim.keymap.set('n', '<m-z>', '<cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
 
+    vim.keymap.set('t', '<m-f>', '<c-\\><c-n><cmd>tabnew<cr>', { desc = 'create new tab' })
+    vim.keymap.set('t', '<m-s>', '<c-\\><c-n>:Tabby rename_tab ', { desc = 'rename tab' })
+    vim.keymap.set('t', '<m-r>', '<c-\\><c-n>gT', { desc = 'move to left tab' })
+    vim.keymap.set('t', '<m-t>', '<c-\\><c-n>gt', { desc = 'move to right tab' })
+    vim.keymap.set('t', '<m-y>', '<c-\\><c-n><cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
+    vim.keymap.set('t', '<m-l>', '<c-\\><c-n><cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
     vim.keymap.set('t', '<m-n>', '<c-\\><c-n><cmd>wincmd h<cr>', { desc = 'move Left' })
     vim.keymap.set('t', '<m-u>', '<c-\\><c-n><cmd>wincmd k<cr>', { desc = 'move Up' })
     vim.keymap.set('t', '<m-e>', '<c-\\><c-n><cmd>wincmd j<cr>', { desc = 'move Down' })
@@ -34,6 +40,8 @@ if jit.os == "Linux" then
     vim.keymap.set('t', '<m-7>', '<c-\\><c-n>7gt', { desc = 'select tab 7' })
     vim.keymap.set('t', '<m-8>', '<c-\\><c-n>8gt', { desc = 'select tab 8' })
     vim.keymap.set('t', '<m-9>', '<c-\\><c-n>9gt', { desc = 'select tab 9' })
+    vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { desc = 'esc' })
+    vim.keymap.set('t', 'ZQ', '<c-\\><c-n>ZQ', { desc = 'exit terminal' })
 else
     -- Mac keybinds
     vim.keymap.set('n', '<esc><up>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
