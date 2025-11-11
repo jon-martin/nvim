@@ -1,36 +1,26 @@
-# Rewritten with advent of neovim as a basis
+# Rewritten with advent of neovim as a starting point
 
-# Plugins to include
-- [x] blink-cmp
-- [x] which-key
-- [x] Markdown
-- [x] Tabby
-- [x] Flash
-- [x] Fugitive
-- [x] Gitsigns
-- [ ] Snacks [repo](https://github.com/folke/snacks.nvim/blob/main/README.md) 
-    - [ ] gitbrowse (fix url stuff)
-    - [x] bufdelete (unsure of usage)
-    - [x] bigfile
-    - [x] quickfile
-    - [x] dim
-    - [x] terminal
-    - [x] indent
-- [-] Mmagick '*.jpg' -crop 120x120+10+5 thumbnail%03d.pngini [repo](https://github.com/echasnovski/mini.nvim/blob/main/README.md) 
-    - [-] files (swap for snacks.explore?)
-    - [-] ai (learn usage)
-    - [-] operators? (learn usage)
-- [-] tiny-glimmer? - nah
-
-# Functionality to include
-
-- [x] Lots of keybind fixes
-- [x] Gutter fix (its too wide)
-- [x] Snippet fix (can i ditch my fork? nah)
-- [x] Search files in specific directories
-- [x] Change to tab for autocompletion in blink-cmp?
-- [x] Escape to remove focus
-- [x] Keybind fixes
-    - [x] h > git-related keybinds (and disabling)
-    - [x] l > quickfix stuff (and disabling)
-
+# Plugins included:
+- blink.cmp 
+- catppuccin 
+- flash.nvim 
+- friendly-snippets 
+- gitsigns.nvim 
+- lazy.nvim 
+- lazydev.nvim 
+- lualine.nvim 
+- mason-lspconfig.nvim 
+- mason.nvim 
+- mini.icons 
+- nvim-lspconfig 
+- nvim-treesitter 
+- nvim-web-devicons 
+- oil.nvim 
+- render-markdown.nvim 
+- snacks.nvim 
+- tabby.nvim 
+- vim-dadbod 
+- vim-dadbod-completion 
+- vim-dadbod-ui 
+- vim-fugitive 
+- which-key.nvim 

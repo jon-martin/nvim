@@ -50,7 +50,7 @@ require('functions')
 
 require("catppuccin").setup({
   flavour = "mocha",
-  -- transparent_background = true, -- disables setting the background color.
+  transparent_background = true, -- disables setting the background color.
   dim_inactive = {
     enabled = true,       -- dims the background color of inactive window
     shade = "light",
