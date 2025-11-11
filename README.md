@@ -15,7 +15,6 @@
 - nvim-lspconfig 
 - nvim-treesitter 
 - nvim-web-devicons 
-- oil.nvim 
 - render-markdown.nvim 
 - snacks.nvim 
 - tabby.nvim 
