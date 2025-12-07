@@ -161,6 +161,7 @@ wk.add({
     { '<leader>f',  group = "Format",                                                                                                                   mode = 'v' },
     { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'sqlify' },
     { '<leader>fo', "J<cmd>s/ / OR /g<cr>V\"+y",                                                                                                        mode = 'v',                                        desc = 'ORify' },
+    { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'SQLify' },
     { '<leader>m',  group = "Macros",                                                                                                                   mode = 'v' },
 })
 
