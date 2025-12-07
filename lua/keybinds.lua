@@ -159,12 +159,13 @@ wk.add({
     { '<leader>pd', '<cmd>lcd ~/Documents/<cr><cmd>Tabby rename_tab documents<cr><cmd>lua Snacks.picker.files()<cr>',    desc = "Documents" },
     { '<leader>ps', '<cmd>lcd ~/Documents/scripts/<cr><cmd>Tabby rename_tab script<cr><cmd>lua Snacks.picker.files()<cr>',    desc = "Scripts" },
     { '<leader>f',  group = "Format",                                                                                                                   mode = 'v' },
-    { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'sqlify' },
+    { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'Sqlify' },
     { '<leader>fo', "J<cmd>s/ / OR /g<cr>V\"+y",                                                                                                        mode = 'v',                                        desc = 'ORify' },
-    { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'SQLify' },
+    { '<leader>fc', "o<esc>O```<esc>gvo<esc>o```<esc>",                                                                                                 mode = 'v',                                        desc = 'markup Code-block' },
     { '<leader>m',  group = "Macros",                                                                                                                   mode = 'v' },
 })
 
+-- ```
 -- Moved from wk.add, because refresh of command line did not happen
 vim.keymap.set({ 'n' }, 'hc', '<cr>:Git commit -am ""<left>', { desc = 'Commit' })
 vim.keymap.set({ 'n' }, '<leader>mc', ':%!', { desc = 'Run command on buffer' })
