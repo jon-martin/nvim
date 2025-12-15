@@ -107,6 +107,7 @@ wk.add({
     { '<leader>fj', '<cmd>%! jq .<cr>',                                                                                                                 desc = 'Json prettyprint' },
     { '<leader>fc', 'ggI|<esc>A|<esc>:s/\\s\\+/\\|\\|/g<cr>:%s/\\s\\+/\\|/g<cr>:%s/^/\\|/g<cr>:%s/$/\\|/g<cr>',                                         desc = 'Confluence prettyprint' },
     { '<leader>fd', ':%s/\\(\\d\\{2}:\\d\\{2}\\):\\d\\{2}\\.\\d\\{3}/\\1/g<cr>',                                                                        desc = 'Dateformat' },
+    { '<leader>fm', '0y$!!echo "$((<c-r>"))"<cr>O<esc>p',                                                                                               desc = 'Math' },
     -- Macros
     { '<leader>m',  group = "Macros" },
     { '<leader>ms', '<cmd>set lazyredraw<cr>',                                                                                                          desc = 'Silence macros' },
@@ -161,7 +162,7 @@ wk.add({
     { '<leader>f',  group = "Format",                                                                                                                   mode = 'v' },
     { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'Sqlify' },
     { '<leader>fo', "J<cmd>s/ / OR /g<cr>V\"+y",                                                                                                        mode = 'v',                                        desc = 'ORify' },
-    { '<leader>fc', "<esc>o```<esc>gvo<esc>O```",                                                                                                 mode = 'v',                                        desc = 'markup Code-block' },
+    { '<leader>fc', "<esc>o```<esc>gvo<esc>O```",                                                                                                       mode = 'v',                                        desc = 'markup Code-block' },
     { '<leader>m',  group = "Macros",                                                                                                                   mode = 'v' },
 })
 
