@@ -50,11 +50,11 @@ require('functions')
 
 require("catppuccin").setup({
   flavour = "mocha",
-  transparent_background = true, -- disables setting the background color.
+  transparent_background = false,
   dim_inactive = {
-    enabled = true,       -- dims the background color of inactive window
+    enabled = true,
     shade = "light",
-    percentage = 0.5,     -- percentage of the shade to apply to the inactive window
+    percentage = 0.5,
   },
   highlight_overrides = {
     mocha = function (C)
@@ -70,6 +70,10 @@ require("flash").toggle(false)
 
 require('gitsigns').setup()
 
+local function tab_name()
+  return vim.t.tabname or "todo"
+end
+
 require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
@@ -79,36 +83,15 @@ require('lualine').setup {
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
+  tabline = {
+    lualine_a = { tab_name },
+    lualine_z = { 'tabs' },
+  },
   inactive_sections = {
     lualine_c = { { 'filename', path=1 } },
     lualine_x = {'location'},
   },
 }
-
-local theme = {
-  fill = 'TabLineFill',
-  current_tab = { fg = '#000000', bg = '#89b4fa' },
-  tab = 'TabLine',
-  win = 'TabLine',
-}
-
-require('tabby.tabline').set(function(line)
-  return {
-    line.tabs().foreach(function(tab)
-      local hl = tab.is_current() and theme.current_tab or theme.tab
-      return {
-        line.sep('█', hl, theme.fill),
-        tab.number(),
-        tab.name(),
-        -- tab.close_btn(''), -- show a close button
-        line.sep('', hl, theme.fill),
-        hl = hl,
-        margin = ' ',
-      }
-    end),
-    hl = theme.fill,
-  }
-end)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

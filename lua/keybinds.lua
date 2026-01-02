@@ -8,7 +8,7 @@ if jit.os == "Linux" then
     vim.keymap.set({'n', 't'}, '<m-e>', '<cmd>wincmd j<cr>', { desc = 'move Down' })
     vim.keymap.set({'n', 't'}, '<m-i>', '<cmd>wincmd l<cr>', { desc = 'move Right' })
 
-    vim.keymap.set('n', '<m-s>', ':Tabby rename_tab ', { desc = 'rename tab' })
+    vim.keymap.set('n', '<m-s>', ':let t:tabname = ""<left>', { desc = 'rename tab' })
     vim.keymap.set('n', '<m-r>', 'gT', { desc = 'move to left tab' })
     vim.keymap.set('n', '<m-t>', 'gt', { desc = 'move to right tab' })
     vim.keymap.set('n', '<m-1>', '1gt', { desc = 'select tab 1' })
@@ -22,7 +22,7 @@ if jit.os == "Linux" then
     vim.keymap.set('n', '<m-9>', '9gt', { desc = 'select tab 9' })
     vim.keymap.set('n', '<m-z>', '<cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
 
-    vim.keymap.set('t', '<m-s>', '<c-\\><c-n>:Tabby rename_tab ', { desc = 'rename tab' })
+    vim.keymap.set('t', '<m-s>', '<c-\\><c-n>:let t:tabname = ""<left>', { desc = 'rename tab' })
     vim.keymap.set('t', '<m-r>', '<c-\\><c-n>gT', { desc = 'move to left tab' })
     vim.keymap.set('t', '<m-t>', '<c-\\><c-n>gt', { desc = 'move to right tab' })
     vim.keymap.set('t', '<m-1>', '<c-\\><c-n>1gt', { desc = 'select tab 1' })
@@ -37,7 +37,7 @@ if jit.os == "Linux" then
     vim.keymap.set('t', '<m-z>', '<c-\\><c-n><cmd>lua Snacks.zen.zoom()<cr>a', { desc = 'resize' })
 else
     -- Mac keybinds
-    vim.keymap.set({'n', 't'}, '<esc><up>', '<cmd>tablast<cr><cmd>tabnew<cr>', { desc = 'create new tab' })
+    vim.keymap.set({'n', 't'}, '<esc><up>', '<cmd>tabnew<cr>', { desc = 'create new tab' })
     vim.keymap.set({'n', 't'}, '<c-b>%', '<cmd>vsplit<cr><cmd>wincmd l<cr>', { desc = 'vertical split' })
     vim.keymap.set({'n', 't'}, '<c-b>"', '<cmd>split<cr><cmd>wincmd j<cr>', { desc = 'horizontal split' })
     vim.keymap.set({'n', 't'}, '<c-b><left>', '<cmd>wincmd h<cr>', { desc = 'move Left' })
@@ -45,7 +45,7 @@ else
     vim.keymap.set({'n', 't'}, '<c-b><down>', '<cmd>wincmd j<cr>', { desc = 'move Down' })
     vim.keymap.set({'n', 't'}, '<c-b><right>', '<cmd>wincmd l<cr>', { desc = 'move Right' })
 
-    vim.keymap.set('n', '<esc><down>', ':Tabby rename_tab ', { desc = 'rename tab' })
+    vim.keymap.set('n', '<esc><down>', ':let t:tabname = ""<left>', { desc = 'rename tab' })
     vim.keymap.set('n', '<esc><left>', 'gT', { desc = 'move to left tab' })
     vim.keymap.set('n', '<esc><right>', 'gt', { desc = 'move to right tab' })
     vim.keymap.set('n', '<c-b>1', '1gt', { desc = 'select tab 1' })
@@ -59,7 +59,7 @@ else
     vim.keymap.set('n', '<c-b>9', '9gt', { desc = 'select tab 9' })
     vim.keymap.set('n', '<c-b>z', '<cmd>lua Snacks.zen.zoom()<cr>', { desc = 'resize' })
 
-    vim.keymap.set('t', '<esc><down>', '<c-\\><c-n>:Tabby rename_tab ', { desc = 'rename tab' })
+    vim.keymap.set('t', '<esc><down>', '<c-\\><c-n>:let t:tabname = ""<left>', { desc = 'rename tab' })
     vim.keymap.set('t', '<esc><left>', '<c-\\><c-n>gT', { desc = 'move to left tab' })
     vim.keymap.set('t', '<esc><right>', '<c-\\><c-n>gt', { desc = 'move to right tab' })
     vim.keymap.set('t', '<c-b>1', '<c-\\><c-n>1gt', { desc = 'select tab 1' })
@@ -126,9 +126,9 @@ wk.add({
     { 'lc',         'o- [ ] ',                                                                                                                          desc = 'create markdown Checkbox' },
     { 'lw',         '<cmd>tcd %:p:h<CR>',                                                                                                               desc = 'set buffer as local directory' },
     { 'lW',         '<cmd>tcd %:p:h:h<CR>',                                                                                                             desc = 'set buffer/.. as local directory' },
-    { 'lx',         '0/\\[.]<CR><right>rx<down>',                                                                                                     desc = 'mark checkbox done' },
-    { 'l-',         '0/\\[.]<CR><right>r-<down>',                                                                                                             desc = 'mark checkbox progress' },
-    { 'l ',         '0/\\[.]<CR><right>r <down>',                                                                                                             desc = 'mark checkbox unmarked' },
+    { 'lx',         '0/\\[.]<CR><right>rx<down>',                                                                                                       desc = 'mark checkbox done' },
+    { 'l-',         '0/\\[.]<CR><right>r-<down>',                                                                                                       desc = 'mark checkbox progress' },
+    { 'l ',         '0/\\[.]<CR><right>r <down>',                                                                                                       desc = 'mark checkbox unmarked' },
     { 'lt',         'V<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc><down>',                                                                                    desc = 'markdown Table line' },
     { 'lh',         'yyV<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc>pV<cmd>s/\\%V\\w*/ | --- /g<CR>A |<esc><down>',                                           desc = 'markdown table Header' },
     { 'll',         '@q',                                                                                                                               desc = 'run q-macro' },
@@ -148,17 +148,17 @@ wk.add({
     { 'hs',         '<cmd>Git stash<cr>',                                                                                                               desc = 'Stash' },
     { 'hS',         '<cmd>Git stash pop<cr>',                                                                                                           desc = 'Stash pop' },
     { 'hb',         require('gitsigns').blame_line,                                                                                                     desc = 'blame' },
-    { 'hN',                                                                                                               desc = 'go to Previous Hunk' },
-    { 'hn',                                                                                                               desc = 'go to Next Hunk' },
+    { 'hN',                                                                                                                                             desc = 'go to Previous Hunk' },
+    { 'hn',                                                                                                                                             desc = 'go to Next Hunk' },
     { 'hr',         require('gitsigns').reset_hunk,                                                                                                     desc = 'reset Hunk' },
     { 'hv',         require('gitsigns').preview_hunk,                                                                                                   desc = 'preView Hunk' },
     { '<leader>p',  group = "Projects" },
-    { '<leader>pp', '<cmd>lua Snacks.picker.projects()<cr>',                                                             desc = "Project picker" },
-    { '<leader>pn', '<cmd>tabfirst<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>Tabby rename_tab notes<cr><cmd>lua Snacks.picker.files()<cr>', desc = "Notes" },
-    { '<leader>pw', '<cmd>lcd ~/Downloads/<cr><cmd>Tabby rename_tab downloads<cr><cmd>lua Snacks.picker.files()<cr>',    desc = "Downloads" },
-    { '<leader>pg', '<cmd>lcd ~/Documents/git/<cr><cmd>Tabby rename_tab git<cr><cmd>lua Snacks.picker.files()<cr>',      desc = "Git" },
-    { '<leader>pd', '<cmd>lcd ~/Documents/<cr><cmd>Tabby rename_tab documents<cr><cmd>lua Snacks.picker.files()<cr>',    desc = "Documents" },
-    { '<leader>ps', '<cmd>lcd ~/Documents/scripts/<cr><cmd>Tabby rename_tab script<cr><cmd>lua Snacks.picker.files()<cr>',    desc = "Scripts" },
+    { '<leader>pp', '<cmd>lua Snacks.picker.projects()<cr>',                                                                                            desc = "Project picker" },
+    { '<leader>pn', '<cmd>tabfirst<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>let t:tabname = "notes"<cr><cmd>lua Snacks.picker.files()<cr>',desc = "Notes" },
+    { '<leader>pw', '<cmd>lcd ~/Downloads/<cr><cmd>let t:tabname = "downloads"<cr><cmd>lua Snacks.picker.files()<cr>',                                  desc = "Downloads" },
+    { '<leader>pg', '<cmd>lcd ~/Documents/git/<cr><cmd>let t:tabname = "git"<cr><cmd>lua Snacks.picker.files()<cr>',                                    desc = "Git" },
+    { '<leader>pd', '<cmd>lcd ~/Documents/<cr><cmd>let t:tabname = "documents"<cr><cmd>lua Snacks.picker.files()<cr>',                                  desc = "Documents" },
+    { '<leader>ps', '<cmd>lcd ~/Documents/scripts/<cr><cmd>let t:tabname = "script"<cr><cmd>lua Snacks.picker.files()<cr>',                             desc = "Scripts" },
     { '<leader>f',  group = "Format",                                                                                                                   mode = 'v' },
     { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                                                           mode = 'v',                                        desc = 'Sqlify' },
     { '<leader>fo', "J<cmd>s/ / OR /g<cr>V\"+y",                                                                                                        mode = 'v',                                        desc = 'ORify' },
