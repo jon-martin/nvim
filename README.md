@@ -17,7 +17,6 @@
 - nvim-web-devicons 
 - render-markdown.nvim 
 - snacks.nvim 
-- tabby.nvim 
 - vim-dadbod 
 - vim-dadbod-completion 
 - vim-dadbod-ui 

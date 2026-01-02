@@ -154,7 +154,7 @@ wk.add({
     { 'hv',         require('gitsigns').preview_hunk,                                                                                                   desc = 'preView Hunk' },
     { '<leader>p',  group = "Projects" },
     { '<leader>pp', '<cmd>lua Snacks.picker.projects()<cr>',                                                                                            desc = "Project picker" },
-    { '<leader>pn', '<cmd>tabfirst<cr><cmd>tabnew<cr><cmd>lcd ~/Documents/notes/<cr><cmd>let t:tabname = "notes"<cr><cmd>lua Snacks.picker.files()<cr>',desc = "Notes" },
+    { '<leader>pn', '<cmd>lcd ~/Documents/notes/<cr><cmd>let t:tabname = "notes"<cr><cmd>lua Snacks.picker.files()<cr>',                                desc = "Notes" },
     { '<leader>pw', '<cmd>lcd ~/Downloads/<cr><cmd>let t:tabname = "downloads"<cr><cmd>lua Snacks.picker.files()<cr>',                                  desc = "Downloads" },
     { '<leader>pg', '<cmd>lcd ~/Documents/git/<cr><cmd>let t:tabname = "git"<cr><cmd>lua Snacks.picker.files()<cr>',                                    desc = "Git" },
     { '<leader>pd', '<cmd>lcd ~/Documents/<cr><cmd>let t:tabname = "documents"<cr><cmd>lua Snacks.picker.files()<cr>',                                  desc = "Documents" },
