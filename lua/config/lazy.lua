@@ -110,9 +110,11 @@ require("lazy").setup({
 
         local servers = {
           ruff = {},
+          terraformls = {},
           bashls = {},
           cssls = {},
           jsonls = {},
+          tailwindcss = {},
           lua_ls = {
             settings = {
               Lua = {

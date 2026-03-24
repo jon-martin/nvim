@@ -21,3 +21,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "term://*",
     command = "startinsert",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "htmldjango" },
+  callback = function()
+    vim.cmd("TSBufDisable highlight")
+  end,
+})

@@ -50,7 +50,7 @@ require('functions')
 
 require("catppuccin").setup({
   flavour = "mocha",
-  transparent_background = false,
+  transparent_background = true,
   dim_inactive = {
     enabled = true,
     shade = "light",
