@@ -90,6 +90,9 @@ local wk = require("which-key")
 
 wk.add({
     { '<leader>s',  group = "Search commands" },
+    { '<leader>sf', '<cmd>FzfLua files<cr>',                                                                                                            desc = "find Files" },
+    { '<leader>sg', '<cmd>FzfLua grep<cr>',                                                                                                             desc = "Grep" },
+    { '<leader>/', '<cmd>FzfLua lgrep_curbuf<cr>',                                                                                                     desc = "grep Buffer" },
     { '<leader>u',  group = "Enable/Disable features" },
     { '<leader>g',  group = "Git snacks" },
     { '<leader>d',  group = "Document LSP" },
