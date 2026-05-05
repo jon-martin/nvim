@@ -49,18 +49,23 @@ wk.add({
     { '<leader>/',  '<cmd>FzfLua lgrep_curbuf<cr>',      desc = "grep Buffer" },
     { '<leader>b',  '<cmd>FzfLua buffers<cr>',           desc = "Buffers" },
     { '<leader>sf', '<cmd>FzfLua files<cr>',             desc = "Files" },
-    { '<leader>sg', '<cmd>FzfLua grep<cr>',              desc = "Grep dir" },
+    { '<leader>sr', '<cmd>FzfLua grep<cr>',              desc = "Ripgrep" },
     { '<leader>sj', '<cmd>FzfLua jumps<cr>',             desc = "Jumplist" },
     { '<leader>sm', '<cmd>FzfLua marks<cr>',             desc = "Marks" },
-    { '<leader>sr', '<cmd>FzfLua registers<cr>',         desc = "Registers" },
+    { '<leader>s"', '<cmd>FzfLua registers<cr>',         desc = "registers" },
     { '<leader>sk', '<cmd>FzfLua keymaps<cr>',           desc = "Keymaps" },
     { '<leader>sc', '<cmd>FzfLua command_history<cr>',   desc = "Commands" },
     { '<leader>sh', '<cmd>FzfLua history<cr>',           desc = "file History" },
     { '<leader>sb', '<cmd>FzfLua lines<cr>',             desc = "Buffer lines" },
     { '<leader>sq', '<cmd>FzfLua quickfix<cr>',          desc = "Quickfix" },
     { '<leader>sl', '<cmd>FzfLua loclist<cr>',           desc = "Location list" },
-    { '<leader>ss', '<cmd>FzfLua git_status<cr>',        desc = "git Status" },
     { '<leader>sz', '<cmd>FzfLua<cr>',                   desc = "fZflua" },
+    { '<leader>sg',                                      group = "Git" },
+    { '<leader>sgs', '<cmd>FzfLua git_status<cr>',       desc = "git Status" },
+    { '<leader>sgh', '<cmd>FzfLua git_stash<cr>',        desc = "git stasH" },
+    { '<leader>sgc', '<cmd>FzfLua git_commits<cr>',      desc = "git Commits" },
+    { '<leader>sgb', '<cmd>FzfLua git_bcommits<cr>',     desc = "git Buffer commits" },
+    { '<leader>sgr', '<cmd>FzfLua git_branches<cr>',     desc = "git bRanches" },
     -- Formatting
     { '<leader>f',                                                                                              group = "Format" },
     { '<leader>fs', '<cmd>%s/^.*$/\'&\',/g<CR>G$xgg0vG$"+y',                                                    desc = 'SQLify' },
@@ -134,6 +139,8 @@ vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t',         { des
 vim.keymap.set({ 'n' }, '<leader>N',  ':enew<cr>:w ~/Documents/notes/<c-r>=strftime(\'%Y-%m-%d\')<cr>-.md<left><left><left>', { desc = 'New note' })
 
 -- Misc
+-- Leap
+vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 -- Rename the variable under your cursor.
 vim.keymap.set({ 'n' }, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
 -- Create markdown link to file

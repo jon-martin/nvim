@@ -22,5 +22,3 @@ require("config.parameters")
 require("config.keybinds")
 require("config.lsp")
 require("config.autocmds")
-
-vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')

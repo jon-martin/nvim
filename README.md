@@ -4,34 +4,34 @@
 - [x] the leap key interferes with leader-key
 - [x] the simple settings should get its own file
 - [x] https://github.com/nvim-tree/nvim-tree.lua
-    - [ ] disable s in nvimtree (use leap)
-- [ ] the keybindings are overcomplicated
-- [ ] hunk stuff
+    - [x] disable s in nvimtree (use leap)
+- [x] the keybindings are overcomplicated
+- [x] hunk stuff
 - [ ] handle bigfiles
 - [ ] snippets
-
-# Old config
-## Rewritten with advent of neovim as a starting point
+- [ ] location list (window local list)
+- [ ] native undotree ?
 
 ## Plugins included:
+- [ ] friendly-snippets 
 - blink.cmp 
-- catppuccin 
-- flash.nvim 
-- friendly-snippets 
 - gitsigns.nvim 
-- lazy.nvim 
-- lazydev.nvim 
 - lualine.nvim 
-- mason-lspconfig.nvim 
-- mason.nvim 
-- mini.icons 
-- nvim-lspconfig 
-- nvim-treesitter 
-- nvim-web-devicons 
+- catppuccin 
 - render-markdown.nvim 
-- snacks.nvim 
-- vim-dadbod 
-- vim-dadbod-completion 
-- vim-dadbod-ui 
-- vim-fugitive 
+- leap 
+    - flash.nvim 
+- mason.nvim 
+    - mason-lspconfig.nvim 
+- nvim-web-devicons 
+    - mini.icons 
+- nvim-lspconfig 
+    - nvim-treesitter 
 - which-key.nvim 
+    - lazy.nvim 
+    - lazydev.nvim 
+    - snacks.nvim 
+    - vim-dadbod 
+    - vim-dadbod-completion 
+    - vim-dadbod-ui 
+    - vim-fugitive 
