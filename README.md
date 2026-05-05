@@ -7,9 +7,9 @@
     - [x] disable s in nvimtree (use leap)
 - [x] the keybindings are overcomplicated
 - [x] hunk stuff
+- [x] location list (window local list)
 - [ ] handle bigfiles
 - [ ] snippets
-- [ ] location list (window local list)
 - [ ] native undotree ?
 
 ## Plugins included:

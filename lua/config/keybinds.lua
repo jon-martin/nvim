@@ -21,12 +21,12 @@ wk.add({
     { '<leader>w',  '<c-w>=',                            desc = 'equal Windows' },
     { '<leader>n',  '<cmd>wincmd h<cr>',                 desc = 'move left' },
     { '<leader>i',  '<cmd>wincmd l<cr>',                 desc = 'move right' },
-    { '<leader>y', '<cmd>vsplit<cr><cmd>wincmd l<cr>',   desc = 'vertical split' },
+    { '<leader>y',  '<cmd>vsplit<cr><cmd>wincmd l<cr>',  desc = 'vertical split' },
     { '<leader>e',  '<cmd>NvimTreeToggle<cr>',           desc = 'Explorer' },
+    { '<leader>u',  require("undotree").open,            desc = 'Explorer' },
     -- Window keymaps
     { '<leader>w',                                       group = "Window" },
     { '<leader>wf', '<cmd>tabnew<cr>',                   desc = 'create new tab' },
-    { '<leader>ws', ':let t:tabname = ""<left>',         desc = 'rename tab' },
     { '<leader>wr', 'gT',                                desc = 'move to left tab' },
     { '<leader>wt', 'gt',                                desc = 'move to right tab' },
     { '<leader>wl', '<cmd>split<cr><cmd>wincmd j<cr>',   desc = 'horizontal split' },
@@ -52,7 +52,7 @@ wk.add({
     { '<leader>sr', '<cmd>FzfLua grep<cr>',              desc = "Ripgrep" },
     { '<leader>sj', '<cmd>FzfLua jumps<cr>',             desc = "Jumplist" },
     { '<leader>sm', '<cmd>FzfLua marks<cr>',             desc = "Marks" },
-    { '<leader>s"', '<cmd>FzfLua registers<cr>',         desc = "registers" },
+    { '<leader>s"', '<cmd>FzfLua registers<cr>',         desc = "Registers" },
     { '<leader>sk', '<cmd>FzfLua keymaps<cr>',           desc = "Keymaps" },
     { '<leader>sc', '<cmd>FzfLua command_history<cr>',   desc = "Commands" },
     { '<leader>sh', '<cmd>FzfLua history<cr>',           desc = "file History" },
@@ -80,27 +80,37 @@ wk.add({
     { '<leader>fs', "J<cmd>s/ /','/g<cr>I'<esc>A'<esc>V\"+y",                                                   mode = 'v', desc = 'Sqlify' },
     { '<leader>fo', "J<cmd>s/ / OR /g<cr>V\"+y",                                                                mode = 'v', desc = 'ORify' },
     { '<leader>fc', "<esc>o```<esc>gvo<esc>O```",                                                               mode = 'v', desc = 'markup Code-block' },
-    -- Quickfix
-    { '<leader>l',                                       group = "quickfixList" },
-    { '<leader>lo', '<cmd>copen<CR>',                    desc = 'Open quickfix list' },
-    { '<leader>lq', '<cmd>cclose<CR>',                   desc = 'Quit quickfix list' },
-    { '<leader>ln', '<cmd>cnext<CR>',                    desc = 'Next quickfix item' },
-    { '<leader>lp', '<cmd>cprev<CR>',                    desc = 'previous quickfix item' },
-    { '<leader>lgg','<cmd>cfirst<CR>',                   desc = 'first quickfix item' },
-    { '<leader>lG', '<cmd>clast<CR>',                    desc = 'last quickfix item' },
-    { '<leader>lc', 'o- [ ] ',                           desc = 'create markdown Checkbox' },
-    { '<leader>lv', '<cmd>vsplit<cr><cmd>cnext<cr>',     desc = 'open next quickfix-item in Vertical split' },
-    { '<leader>ls', '<cmd>split<cr><cmd>cnext<cr>',      desc = 'open next quickfix-item in Split' },
-    -- Markdown
-    { '<leader>lx', '0/\\[.]<CR><right>rx<down>',        desc = 'mark checkbox done' },
-    { '<leader>l-', '0/\\[.]<CR><right>r-<down>',        desc = 'mark checkbox progress' },
-    { '<leader>l ', '0/\\[.]<CR><right>r <down>',        desc = 'mark checkbox unmarked' },
-    { '<leader>lt', 'V<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc><down>',                                          desc = 'markdown Table line' },
-    { '<leader>lh', 'yyV<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc>pV<cmd>s/\\%V\\w*/ | --- /g<CR>A |<esc><down>', desc = 'markdown table Header' },
-    -- Run macros
-    { '<leader>ll', '@q',                                desc = 'run q-macro' },
-    { '<leader>lu', '@w',                                desc = 'run w-macro' },
-    { '<leader>ly', '@f',                                desc = 'run f-macro' },
+    -- Location list
+    { '<leader>l',                                       group = "Location-list" },
+    { '<leader>lo', '<cmd>lopen<CR>',                    desc = 'Open location list' },
+    { '<leader>lq', '<cmd>lclose<CR>',                   desc = 'Quit location list' },
+    { '<leader>ln', '<cmd>lnext<CR>',                    desc = 'Next location item' },
+    { '<leader>lp', '<cmd>lprev<CR>',                    desc = 'previous location item' },
+    { '<leader>lgg','<cmd>lfirst<CR>',                   desc = 'first location item' },
+    { '<leader>lG', '<cmd>llast<CR>',                    desc = 'last location item' },
+    { '<leader>lv', '<cmd>vsplit<cr><cmd>lnext<cr>',     desc = 'open next location-item in Vertical split' },
+    { '<leader>ls', '<cmd>split<cr><cmd>lnext<cr>',      desc = 'open next location-item in Split' },
+    -- Quickfix list
+    { '<leader>q',                                       group = "Quickfix-list" },
+    { '<leader>qo', '<cmd>copen<CR>',                    desc = 'Open quickfix list' },
+    { '<leader>qq', '<cmd>cclose<CR>',                   desc = 'Quit quickfix list' },
+    { '<leader>qn', '<cmd>cnext<CR>',                    desc = 'Next quickfix item' },
+    { '<leader>qp', '<cmd>cprev<CR>',                    desc = 'previous quickfix item' },
+    { '<leader>qgg','<cmd>cfirst<CR>',                   desc = 'first quickfix item' },
+    { '<leader>qG', '<cmd>clast<CR>',                    desc = 'last quickfix item' },
+    { '<leader>qv', '<cmd>vsplit<cr><cmd>cnext<cr>',     desc = 'open next quickfix-item in Vertical split' },
+    { '<leader>qs', '<cmd>split<cr><cmd>cnext<cr>',      desc = 'open next quickfix-item in Split' },
+    -- Helpers
+    { '<leader>h',                                       group = "Helpers" },
+    { '<leader>hc', 'o- [ ] ',                           desc = 'create markdown Checkbox' },
+    { '<leader>hx', '0/\\[.]<CR><right>rx<down>',        desc = 'mark checkbox done' },
+    { '<leader>h-', '0/\\[.]<CR><right>r-<down>',        desc = 'mark checkbox progress' },
+    { '<leader>h ', '0/\\[.]<CR><right>r <down>',        desc = 'mark checkbox unmarked' },
+    { '<leader>ht', 'V<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc><down>',                                          desc = 'markdown Table line' },
+    { '<leader>hh', 'yyV<cmd>s/\\%V / | /g<CR>I| <esc>A |<esc>pV<cmd>s/\\%V\\w*/ | --- /g<CR>A |<esc><down>', desc = 'markdown table Header' },
+    { '<leader>hl', '@q',                                desc = 'run q-macro' },
+    { '<leader>hu', '@w',                                desc = 'run w-macro' },
+    { '<leader>hy', '@f',                                desc = 'run f-macro' },
     -- Git
     { '<leader>g',                                       group = "Gitsigns" },
     { '<leader>ga', '<cmd>!git add %<cr>',               desc = 'Add' },
@@ -145,3 +155,5 @@ vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 vim.keymap.set({ 'n' }, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
 -- Create markdown link to file
 vim.keymap.set({ 'n' }, '<leader>ff', 'o[notat]()<esc><Left>"%pdd',        { desc = 'File markdown to register' })
+-- Rename tab
+vim.keymap.set({ 'n' }, '<leader>ws', ':let t:tabname = ""<left>',         { desc = 'rename tab' })

@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Save undo history
-vim.o.undofile = true
+vim.opt.undofile = true
 
 vim.opt.expandtab = true   -- Use spaces instead of tabs
 vim.opt.shiftwidth = 4     -- Number of spaces for indentation
@@ -39,7 +39,7 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
 vim.cmd.colorscheme('catppuccin')
 
