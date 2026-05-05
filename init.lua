@@ -10,12 +10,14 @@ vim.pack.add {
     'https://github.com/MeanderingProgrammer/render-markdown.nvim',
     'https://github.com/nvim-tree/nvim-web-devicons',
     'https://github.com/nvim-tree/nvim-tree.lua',
+    'https://github.com/nvim-lualine/lualine.nvim',
 }
 
 require("mason").setup({})
 
 require("plugins.blink")
 require("plugins.nvim-tree")
+require("plugins.lualine")
 require("config.parameters")
 require("config.keybinds")
 require("config.lsp")

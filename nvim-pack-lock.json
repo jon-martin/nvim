@@ -36,6 +36,10 @@
       "rev": "5ad712bbc927c09b6b6ebd3df414669bb80b6c77",
       "src": "https://codeberg.org/andyg/leap.nvim"
     },
+    "lualine.nvim": {
+      "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
     "markdown-preview.nvim": {
       "rev": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee",
       "src": "https://github.com/iamcco/markdown-preview.nvim"
