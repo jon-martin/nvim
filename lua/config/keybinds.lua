@@ -16,16 +16,18 @@ local wk = require("which-key")
 wk.add({
     -- One-key binds
     { '<leader>o',  '<cmd>only<cr>',                     desc = 'Only' },
-    { '<leader>n',  '<cmd>enew<cr>',                     desc = 'New buffer' },
     { '<leader>t',  '<cmd>terminal<cr>a',                desc = 'new terminal' },
-    { '<leader>w',  '<c-w>=',                            desc = 'equal Windows' },
     { '<leader>n',  '<cmd>wincmd h<cr>',                 desc = 'move left' },
     { '<leader>i',  '<cmd>wincmd l<cr>',                 desc = 'move right' },
     { '<leader>y',  '<cmd>vsplit<cr><cmd>wincmd l<cr>',  desc = 'vertical split' },
     { '<leader>e',  '<cmd>NvimTreeToggle<cr>',           desc = 'Explorer' },
     { '<leader>u',  require("undotree").open,            desc = 'Explorer' },
+    { '<leader>b',  '<cmd>FzfLua buffers<cr>',           desc = "Buffers" },
+    { '<leader>/',  '<cmd>FzfLua lgrep_curbuf<cr>',      desc = "grep Buffer" },
+    { '<leader>?',  '<cmd>FzfLua history<cr>',            desc = "file History" },
     -- Window keymaps
     { '<leader>w',                                       group = "Window" },
+    { '<leader>ww',  '<c-w>=',                           desc = 'equal Windows' },
     { '<leader>wf', '<cmd>tabnew<cr>',                   desc = 'create new tab' },
     { '<leader>wr', 'gT',                                desc = 'move to left tab' },
     { '<leader>wt', 'gt',                                desc = 'move to right tab' },
@@ -46,8 +48,6 @@ wk.add({
     { '<leader>w9', '9gt',                               desc = 'select tab 9' },
     -- Find
     { '<leader>s',                                       group = "Search" },
-    { '<leader>/',  '<cmd>FzfLua lgrep_curbuf<cr>',      desc = "grep Buffer" },
-    { '<leader>b',  '<cmd>FzfLua buffers<cr>',           desc = "Buffers" },
     { '<leader>sf', '<cmd>FzfLua files<cr>',             desc = "Files" },
     { '<leader>sr', '<cmd>FzfLua grep<cr>',              desc = "Ripgrep" },
     { '<leader>sj', '<cmd>FzfLua jumps<cr>',             desc = "Jumplist" },
@@ -55,7 +55,6 @@ wk.add({
     { '<leader>s"', '<cmd>FzfLua registers<cr>',         desc = "Registers" },
     { '<leader>sk', '<cmd>FzfLua keymaps<cr>',           desc = "Keymaps" },
     { '<leader>sc', '<cmd>FzfLua command_history<cr>',   desc = "Commands" },
-    { '<leader>sh', '<cmd>FzfLua history<cr>',           desc = "file History" },
     { '<leader>sb', '<cmd>FzfLua lines<cr>',             desc = "Buffer lines" },
     { '<leader>sq', '<cmd>FzfLua quickfix<cr>',          desc = "Quickfix" },
     { '<leader>sl', '<cmd>FzfLua loclist<cr>',           desc = "Location list" },
@@ -119,7 +118,7 @@ wk.add({
     { '<leader>gs', '<cmd>!git stash<cr>',               desc = 'Stash' },
     { '<leader>gS', '<cmd>!git stash pop<cr>',           desc = 'Stash pop' },
     { '<leader>gn', require('gitsigns').next_hunk,       desc = 'Next hunk' },
-    { '<leader>gp', require('gitsigns').prev_hunk,       desc = 'Prev hunk' },
+    { '<leader>gN', require('gitsigns').prev_hunk,       desc = 'Prev hunk' },
     { '<leader>gB', require('gitsigns').blame,           desc = 'Blame' },
     { '<leader>gb', require('gitsigns').blame_line,      desc = 'blame' },
     { '<leader>gr', require('gitsigns').reset_hunk,      desc = 'Reset Hunk' },
@@ -137,6 +136,7 @@ wk.add({
 })
 
 -- Moved from wk.add, because refresh of command line did not happen
+vim.keymap.set({ 'n' }, '<leader>N',  ':enew<cr>:w ~/Documents/notes/<c-r>=strftime(\'%Y-%m-%d\')<cr>-.md<left><left><left>', { desc = 'New note' })
 vim.keymap.set({ 'n' }, '<leader>gc', '<cr>:!git commit -am ""<left>',     { desc = 'Commit' })
 vim.keymap.set({ 'n' }, '<leader>mc', ':%!',                               { desc = 'Run command on buffer' })
 vim.keymap.set({ 'n' }, '<leader>mg', 'yiw:%g/<C-r>"/d<Left><Left>',       { desc = 'G-remove template' })
@@ -146,9 +146,8 @@ vim.keymap.set({ 'n' }, '<leader>mR', 'yiw:windo%s/<C-r>"//g<Left><Left>', { des
 vim.keymap.set({ 'v' }, '<leader>mr', ':s/\\%V//g<left><left><left>',      { desc = 'search-Replace template' })
 vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @',                      { desc = 'run macro template' })
 vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t',         { desc = 'Table prettyprint' })
-vim.keymap.set({ 'n' }, '<leader>N',  ':enew<cr>:w ~/Documents/notes/<c-r>=strftime(\'%Y-%m-%d\')<cr>-.md<left><left><left>', { desc = 'New note' })
 
--- Misc
+---- Misc
 -- Leap
 vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 -- Rename the variable under your cursor.

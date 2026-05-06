@@ -11,6 +11,8 @@
 - [ ] handle bigfiles
 - [ ] snippets
 - [ ] native undotree ?
+- [ ] linters
+- [ ] languages: json, yaml, terraform, flux
 
 ## Plugins included:
 - [ ] friendly-snippets 
