@@ -12,8 +12,8 @@ vim.lsp.config("bashls", {})
 vim.lsp.config("jsonls", {})
 vim.lsp.config("terraformls", {})
 vim.lsp.config("terraform", {})
-vim.lsp.config("cssls", {})
-vim.lsp.config("tailwindcss", {})
+-- vim.lsp.config("cssls", {})
+-- vim.lsp.config("tailwindcss", {})
 
 vim.lsp.enable({
 	"lua_ls",
@@ -23,6 +23,6 @@ vim.lsp.enable({
     "jsonls",
     "terraformls",
     "terraform",
-    "cssls",
-    "tailwindcss",
+    -- "cssls",
+    -- "tailwindcss",
 })
