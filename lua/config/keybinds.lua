@@ -83,24 +83,14 @@ wk.add({
     { '<leader>l',                                       group = "Location-list" },
     { '<leader>lo', '<cmd>lopen<CR>',                    desc = 'Open location list' },
     { '<leader>lq', '<cmd>lclose<CR>',                   desc = 'Quit location list' },
-    -- [lL / ]lL
-    -- { '<leader>ln', '<cmd>lnext<CR>',                    desc = 'Next location item' },
-    -- { '<leader>lp', '<cmd>lprev<CR>',                    desc = 'previous location item' },
-    -- { '<leader>lgg','<cmd>lfirst<CR>',                   desc = 'first location item' },
-    -- { '<leader>lG', '<cmd>llast<CR>',                    desc = 'last location item' },
     { '<leader>lv', '<cmd>vsplit<cr><cmd>lnext<cr>',     desc = 'open next location-item in Vertical split' },
-    { '<leader>ls', '<cmd>split<cr><cmd>lnext<cr>',      desc = 'open next location-item in Split' },
+    { '<leader>lh', '<cmd>split<cr><cmd>lnext<cr>',      desc = 'open next location-item in Horizontal split' },
     -- Quickfix list
     { '<leader>q',                                       group = "Quickfix-list" },
     { '<leader>qo', '<cmd>copen<CR>',                    desc = 'Open quickfix list' },
     { '<leader>qq', '<cmd>cclose<CR>',                   desc = 'Quit quickfix list' },
-    -- [qQ / ]qQ
-    -- { '<leader>qn', '<cmd>cnext<CR>',                    desc = 'Next quickfix item' },
-    -- { '<leader>qp', '<cmd>cprev<CR>',                    desc = 'previous quickfix item' },
-    -- { '<leader>qgg','<cmd>cfirst<CR>',                   desc = 'first quickfix item' },
-    -- { '<leader>qG', '<cmd>clast<CR>',                    desc = 'last quickfix item' },
     { '<leader>qv', '<cmd>vsplit<cr><cmd>cnext<cr>',     desc = 'open next quickfix-item in Vertical split' },
-    { '<leader>qs', '<cmd>split<cr><cmd>cnext<cr>',      desc = 'open next quickfix-item in Split' },
+    { '<leader>qh', '<cmd>split<cr><cmd>cnext<cr>',      desc = 'open next quickfix-item in Horizontal split' },
     -- Helpers
     { '<leader>h',                                       group = "Helpers" },
     { '<leader>hc', 'o- [ ] ',                           desc = 'create markdown Checkbox' },
