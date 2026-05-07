@@ -11,9 +11,18 @@ vim.opt.tabstop = 4        -- Number of spaces a tab counts for
 vim.opt.softtabstop = 4    -- Number of spaces when hitting <Tab>
 vim.opt.nrformats = 'unsigned'
 
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldlevel = 99
+-- Folding
+vim.opt.foldmethod = 'manual'
+vim.opt.foldcolumn = "1"
+vim.opt.fillchars = {
+    fold = " ",
+    foldopen = "▾",         -- Open fold icon
+    foldclose = "▸",        -- Closed fold icon
+    foldinner = " ",
+    foldsep = "│",          -- Fold separator
+}
+-- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.opt.foldlevel = 1
 
 -- vim.opt.clipboard = "unnamedplus"
 vim.opt.number = true

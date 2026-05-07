@@ -3,6 +3,7 @@ vim.cmd("packadd nvim.undotree")
 vim.pack.add {
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mason-org/mason.nvim',
+    'https://github.com/saghen/blink.lib',
     'https://github.com/saghen/blink.cmp',
     'https://github.com/catppuccin/nvim',
     'https://github.com/ibhagwan/fzf-lua',
@@ -26,3 +27,7 @@ require("config.parameters")
 require("config.keybinds")
 require("config.lsp")
 require("config.autocmds")
+
+-- local cmp = require('blink.cmp')
+-- cmp.build():wait(60000)
+-- cmp.setup()

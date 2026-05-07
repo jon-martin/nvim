@@ -8,6 +8,10 @@
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "blink.lib": {
+      "rev": "f29d8bac6549bc1e7d699c83f680823d7def98bd",
+      "src": "https://github.com/saghen/blink.lib"
+    },
     "codeme.nvim": {
       "rev": "54810c83d183c6e69f9ad910a4a410ed80958d66",
       "src": "https://gitlab.com/tduyng/codeme.nvim"
