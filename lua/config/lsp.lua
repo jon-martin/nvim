@@ -6,13 +6,23 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
-vim.lsp.config("ty", {})
+vim.lsp.config('ty', {})
+vim.lsp.config("ruff", {})
 vim.lsp.config("bashls", {})
-vim.lsp.config("ts_ls", {})
+vim.lsp.config("jsonls", {})
+vim.lsp.config("terraformls", {})
+vim.lsp.config("terraform", {})
+vim.lsp.config("cssls", {})
+vim.lsp.config("tailwindcss", {})
 
 vim.lsp.enable({
 	"lua_ls",
-	"ty",
+    "ty",
+    "ruff",
 	"bashls",
-	"ts_ls",
+    "jsonls",
+    "terraformls",
+    "terraform",
+    "cssls",
+    "tailwindcss",
 })

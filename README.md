@@ -8,11 +8,11 @@
 - [x] the keybindings are overcomplicated
 - [x] hunk stuff
 - [x] location list (window local list)
+- [x] native undotree ?
+- [x] linters
+- [x] snippets
+- [x] languages: json, yaml, terraform, flux
 - [ ] handle bigfiles
-- [ ] snippets
-- [ ] native undotree ?
-- [ ] linters
-- [ ] languages: json, yaml, terraform, flux
 
 ## Plugins included:
 - [ ] friendly-snippets 

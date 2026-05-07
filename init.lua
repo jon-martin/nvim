@@ -13,6 +13,8 @@ vim.pack.add {
     'https://github.com/nvim-tree/nvim-web-devicons',
     'https://github.com/nvim-tree/nvim-tree.lua',
     'https://github.com/nvim-lualine/lualine.nvim',
+    'https://github.com/jon-martin/friendly-snippets',
+    'https://github.com/L3MON4D3/LuaSnip',
 }
 
 require("mason").setup({})
