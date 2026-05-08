@@ -20,6 +20,7 @@ vim.pack.add {
 
 require("mason").setup({})
 
+require("plugins.fzf-lua")
 require("plugins.blink")
 require("plugins.nvim-tree")
 require("plugins.lualine")
