@@ -12,4 +12,5 @@ end
 -- pass to setup along with your other config
 require("nvim-tree").setup({
   on_attach = my_on_attach,
+  view = { adaptive_size = true },
 })
