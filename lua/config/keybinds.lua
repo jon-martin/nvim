@@ -11,6 +11,10 @@ vim.keymap.set('n', '<esc>', '<cmd>nohlsearch<cr>', { noremap = true, silent = t
 vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { desc = 'esc' })
 vim.keymap.set('t', 'ZQ', '<c-\\><c-n>ZQ', { desc = 'exit terminal' })
 
+-- LSP
+vim.keymap.set("n", "gd", vim.lsp.buf.definition,                          { desc = 'definition' })
+vim.keymap.set("n", "K", vim.lsp.buf.hover)
+
 local wk = require("which-key")
 
 wk.add({
@@ -54,6 +58,7 @@ wk.add({
     { '<leader>sb', '<cmd>FzfLua lines<cr>',             desc = 'Buffer lines' },
     { '<leader>sq', '<cmd>FzfLua quickfix<cr>',          desc = 'Quickfix' },
     { '<leader>sl', '<cmd>FzfLua loclist<cr>',           desc = 'Location list' },
+    { '<leader>s*', '<cmd>FzfLua grep_cword<cr>',        desc = 'grep cword' },
     { '<leader>sz', '<cmd>FzfLua<cr>',                   desc = 'fZflua' },
     { '<leader>sg',                                      group = 'Git' },
     { '<leader>sgs', '<cmd>FzfLua git_status<cr>',       desc = 'git Status' },
