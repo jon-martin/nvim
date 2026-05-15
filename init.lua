@@ -9,7 +9,7 @@ vim.pack.add {
     'https://github.com/ibhagwan/fzf-lua',
     'https://github.com/lewis6991/gitsigns.nvim',
     'https://github.com/folke/which-key.nvim',
-    'https://codeberg.org/andyg/leap.nvim',
+    'https://github.com/folke/flash.nvim',
     'https://github.com/MeanderingProgrammer/render-markdown.nvim',
     'https://github.com/nvim-tree/nvim-web-devicons',
     'https://github.com/nvim-tree/nvim-tree.lua',

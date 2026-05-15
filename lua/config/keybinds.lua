@@ -29,6 +29,7 @@ wk.add({
     { '<leader>b',  '<cmd>FzfLua buffers<cr>',           desc = 'Buffers' },
     { '<leader>/',  '<cmd>FzfLua lgrep_curbuf<cr>',      desc = 'grep Buffer' },
     { '<leader>?',  '<cmd>FzfLua history<cr>',           desc = 'file History' },
+    { '<leader>-',  '<cmd>NvimTreeToggle<cr>',           desc = 'Explorer' },
     -- Window keymaps
     { '<leader>w',                                       group = 'Window' },
     { '<leader>ww', '<c-w>=',                            desc = 'equal Windows' },
@@ -94,7 +95,6 @@ wk.add({
     { '<leader>h-', '0/\\[.]<CR><right>r-<down>',        desc = 'mark checkbox progress' },
     { '<leader>h ', '0/\\[.]<CR><right>r <down>',        desc = 'mark checkbox unmarked' },
     { '<leader>hl', '@q',                                desc = 'run q-macro' },
-    { '<leader>he', '<cmd>NvimTreeToggle<cr>',           desc = 'Explorer' },
     { '<leader>hu', require("undotree").open,            desc = 'Undotree' },
     { '<leader>hf', 'V%zf',                              desc = 'Fold' },
     { '<leader>ho', '<cmd>lopen<CR>',                    desc = 'Open location list' },
@@ -139,8 +139,9 @@ vim.keymap.set({ 'v' }, '<leader>mg', ':g/^/norm! @',                      { des
 vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t',         { desc = 'Table prettyprint' })
 
 ---- Misc
--- Leap
-vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
+-- Flash
+vim.keymap.set({ 'n', 'x', 'o' }, 's', function() require("flash").jump() end,         { desc = 'Flash'})
+vim.keymap.set({ 'o' }, 'r', function() require("flash").remote() end,                 { desc = 'Remote Flash' })
 -- Rename the variable under your cursor.
 vim.keymap.set({ 'n' }, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
 -- Create markdown link to file
