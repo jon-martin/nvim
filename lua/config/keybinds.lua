@@ -140,8 +140,8 @@ vim.keymap.set({ 'n' }, '<leader>ft', ':%! tr -s " " | column -t',         { des
 
 ---- Misc
 -- Flash
-vim.keymap.set({ 'n', 'x', 'o' }, 's', function() require("flash").jump() end,         { desc = 'Flash'})
-vim.keymap.set({ 'o' }, 'r', function() require("flash").remote() end,                 { desc = 'Remote Flash' })
+vim.keymap.set({ 'n', 'x', 'o' }, 's', function() require('flash').jump() end,         { desc = 'Flash'})
+vim.keymap.set({ 'o' }, 'r', function() require('flash').remote() end,                 { desc = 'Remote Flash' })
 -- Rename the variable under your cursor.
 vim.keymap.set({ 'n' }, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { desc = 'Rename' })
 -- Create markdown link to file
