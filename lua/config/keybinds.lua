@@ -1,18 +1,18 @@
 -- Clipboard
-vim.keymap.set('n', '<m-a>', 'ggVG', { desc = 'visual select all' })
-vim.keymap.set('n', '<m-x>', '"+yydd', { desc = 'cut to clipboard' })
-vim.keymap.set('n', '<m-c>', '"+yyj', { desc = 'copy to clipboard' })
-vim.keymap.set('v', '<m-c>', '"+y', { desc = 'copy to clipboard' })
-vim.keymap.set('n', '<m-v>', '"+P<down>', { desc = 'paste from clipboard' })
-vim.keymap.set('v', '<m-v>', '"+p', { desc = 'paste from clipboard' })
-vim.keymap.set('n', '<esc>', '<cmd>nohlsearch<cr>', { noremap = true, silent = true, desc = 'Remove search highlights' })
+vim.keymap.set('n', '<m-a>', 'ggVG',                     { desc = 'visual select all' })
+vim.keymap.set('n', '<m-x>', '"+yydd',                   { desc = 'cut to clipboard' })
+vim.keymap.set('n', '<m-c>', '"+yyj',                    { desc = 'copy to clipboard' })
+vim.keymap.set('v', '<m-c>', '"+y',                      { desc = 'copy to clipboard' })
+vim.keymap.set('n', '<m-v>', '"+P<down>',                { desc = 'paste from clipboard' })
+vim.keymap.set('v', '<m-v>', '"+p',                      { desc = 'paste from clipboard' })
+vim.keymap.set('n', '<esc>', '<cmd>nohlsearch<cr>',                          { noremap = true, silent = true, desc = 'Remove search highlights' })
 
 -- Terminal
-vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { desc = 'esc' })
-vim.keymap.set('t', 'ZQ', '<c-\\><c-n>ZQ', { desc = 'exit terminal' })
+vim.keymap.set('t', '<esc>', '<c-\\><c-n>',              { desc = 'esc' })
+vim.keymap.set('t', 'ZQ', '<c-\\><c-n>ZQ',               { desc = 'exit terminal' })
 
 -- LSP
-vim.keymap.set("n", "gd", vim.lsp.buf.definition,                          { desc = 'definition' })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition,        { desc = 'definition' })
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
 local wk = require("which-key")
@@ -51,6 +51,7 @@ wk.add({
     { '<leader>s',                                       group = 'Search' },
     { '<leader>sf', '<cmd>FzfLua files<cr>',             desc = 'Files' },
     { '<leader>sr', '<cmd>FzfLua live_grep<cr>',         desc = 'Ripgrep' },
+    { '<leader>sd', '<cmd>FzfLua grep<cr>',              desc = 'Double grep' },
     { '<leader>sj', '<cmd>FzfLua jumps<cr>',             desc = 'Jumplist' },
     { '<leader>sm', '<cmd>FzfLua marks<cr>',             desc = 'Marks' },
     { '<leader>s"', '<cmd>FzfLua registers<cr>',         desc = 'Registers' },
