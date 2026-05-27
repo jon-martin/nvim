@@ -38,12 +38,10 @@ wk.add({
     { '<leader>7', '7gt',                                desc = 'select tab 7' },
     { '<leader>8', '8gt',                                desc = 'select tab 8' },
     { '<leader>9', '9gt',                                desc = 'select tab 9' },
-    -- Window keymaps
-    { '<leader>w',                                       group = 'Window' },
-    { '<leader>ww', '<c-w>=',                            desc = 'equal Windows' },
-    { '<leader>wo', '<cmd>only<cr>',                     desc = 'Only' },
-    { '<leader>wz', '<c-w>|<c-w>_',                      desc = 'Zoom' },
-    { '<leader>wn', '<cmd>tabnew<cr>',                   desc = 'create New tab' },
+    { '<leader>w', '<c-w>=',                             desc = 'equal Windows' },
+    { '<leader>o', '<cmd>only<cr>',                      desc = 'Only' },
+    { '<leader>z', '<c-w>|<c-w>_',                       desc = 'Zoom' },
+    { '<leader>t', '<cmd>tabnew<cr>',                    desc = 'create new Tab' },
     -- Find
     { '<leader>s',                                       group = 'Search' },
     { '<leader>sf', '<cmd>FzfLua files<cr>',             desc = 'Files' },
@@ -146,4 +144,4 @@ vim.keymap.set({ 'n' }, '<leader>dr', '<cmd>lua vim.lsp.buf.rename()<cr>', { des
 -- Create markdown link to file
 vim.keymap.set({ 'n' }, '<leader>ff', 'o[notat]()<esc><Left>"%pdd',        { desc = 'File markdown to register' })
 -- Rename tab
-vim.keymap.set({ 'n' }, '<leader>ws', ':let t:tabname = ""<left>',         { desc = 'rename tab' })
+vim.keymap.set({ 'n' }, '<leader>r', ':let t:tabname = ""<left>',          { desc = 'rename tab' })
