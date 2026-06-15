@@ -10,6 +10,15 @@ vim.keymap.set('n', '<esc>', '<cmd>nohlsearch<cr>',                          { n
 -- Terminal
 vim.keymap.set('t', '<esc>', '<c-\\><c-n>',              { desc = 'esc' })
 vim.keymap.set('t', 'ZQ', '<c-\\><c-n>ZQ',               { desc = 'exit terminal' })
+vim.keymap.set('t', '<leader>1', '<c-\\><c-n>1gt',       { desc = 'select tab 1' })
+vim.keymap.set('t', '<leader>2', '<c-\\><c-n>2gt',       { desc = 'select tab 2' })
+vim.keymap.set('t', '<leader>3', '<c-\\><c-n>3gt',       { desc = 'select tab 3' })
+vim.keymap.set('t', '<leader>4', '<c-\\><c-n>4gt',       { desc = 'select tab 4' })
+vim.keymap.set('t', '<leader>5', '<c-\\><c-n>5gt',       { desc = 'select tab 5' })
+vim.keymap.set('t', '<leader>6', '<c-\\><c-n>6gt',       { desc = 'select tab 6' })
+vim.keymap.set('t', '<leader>7', '<c-\\><c-n>7gt',       { desc = 'select tab 7' })
+vim.keymap.set('t', '<leader>8', '<c-\\><c-n>8gt',       { desc = 'select tab 8' })
+vim.keymap.set('t', '<leader>9', '<c-\\><c-n>9gt',       { desc = 'select tab 9' })
 
 -- LSP
 vim.keymap.set("n", "gd", vim.lsp.buf.definition,        { desc = 'definition' })
@@ -19,16 +28,16 @@ local wk = require("which-key")
 
 wk.add({
     -- One-key binds
-    { '<leader>n',  '<cmd>wincmd h<cr>',                 desc = 'move left' },
-    { '<leader>i',  '<cmd>wincmd l<cr>',                 desc = 'move right' },
-    { '<leader>u',  '<cmd>wincmd k<cr>',                 desc = 'move Up' },
-    { '<leader>e',  '<cmd>wincmd j<cr>',                 desc = 'move Down' },
-    { '<leader>y',  '<cmd>vsplit<cr><cmd>wincmd l<cr>',  desc = 'vertical split' },
-    { '<leader>l',  '<cmd>split<cr><cmd>wincmd j<cr>',   desc = 'horizontal split' },
-    { '<leader>b',  '<cmd>FzfLua buffers<cr>',           desc = 'Buffers' },
-    { '<leader>/',  '<cmd>FzfLua lgrep_curbuf<cr>',      desc = 'grep Buffer' },
-    { '<leader>?',  '<cmd>FzfLua history<cr>',           desc = 'file History' },
-    { '<leader>-',  '<cmd>NvimTreeToggle<cr>',           desc = 'Explorer' },
+    { '<leader>n', '<cmd>wincmd h<cr>',                  desc = 'move left' },
+    { '<leader>i', '<cmd>wincmd l<cr>',                  desc = 'move right' },
+    { '<leader>u', '<cmd>wincmd k<cr>',                  desc = 'move Up' },
+    { '<leader>e', '<cmd>wincmd j<cr>',                  desc = 'move Down' },
+    { '<leader>y', '<cmd>vsplit<cr><cmd>wincmd l<cr>',   desc = 'vertical split' },
+    { '<leader>l', '<cmd>split<cr><cmd>wincmd j<cr>',    desc = 'horizontal split' },
+    { '<leader>b', '<cmd>FzfLua buffers<cr>',            desc = 'Buffers' },
+    { '<leader>/', '<cmd>FzfLua lgrep_curbuf<cr>',       desc = 'grep Buffer' },
+    { '<leader>?', '<cmd>FzfLua history<cr>',            desc = 'file History' },
+    { '<leader>-', '<cmd>NvimTreeToggle<cr>',            desc = 'Explorer' },
     { '<leader>1', '1gt',                                desc = 'select tab 1' },
     { '<leader>2', '2gt',                                desc = 'select tab 2' },
     { '<leader>3', '3gt',                                desc = 'select tab 3' },
