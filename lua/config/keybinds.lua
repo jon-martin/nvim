@@ -107,6 +107,7 @@ wk.add({
     { '<leader>hq', '<cmd>lclose<CR>',                   desc = 'Quit location list' },
     { '<leader>hv', '<cmd>vsplit<cr><cmd>lnext<cr>',     desc = 'open next location-item in Vertical split' },
     { '<leader>hh', '<cmd>split<cr><cmd>lnext<cr>',      desc = 'open next location-item in Horizontal split' },
+    { '<leader>hw', '<cmd>lcd %:p:h<cr>',                desc = 'set file path as window working directory' },
     -- Git
     { '<leader>g',                                       group = 'Gitsigns' },
     { '<leader>ga', '<cmd>!git add %<cr>',               desc = 'Add' },

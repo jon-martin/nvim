@@ -5,6 +5,10 @@ vim.g.maplocalleader = "\\"
 -- Save undo history
 vim.opt.undofile = true
 
+-- Textwidth
+vim.opt.textwidth = 180
+vim.opt.formatoptions:remove("t")
+
 vim.opt.expandtab = true   -- Use spaces instead of tabs
 vim.opt.shiftwidth = 4     -- Number of spaces for indentation
 vim.opt.tabstop = 4        -- Number of spaces a tab counts for

@@ -31,6 +31,10 @@ require("config.keybinds")
 require("config.lsp")
 require("config.autocmds")
 
--- local cmp = require('blink.cmp')
--- cmp.build():wait(60000)
--- cmp.setup()
+local uname = vim.uv.os_uname()
+local is_mac = uname.sysname == "Darwin"
+if is_mac then
+    local cmp = require('blink.cmp')
+    cmp.build():wait(60000)
+    cmp.setup()
+end
